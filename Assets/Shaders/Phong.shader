@@ -77,7 +77,7 @@
                 float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPos);
                 float3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0.0,dot(reflection,viewDir)),_Gloss);
                 
-                float4 finalCol = float4((ambient + diffuse + specular * spec * _SpecularScale) * col.rgb,1);
+                float4 finalCol = float4((ambient + diffuse + specular * spec.rgb * _SpecularScale) * col.rgb,1);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, finalCol);
                 return finalCol;

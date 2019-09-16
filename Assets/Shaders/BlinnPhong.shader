@@ -65,7 +65,7 @@
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-                float3 spec = tex2D(_SpecularTex,i.uv);
+                float4 spec = tex2D(_SpecularTex,i.uv);
                 float3 normal = normalize(i.worldNormal);
                 float3 worldLight = normalize(_WorldSpaceLightPos0.xyz);
                 //ambient
@@ -77,7 +77,7 @@
                 float3 halfDir = normalize(viewDir + worldLight);
                 float3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(halfDir,normal)),_Gloss);
                 
-                float4 finalCol = float4((ambient + diffuse + specular * spec * _SpecularScale) * col.rgb,1);
+                float4 finalCol = float4((ambient + diffuse + specular * spec.rgb * _SpecularScale) * col.rgb,1);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, finalCol);
                 return finalCol;
