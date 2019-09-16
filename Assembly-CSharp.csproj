@@ -57,6 +57,7 @@
      <None Include="Assets\Shaders\Lambert.shader" />
      <None Include="Assets\Shaders\NormalMapping.shader" />
      <None Include="Assets\Shaders\Phong.shader" />
+     <None Include="Assets\Resources\Basic Metal Texture Pack\readme.txt" />
      <None Include="Assets\Shaders\BlinnPhong.shader" />
      <None Include="Assets\Shaders\NormalMapping_2.shader" />
      <None Include="Assets\Shaders\HalfLambert.shader" />
