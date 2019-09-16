@@ -3,8 +3,10 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _SpecularTex ("Specular Texture",2D) = "white"{}
         _Diffuse ("Diffuse", Color) = (1,1,1,1)
         _Specular ("Specualr", Color) = (1,1,1,1)
+        _SpecularScale("SpecularScale", Range(0.0, 5.0)) = 1.0
         _Gloss ("Gloss", Range(0,20)) = 20
     }
     SubShader
@@ -40,8 +42,11 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            sampler2D _SpecularTex;
+            float4 _SpecularTex_ST;
             float4 _Diffuse;
             float4 _Specular;
+            float _SpecularScale;
             float _Gloss;
 
             v2f vert (appdata v)
@@ -60,6 +65,7 @@
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
+                float3 spec = tex2D(_SpecularTex,i.uv);
                 float3 normal = normalize(i.worldNormal);
                 float3 worldLight = normalize(_WorldSpaceLightPos0.xyz);
                 //ambient
@@ -71,7 +77,7 @@
                 float3 halfDir = normalize(viewDir + worldLight);
                 float3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(halfDir,normal)),_Gloss);
                 
-                float4 finalCol = float4((ambient + diffuse + specular) * col.rgb,1);
+                float4 finalCol = float4((ambient + diffuse + specular * spec * _SpecularScale) * col.rgb,1);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, finalCol);
                 return finalCol;
