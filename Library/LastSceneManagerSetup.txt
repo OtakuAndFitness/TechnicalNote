@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/NormalMapping.unity
+- path: Assets/Scenes/LightingModel/LightingModel.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
