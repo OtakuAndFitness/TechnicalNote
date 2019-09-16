@@ -60,7 +60,7 @@
                 float3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
                 //diffuse
                 float3 diffuse = _LightColor0.rgb * _Diffuse.rgb * (dot(normal,worldLight) * 0.5 + 0.5);
-                float4 finalCol = float4((sqrt(diffuse) + ambient) * col.rgb,1);
+                float4 finalCol = float4((diffuse * diffuse + ambient) * col.rgb,1);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, finalCol);
                 return finalCol;
