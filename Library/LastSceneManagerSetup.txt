@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LightingModel/LightingModel.unity
+- path: Assets/Scenes/TextureMapping/ParallaxMapping.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
