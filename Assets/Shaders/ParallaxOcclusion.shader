@@ -70,13 +70,15 @@
                 float eachLayer = 0.1;
                 float currentLayerDepth = 0.0;
                 float currentDepth = tex2D(_HeightTex,uv).a;
-                float step = viewDir.xy / viewDir.z / layerNum * height;
+                float3 v = normalize(viewDir); 
+                float step = v.xy / v.z / layerNum * height;
                 float2 currentUV = uv;
                 while (currentLayerDepth < currentDepth){
                     currentUV -= step;
                     currentDepth = tex2Dlod(_HeightTex,float4(currentUV,0,0)).a;
                     currentLayerDepth += eachLayer;
                 }
+                //到此为陡峭视差贴图，加上后面为视差遮蔽贴图
                 float2 preUV = currentUV + step;
                 float preLayerDepth = currentLayerDepth - eachLayer;
                 float afterDepth = currentDepth - currentLayerDepth;
