@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 64b63120021ae80429a026750d64b29b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d0455999741dd0745b506f2f59deb318, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecularTex:
-        m_Texture: {fileID: 2800000, guid: 5432584f31ee22b409d988978bcaa3d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 45e661c39a4c1be4b8f6ec0fae13af21, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -74,7 +74,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularScale: 2.49
+    - _SpecularScale: 5
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
@@ -82,4 +82,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Diffuse: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Specular: {r: 0.18798423, g: 1, b: 0, a: 1}
+    - _Specular: {r: 1, g: 0, b: 0.9059243, a: 1}

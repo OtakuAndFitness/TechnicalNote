@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 311598608}
   - component: {fileID: 311598607}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: BlinnPhong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 672907772}
   - component: {fileID: 672907771}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Phong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 1858640521}
   - component: {fileID: 1858640520}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: HalfLambert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 2118212096}
   - component: {fileID: 2118212095}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: Lambert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

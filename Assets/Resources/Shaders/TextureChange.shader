@@ -87,7 +87,7 @@
                 fixed degree = saturate((param - _Offset) / _EdgeLength);
                 fixed4 ramp = tex2D(_RampTex,fixed2(degree,degree));
 
-                fixed4 col = lerp(c1,c2*ramp,degree);
+                fixed4 col = lerp(c1,c2 + ramp,degree);
 
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
