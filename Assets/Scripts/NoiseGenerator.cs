@@ -19,16 +19,16 @@ public class NoiseGenerator : EditorWindow
 
     void GenerateNoiseImage(int x, int y){
         int size = Mathf.Min(x,y);
-        Texture2D tex = new Texture2D(x,y,TextureFormat.ARGB32,false);
+        Texture2D tex = new Texture2D(x,y,TextureFormat.RGB24,false);
         Color[] pixel = new Color[x*y];
         for (int i=0;i<x;i=i+step){
-            pixel[i] = new Color(1,1,1,1);
+            pixel[i] = new Color(1,1,1);
         }
         for (int i=0;i<x;i=i+step){
             for (int j=0;j<x;j=j+step){
                 float sample = Mathf.PerlinNoise((float)i/x * scale, (float)j/y * scale);
                 sample = Mathf.Clamp(sample,0f,1f);
-                pixel[i*size + j] = new Color(sample,sample,sample,1);
+                pixel[i*size + j] = new Color(sample,sample,sample);
             } 
         }
         tex.SetPixels(pixel);
