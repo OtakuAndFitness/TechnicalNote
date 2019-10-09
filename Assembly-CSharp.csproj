@@ -48,17 +48,17 @@
      <Compile Include="Assets\Scripts\NoiseGenerator.cs" />
      <Compile Include="Assets\Scripts\ProceduralGrid.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
-     <None Include="Assets\Shaders\Lambert.shader" />
-     <None Include="Assets\Shaders\NormalMapping.shader" />
-     <None Include="Assets\Shaders\Phong.shader" />
-     <None Include="Assets\Shaders\ParallaxOcclusion.shader" />
-     <None Include="Assets\Shaders\Relief.shader" />
+     <None Include="Assets\Resources\Shaders\Lambert.shader" />
+     <None Include="Assets\Resources\Shaders\NormalMapping.shader" />
+     <None Include="Assets\Resources\Shaders\Phong.shader" />
+     <None Include="Assets\Resources\Shaders\ParallaxOcclusion.shader" />
+     <None Include="Assets\Resources\Shaders\Relief.shader" />
      <None Include="Assets\Resources\Basic Metal Texture Pack\readme.txt" />
-     <None Include="Assets\Shaders\SimpleParallax.shader" />
-     <None Include="Assets\Shaders\BlinnPhong.shader" />
-     <None Include="Assets\Shaders\NormalMapping_2.shader" />
-     <None Include="Assets\Shaders\TextureChange.shader" />
-     <None Include="Assets\Shaders\HalfLambert.shader" />
+     <None Include="Assets\Resources\Shaders\SimpleParallax.shader" />
+     <None Include="Assets\Resources\Shaders\BlinnPhong.shader" />
+     <None Include="Assets\Resources\Shaders\NormalMapping_2.shader" />
+     <None Include="Assets\Resources\Shaders\TextureChange.shader" />
+     <None Include="Assets\Resources\Shaders\HalfLambert.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/bowentao/Desktop/GitHub/技术博客/TechnicalNote/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
