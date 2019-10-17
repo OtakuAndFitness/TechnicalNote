@@ -205,7 +205,8 @@
 				float sqrThetaY = acos(halfVector.y);
 				fixed sqrnormX = sin(pow(2 * sqrThetaX, _SquareN));
 				fixed sqrnormY = sin(pow(2 * sqrThetaY, _SquareN));
-				halfVector -= _SquareScale * (sqrnormX * halfVector.x * fixed3(1, 0, 0) + sqrnormY * halfVector.y * fixed3(0, 1, 0));
+                fixed minority = min(sqrnormX,sqrnormY);
+				halfVector -= _SquareScale * (minority * halfVector.x * fixed3(1, 0, 0) + minority * halfVector.y * fixed3(0, 1, 0));
 				halfVector = normalize(halfVector);
 
                 fixed4 ambient = UNITY_LIGHTMODEL_AMBIENT;

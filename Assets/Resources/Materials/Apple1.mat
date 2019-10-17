@@ -80,10 +80,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularScale: 0.0339
-    - _SplitX: 0.361
-    - _SplitY: 0.085
+    - _SplitX: 0.379
+    - _SplitY: 0.03
     - _SquareN: 2.13
-    - _SquareScale: 0.292
+    - _SquareScale: 0.09
     - _SrcBlend: 1
     - _TranslationX: 0.1
     - _TranslationY: -0.03
