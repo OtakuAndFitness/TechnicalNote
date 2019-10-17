@@ -137,7 +137,7 @@
 
                 fixed4 kd = _DiffuseCol * col;
                 fixed4 k_blue = fixed4(0,0,_Blue,1);
-                fixed4 k_yellow = fixed4(_Yellow,_Yellow,0,1);
+                fixed4 k_yellow = fixed4(_Yellow,_Yellow,_Blue,1);
                 fixed4 k_cool = k_blue + _Alpha * kd;
                 fixed4 k_warm = k_yellow + _Beta * kd;
 

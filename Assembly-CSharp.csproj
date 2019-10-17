@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ProceduralGrid.cs" />
      <None Include="Assets\Resources\Shaders\ToonShading1.shader" />
      <None Include="Assets\Resources\Shaders\Lambert.shader" />
+     <None Include="Assets\Resources\Shaders\ToonShading3.shader" />
      <None Include="Assets\Resources\Shaders\NormalMapping.shader" />
      <None Include="Assets\Resources\Shaders\Phong.shader" />
      <None Include="Assets\Resources\Shaders\ParallaxOcclusion.shader" />
