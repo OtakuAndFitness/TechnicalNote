@@ -75,13 +75,13 @@ Material:
     - _RotationX: 0
     - _RotationY: 0
     - _RotationZ: 0
-    - _ScaleX: -0.73
-    - _ScaleY: 0.03
+    - _ScaleX: -0.45
+    - _ScaleY: -0.03
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularScale: 0.0339
-    - _SplitX: 0.379
-    - _SplitY: 0.03
+    - _SplitX: 0.333
+    - _SplitY: 0.039
     - _SquareN: 2.13
     - _SquareScale: 0.09
     - _SrcBlend: 1

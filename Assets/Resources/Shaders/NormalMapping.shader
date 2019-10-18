@@ -22,11 +22,11 @@
             #include "Lighting.cginc"
             #include "UnityCG.cginc"
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+            // struct appdata
+            // {
+            //     float4 vertex : POSITION;
+            //     float2 uv : TEXCOORD0;
+            // };
 
             struct v2f
             {
