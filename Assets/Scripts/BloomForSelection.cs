@@ -34,7 +34,6 @@ public class BloomForSelection : MonoBehaviour
         if (isOutline){
             preMat = new Material(Shader.Find("Unlit/Replace"));
             compositeMat.EnableKeyword("_ISOUTLINE_ON");
-            blurMat.EnableKeyword("_ISOUTLINE_ON");
         }
         
         preTex = RenderTexture.GetTemporary(Screen.width >> blurDownSample, Screen.height >> blurDownSample,24,RenderTextureFormat.Default);
