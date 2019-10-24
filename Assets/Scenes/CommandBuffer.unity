@@ -499,5 +499,5 @@ MonoBehaviour:
   - {fileID: 359888136}
   blurDownSample: 1
   blurNums: 2
-  isOutline: 1
+  isOutline: 0
   outlineStrength: 0.5
