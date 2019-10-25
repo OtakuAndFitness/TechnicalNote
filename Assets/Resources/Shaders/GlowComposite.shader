@@ -13,7 +13,7 @@
             Cull Off
             ZWrite Off
             ZTest Always
-            
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -59,7 +59,7 @@
                 #if _ISOUTLINE_ON
                     fixed glow = saturate(tex2D(_blurTex,i.uv) * _Distance - tex2D(_PreTex, i.uv));
                 #else
-                    fixed glow = saturate(tex2D(_PreTex,i.uv) + tex2D(_blurTex,i.uv));
+                    fixed glow = tex2D(_blurTex,i.uv);
                 #endif
 
                 return col + _GlowColor * _Intensity * glow;
