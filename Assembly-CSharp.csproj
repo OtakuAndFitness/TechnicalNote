@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>     <Compile Include="Assets\Scripts\BloomForSelection.cs" />
+     <Compile Include="Assets\Scripts\BoxController.cs" />
      <Compile Include="Assets\Scripts\GerstnerWave.cs" />
      <Compile Include="Assets\Scripts\MyRotator.cs" />
      <Compile Include="Assets\Scripts\NoiseGenerator.cs" />
@@ -61,9 +62,11 @@
      <None Include="Assets\Resources\Shaders\Test1.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading2.shader" />
      <None Include="Assets\Resources\Basic Metal Texture Pack\readme.txt" />
+     <None Include="Assets\Resources\Shaders\LightProbes.shader" />
      <None Include="Assets\Resources\Shaders\SimpleParallax.shader" />
      <None Include="Assets\Resources\Shaders\BlinnPhong.shader" />
      <None Include="Assets\Resources\Shaders\SeparableBlur.shader" />
+     <None Include="Assets\Resources\Shaders\Monkey.shader" />
      <None Include="Assets\Resources\Shaders\NormalMapping_2.shader" />
      <None Include="Assets\Resources\Shaders\TextureChange.shader" />
      <None Include="Assets\Resources\Shaders\HalfLambert.shader" />
