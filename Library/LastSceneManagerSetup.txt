@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/CommandBuffer.unity
+- path: Assets/Scenes/BakedLight.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
