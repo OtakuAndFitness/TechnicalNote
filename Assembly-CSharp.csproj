@@ -61,7 +61,6 @@
      <None Include="Assets\Resources\Shaders\LightProbes.shader" />
      <None Include="Assets\Resources\Shaders\Relief.shader" />
      <None Include="Assets\Resources\Shaders\NormalMapping.shader" />
-     <None Include="Assets\Resources\Shaders\IsotropicPBR.cginc" />
      <None Include="Assets\Resources\Shaders\BlinnPhong.shader" />
      <None Include="Assets\Resources\Shaders\Lambert.shader" />
      <None Include="Assets\Resources\Shaders\Replace.shader" />
