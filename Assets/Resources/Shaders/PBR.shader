@@ -10,6 +10,7 @@
         _MetalicTex ("Metalic Texture",2D) = "white"{}
         _SpecularColor ("Specular Color", Color) = (1,1,1,1)
         _Smoothness ("Smoothness",Range(0,1)) = 1
+        _GGX ("GGX",Range(0,40)) = 1
     }
     SubShader
     {

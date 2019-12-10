@@ -2,6 +2,8 @@
 
 #define MINNUM 0.000001
 
+float _GGX;
+
 inline float pow2(float res){
     return res * res;
 }
@@ -13,7 +15,7 @@ inline float pow5(float res){
 //Specular D, normal distribution function, α = roughtness^2
 float GGX(float NdotH, float r_2){
     float alpha_2 = pow2(r_2);
-    float res = alpha_2 / (UNITY_PI * pow2(pow2(NdotH) * (alpha_2 - 1) + 1) + MINNUM);//加个非常小的数以防是0
+    float res = (alpha_2 * _GGX) / (UNITY_PI * pow2(pow2(NdotH) * (alpha_2 - 1) + 1) + MINNUM);//加个非常小的数以防是0
     return res;
 }
 
