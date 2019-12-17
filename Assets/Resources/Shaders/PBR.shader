@@ -17,6 +17,12 @@
         Tags { "RenderType"="Opaque" "LightMode" = "ForwardBase"}
         LOD 100
 
+        Stencil{
+            Ref 5
+            Comp Always
+            Pass Replace
+        }
+
         Pass
         {
             CGPROGRAM
@@ -122,4 +128,5 @@
             ENDCG
         }
     }
+    Fallback "Diffuse"
 }

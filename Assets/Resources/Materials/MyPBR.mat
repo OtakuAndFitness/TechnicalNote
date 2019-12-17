@@ -88,6 +88,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _GGX: 1
     - _Gloss: 20
     - _GlossMapScale: 1
     - _GlossStrength: 1

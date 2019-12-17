@@ -7,7 +7,6 @@ public class BoxController : MonoBehaviour {
 	private Rigidbody rb;
 	public float speed = 2f;
 	public float jumpForce = 20f;
-
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 	}
