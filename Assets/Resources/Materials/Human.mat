@@ -121,7 +121,7 @@ Material:
     - _RoughnessMap: 0.7
     - _RoughnessPower: 0
     - _SmallRoughness: 1
-    - _Smoothness: 0.495
+    - _Smoothness: 0.43
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
