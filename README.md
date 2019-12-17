@@ -30,3 +30,7 @@ https://www.jianshu.com/p/54915159d12b
 BakedLight&LightProbes场景对应博客
 
 https://www.jianshu.com/p/6dfe403f75f6
+
+PBR场景对应博客
+
+https://www.jianshu.com/p/9f47d5334fd3
