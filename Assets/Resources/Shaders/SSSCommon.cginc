@@ -1,9 +1,7 @@
 ﻿#include "UnityCG.cginc"
 
-
 #define DistanceToProjectionWindow 5.671281819617709   // 1.0 / tan(0.5 * radians(20))
 #define DPTimes300 1701.384545885313                     //DistanceToProjectionWindow * 300
-// #define nSamples 25
 
 struct appdata
 {
