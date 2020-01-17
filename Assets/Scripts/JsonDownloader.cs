@@ -47,6 +47,10 @@ public class JsonDownloader : MonoBehaviour
         while (!www.isDone){
             await Task.Delay(100);
         }
+        if (www.isHttpError || www.isNetworkError)
+        {
+            throw new System.Exception();
+        }
         string json = www.downloadHandler.text;        
         Users[] res = JsonHelper.GetJsonArray<Users>(json);
         return res;
