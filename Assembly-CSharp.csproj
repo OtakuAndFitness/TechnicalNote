@@ -49,12 +49,15 @@
      <Compile Include="Assets\Scripts\BoxController.cs" />
      <Compile Include="Assets\Scripts\GerstnerWave.cs" />
      <Compile Include="Assets\Scripts\GraphicsHelper.cs" />
+     <Compile Include="Assets\Scripts\JsonDownloader.cs" />
+     <Compile Include="Assets\Scripts\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\KernelCalculator.cs" />
      <Compile Include="Assets\Scripts\MyRotator.cs" />
      <Compile Include="Assets\Scripts\NoiseGenerator.cs" />
      <Compile Include="Assets\Scripts\ProceduralGrid.cs" />
      <Compile Include="Assets\Scripts\ShaderID.cs" />
      <Compile Include="Assets\Scripts\SubsurfaceScatterPostProcessing.cs" />
+     <Compile Include="Assets\Scripts\Users.cs" />
      <None Include="Assets\Resources\Shaders\SSS.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading3.shader" />
      <None Include="Assets\Resources\Shaders\ParallaxOcclusion.shader" />
@@ -291,6 +294,9 @@
  </Reference>
  <Reference Include="UnityEditor">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f3/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>/Users/bowentao/Desktop/GitHub/技术博客/TechnicalNote/Assets/ThirdParty/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f3/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
