@@ -60,7 +60,7 @@ public class JsonDownloader : MonoBehaviour
     IEnumerator Counter(){
         for (int i = 0; i < 100000; i++)
         {
-            // Debug.Log(i);
+            Debug.Log(i);
             yield return null;
             // yield return 0;
             // yield return w;
