@@ -4,3 +4,9 @@ Cmd: compileComputeKernel
   api=14 insize=420 outsize=773 ok=1
 Cmd: translateComputeKernel
   api=14 insize=773 outsize=806 ok=1
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Gray.compute(25): redefinition of 'inputTexture'
+  api=14 insize=1020 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=14 insize=539 outsize=910 ok=1

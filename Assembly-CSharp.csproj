@@ -81,6 +81,7 @@
      <None Include="Assets\Resources\Shaders\SeparableBlur.shader" />
      <None Include="Assets\Resources\Basic Metal Texture Pack\readme.txt" />
      <None Include="Assets\Resources\Shaders\HalfLambert.shader" />
+     <None Include="Assets\Resources\Shaders\Fibonacci.compute" />
      <None Include="Assets\Resources\Shaders\TextureChange.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading2.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading1.shader" />
@@ -623,29 +624,13 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{359fe23e-e1c2-efa4-fa3f-e296f89251d7}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{96937489-8a40-679e-a323-1bb591766725}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{5f724487-21a2-c3fe-a536-d87cf55cc156}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{7ea93b47-0bde-395b-5d7f-5e6f945ed090}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{b6b565ae-15d3-3bba-be6c-699f5ee95f85}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{3815fb06-fee4-08e1-c9f6-d214288c03de}</Project>
-      <Name>Unity.CollabProxy.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
       <Project>{62669993-9cb4-868f-0b48-9911793f10a9}</Project>
@@ -654,10 +639,6 @@
     <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
       <Project>{73007d9f-e863-a33b-f12f-03911a8d375b}</Project>
       <Name>Unity.Postprocessing.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{63dc2dfa-07ac-e778-7509-9f72b0128fed}</Project>
-      <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{96b73345-c9c8-fead-3b82-bd160975b103}</Project>

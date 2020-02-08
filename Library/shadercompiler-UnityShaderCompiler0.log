@@ -2,3 +2,64 @@ Base path: '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents', plugi
 Cmd: initializeCompiler
 Cmd: preprocessCompute
   insize=421 outsize=420 ok=1
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=425 outsize=424 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=424 outsize=773 ok=1
+Cmd: preprocessCompute
+  insize=669 outsize=668 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Gray.compute(19): undeclared identifier 'TurnGray'
+  api=14 insize=668 outsize=0 ok=0
+Cmd: compileSnippet
+  api=14 type=0 insize=2295 outsize=1778 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=2295 outsize=1050 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: preprocessCompute
+  insize=665 outsize=664 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Gray.compute(19): undeclared identifier 'TurnGray'
+  api=14 insize=664 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=672 outsize=671 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Gray.compute(19): undeclared identifier 'TurnGray'
+  api=14 insize=671 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=587 outsize=586 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=586 outsize=866 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=866 outsize=907 ok=1
+Cmd: preprocessCompute
+  insize=548 outsize=547 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=547 outsize=866 ok=1
+Cmd: preprocessCompute
+  insize=1019 outsize=1020 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Gray.compute(25): redefinition of 'inputTexture'
+  api=14 insize=1020 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=540 outsize=539 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=910 outsize=961 ok=1
+Cmd: preprocessCompute
+  insize=421 outsize=420 ok=1
+Cmd: preprocessCompute
+  insize=421 outsize=420 ok=1
+Cmd: preprocessCompute
+  insize=435 outsize=434 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=434 outsize=936 ok=1
+Cmd: preprocessCompute
+  insize=435 outsize=434 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=434 outsize=936 ok=1
+Cmd: preprocessCompute
+  insize=433 outsize=432 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=896 outsize=991 ok=1
+Cmd: preprocessCompute
+  insize=433 outsize=432 ok=1
