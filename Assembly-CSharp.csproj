@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BloomForSelection.cs" />
      <Compile Include="Assets\Scripts\BoxController.cs" />
+     <Compile Include="Assets\Scripts\CSExample.cs" />
      <Compile Include="Assets\Scripts\GerstnerWave.cs" />
      <Compile Include="Assets\Scripts\GraphicsHelper.cs" />
      <Compile Include="Assets\Scripts\JsonDownloader.cs" />
@@ -69,6 +70,7 @@
      <None Include="Assets\Resources\Shaders\Phong.shader" />
      <None Include="Assets\Resources\Shaders\LightProbes.shader" />
      <None Include="Assets\Resources\Shaders\Relief.shader" />
+     <None Include="Assets\Resources\Shaders\Gray.compute" />
      <None Include="Assets\Resources\Shaders\NormalMapping.shader" />
      <None Include="Assets\Resources\Shaders\BlinnPhong.shader" />
      <None Include="Assets\Resources\Shaders\Lambert.shader" />
