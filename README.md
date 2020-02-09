@@ -42,3 +42,7 @@ https://www.jianshu.com/p/d4f36204e15d
 Coroutine场景对应博客
 
 https://www.jianshu.com/p/86779d2ebeaa
+
+ComputeShader场景对应博客
+
+https://www.jianshu.com/p/ec9ba6c3a155
