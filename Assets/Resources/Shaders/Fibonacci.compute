@@ -1,7 +1,12 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
 #pragma kernel Fibonacci
 
-RWStructuredBuffer<int> buffer;
+struct MyInt{
+    int val;
+    int index;
+};
+
+RWStructuredBuffer<MyInt> buffer;
 
 int Fib(int n){
     int a = 0;
@@ -18,6 +23,7 @@ int Fib(int n){
 [numthreads(32,1,1)]
 void Fibonacci (uint3 id : SV_DispatchThreadID)
 {
-    buffer[id.x] = Fib(id.x);
+    buffer[id.x].val = Fib(id.x);
+    buffer[id.x].index = id.x;
     
 }

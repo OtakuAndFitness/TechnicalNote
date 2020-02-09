@@ -63,3 +63,45 @@ Cmd: translateComputeKernel
   api=14 insize=896 outsize=991 ok=1
 Cmd: preprocessCompute
   insize=433 outsize=432 ok=1
+Cmd: preprocessCompute
+  insize=550 outsize=549 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at (0): Did not find shader kernel 'Gray' to compile
+  api=14 insize=549 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=552 outsize=551 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=551 outsize=868 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=868 outsize=909 ok=1
+Cmd: preprocessCompute
+  insize=503 outsize=502 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Fibonacci.compute(9): syntax error: unexpected token 'RWStructuredBuffer'
+  api=14 insize=502 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=504 outsize=503 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Fibonacci.compute(15): scalar, vector, or matrix expected
+  api=14 insize=503 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=523 outsize=522 ok=1
+Cmd: preprocessCompute
+  insize=525 outsize=524 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=524 outsize=808 ok=1
+Cmd: preprocessCompute
+  insize=500 outsize=499 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Fibonacci.compute(12): undeclared identifier 'a'
+  api=14 insize=499 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=508 outsize=507 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=507 outsize=1012 ok=1
+Cmd: preprocessCompute
+  insize=533 outsize=532 ok=1
+Cmd: preprocessCompute
+  insize=522 outsize=521 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=521 outsize=988 ok=1

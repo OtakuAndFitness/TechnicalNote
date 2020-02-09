@@ -2,3 +2,6 @@ Base path: '/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents', plugi
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
   api=14 insize=773 outsize=806 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at Fibonacci.compute(27): invalid subscript 'a'
+  api=14 insize=522 outsize=0 ok=0
