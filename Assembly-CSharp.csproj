@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\MyRotator.cs" />
      <Compile Include="Assets\Scripts\NoiseGenerator.cs" />
      <Compile Include="Assets\Scripts\ProceduralGrid.cs" />
+     <Compile Include="Assets\Scripts\RefOutIn.cs" />
      <Compile Include="Assets\Scripts\ShaderID.cs" />
      <Compile Include="Assets\Scripts\SubsurfaceScatterPostProcessing.cs" />
      <Compile Include="Assets\Scripts\Users.cs" />

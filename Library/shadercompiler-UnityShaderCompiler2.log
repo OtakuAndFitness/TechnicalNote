@@ -5,3 +5,5 @@ Cmd: translateComputeKernel
 Cmd: compileComputeKernel
   error: 2 plat 14 at Fibonacci.compute(27): invalid subscript 'a'
   api=14 insize=522 outsize=0 ok=0
+
+Quitting shader compiler process

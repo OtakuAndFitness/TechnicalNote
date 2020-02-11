@@ -3,3 +3,5 @@ Cmd: initializeCompiler
 Cmd: compileComputeKernel
   error: 2 plat 14 at Fibonacci.compute(9): syntax error: unexpected token 'RWStructuredBuffer'
   api=14 insize=532 outsize=0 ok=0
+
+Quitting shader compiler process
