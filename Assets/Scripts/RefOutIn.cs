@@ -26,6 +26,14 @@ public class RefOutIn : MonoBehaviour
         n++;
     }
 
+    // void add(out int a){
+
+    // }
+
+    // void add(ref int a){
+
+    // }
+
     public class Colleague{
         private string name;
         public string Name{
