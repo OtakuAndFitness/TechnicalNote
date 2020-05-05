@@ -1,6 +1,7 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
 #pragma kernel InitHeightSpectrum
 #pragma kernel InitDisplaceSpectrum
+#pragma kernel DisplaceTexture
 #pragma kernel InitNormalAndBubbleTex
 #pragma kernel HorizontalFFT
 #pragma kernel VerticalFFT
@@ -17,12 +18,16 @@ float randomVal2;
 float A;//浪高参数调节
 float time;
 float2 wind;
+float heightScale;
+float displaceScale;
 
 
 // Create a RenderTexture with enableRandomWrite flag and set it
 // with cs.SetTexture
 RWTexture2D<float4> HeightSpectrumRT;
-RWTexture2D<float4> DisplaceSpectrumRT;
+RWTexture2D<float4> DisplaceXSpectrumRT;
+RWTexture2D<float4> DisplaceZSpectrumRT;
+RWTexture2D<float4> DisplaceRT;
 RWTexture2D<float4> NormalRT;
 RWTexture2D<float4> BubbleRT;
 RWTexture2D<float4> InputRT;
@@ -112,7 +117,7 @@ void InitHeightSpectrum (uint3 id : SV_DispatchThreadID)
 
     float2 h = h1 + h1Conj;
 
-    HeightSpectrumRT[id.xy] = float4(h1,h1Conj);
+    HeightSpectrumRT[id.xy] = float4(h,0,0);
     
 }
 
@@ -121,11 +126,26 @@ void InitDisplaceSpectrum (uint3 id : SV_DispatchThreadID)
 {
     float2 k = GetK(id.x,id.y);
     float kLen = max(0.001f,length(k));
-    float4 height = HeightSpectrumRT[id.xy];
-    float2 hx = -MultipyByI(k.x/kLen * (height.xy + height.zw));
-    float2 hz = -MultipyByI(k.y/kLen * (height.xy + height.zw));
+    float2 height = HeightSpectrumRT[id.xy].xy;
+    float2 hx = -MultipyByI(k.x/kLen * height);
+    float2 hz = -MultipyByI(k.y/kLen * height);
 
-    DisplaceSpectrumRT[id.xy] = float4(hx,hz);
+    DisplaceXSpectrumRT[id.xy] = float4(hx,0,0);
+    DisplaceZSpectrumRT[id.xy] = float4(hz,0,0);
+}
+
+[numthreads(8,8,1)]
+void DisplaceTexture(uint3 id : SV_DispatchThreadID)
+{
+    float y = length(HeightSpectrumRT[id.xy].xy) / (N * N) * heightScale;
+    float x = length(DisplaceXSpectrumRT[id.xy].xy) / (N * N) * displaceScale;
+    float z = length(DisplaceZSpectrumRT[id.xy].xy) / (N * N) * displaceScale;
+
+    HeightSpectrumRT[id.xy] = float4(y,y,y,0);
+    DisplaceXSpectrumRT[id.xy] = float4(x,x,x,0);
+    DisplaceZSpectrumRT[id.xy] = float4(z,z,z,0);
+    DisplaceRT[id.xy] = float4(x,y,z,0);
+
 }
 
 [numthreads(8,8,1)]
@@ -133,15 +153,15 @@ void InitNormalAndBubbleTex(uint3 id : SV_DispatchThreadID)
 {
     float unit = Length / N;
 
-    float3 leftOffset = DisplaceSpectrumRT[uint2((id.x - 1 + N) % N,id.y)].xyz;
-    float3 rightOffset = DisplaceSpectrumRT[uint2((id.x + 1 + N) % N,id.y)].xyz;
-    float3 topOffset = DisplaceSpectrumRT[uint2(id.x,(id.y + 1 + N) % N)].xyz;
-    float3 bottomOffset = DisplaceSpectrumRT[uint2(id.x,(id.y - 1 + N) % N)].xyz;
+    float3 leftOffset = DisplaceRT[uint2((id.x - 1 + N) % N,id.y)].xyz;
+    float3 rightOffset = DisplaceRT[uint2((id.x + 1 + N) % N,id.y)].xyz;
+    float3 topOffset = DisplaceRT[uint2(id.x,(id.y + 1 + N) % N)].xyz;
+    float3 bottomOffset = DisplaceRT[uint2(id.x,(id.y - 1 + N) % N)].xyz;
 
-    float3 left = float3(leftOffset.x - unit, leftOffset.yz) - DisplaceSpectrumRT[id.xy];
-    float3 right = float3(rightOffset.x + unit, rightOffset.yz) - DisplaceSpectrumRT[id.xy];
-    float3 top = float3(topOffset.xy,topOffset.z + unit) - DisplaceSpectrumRT[id.xy];
-    float3 bottom = float3(bottomOffset.xy, bottomOffset.z - unit) - DisplaceSpectrumRT[id.xy];
+    float3 left = float3(leftOffset.x - unit, leftOffset.yz) - DisplaceRT[id.xy];
+    float3 right = float3(rightOffset.x + unit, rightOffset.yz) - DisplaceRT[id.xy];
+    float3 top = float3(topOffset.xy,topOffset.z + unit) - DisplaceRT[id.xy];
+    float3 bottom = float3(bottomOffset.xy, bottomOffset.z - unit) - DisplaceRT[id.xy];
 
     float3 lt = cross(left,top);
     float3 rt = cross(right,top);
@@ -198,6 +218,6 @@ void VerticalFFT(uint3 id : SV_DispatchThreadID)
     float2 vertical = float2(output1.x + w.x * output2.x - w.y * output2.y, output1.y + w.y * output2.x + w.x * output2.y);
     int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) : 1;
     vertical *= minusOne;
-    OutputRT[id.xy] = float4(OutputRT[id.xy].xy,vertical);
+    OutputRT[id.xy] = float4(vertical,0,0);
 }
 

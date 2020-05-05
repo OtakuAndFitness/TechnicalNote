@@ -1,49 +1,24 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.8f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.8f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: translateComputeKernel
+  api=14 insize=2086 outsize=1823 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2970 outsize=3996 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=1226 outsize=1348 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=1348 outsize=1429 ok=1
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(147): undeclared identifier 'DispalceRT'
+  api=14 insize=6948 outsize=0 ok=0
 Cmd: compileComputeKernel
-  api=14 insize=5032 outsize=7304 ok=1
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(156): undeclared identifier 'DisplaceSpectrumRT'
+  api=14 insize=6948 outsize=0 ok=0
 Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
-  error: 1 plat 14 at FFTOcean.compute(138): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(139): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  api=14 insize=6148 outsize=5163 ok=1
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(154): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6884 outsize=3488 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=5222 outsize=7812 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2972 outsize=3965 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3604 outsize=4723 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  api=14 insize=6204 outsize=2184 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(133): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  api=14 insize=6208 outsize=3396 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2972 outsize=3965 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3604 outsize=4723 ok=1
-Cmd: compileComputeKernel
-  error: 2 plat 14 at FFTOcean.compute(83): undeclared identifier 'n'
-  api=14 insize=6251 outsize=0 ok=0
-Cmd: translateComputeKernel
-  api=14 insize=2972 outsize=3965 ok=1
-
-Quitting shader compiler process
+  api=14 insize=3768 outsize=4787 ok=1

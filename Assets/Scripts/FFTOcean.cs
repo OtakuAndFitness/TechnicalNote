@@ -12,18 +12,23 @@ public class FFTOcean : MonoBehaviour
     public int Length = 10;
     public float A = 0.0001f;
     public Vector2 wind;
+    public float heightScale = 1;
+    public float displaceScale = 1;
     public float timeScale = 1.0f;
     private int N;
     private float time;
     private MeshFilter filter;
     private Mesh mesh;
     private RenderTexture HeightTex;
+    private RenderTexture XDisplace;
+    private RenderTexture ZDisplace;
     private RenderTexture DispaceTex;
     private RenderTexture NormalTex;
     private RenderTexture BubbleTex;
     private RenderTexture OutputRT;
     private int kernelInitHeightSpectrum;
     private int kernelInitDisplaceSpectrum;
+    private int kernelDisplaceTexture;
     private int kernelInitNormalAndBubble;
     private int kernelHorizontalFFT;
     private int kernelVerticalFFT;
@@ -90,6 +95,8 @@ public class FFTOcean : MonoBehaviour
     void InitCSValue(){
         N = resolution * detail;
         HeightTex = CreateRT(N);
+        XDisplace = CreateRT(N);
+        ZDisplace = CreateRT(N);
         DispaceTex = CreateRT(N);
         NormalTex = CreateRT(N);
         BubbleTex = CreateRT(N);
@@ -97,6 +104,7 @@ public class FFTOcean : MonoBehaviour
         
         kernelInitHeightSpectrum = fftOcean.FindKernel("InitHeightSpectrum");
         kernelInitDisplaceSpectrum = fftOcean.FindKernel("InitDisplaceSpectrum");
+        kernelDisplaceTexture = fftOcean.FindKernel("DisplaceTexture");
         kernelInitNormalAndBubble = fftOcean.FindKernel("InitNormalAndBubbleTex");
         kernelHorizontalFFT = fftOcean.FindKernel("HorizontalFFT");
         kernelVerticalFFT = fftOcean.FindKernel("VerticalFFT");
@@ -123,6 +131,8 @@ public class FFTOcean : MonoBehaviour
         fftOcean.SetFloat("A",A);
         fftOcean.SetFloat("time",time);
         fftOcean.SetVector("wind",wind);
+        fftOcean.SetFloat("displaceScale", displaceScale);
+        fftOcean.SetFloat("HeightScale", heightScale);
 
         //初始化高度频谱
         fftOcean.SetTexture(kernelInitHeightSpectrum,"HeightSpectrumRT",HeightTex);
@@ -130,7 +140,8 @@ public class FFTOcean : MonoBehaviour
 
         //初始化偏移频谱
         fftOcean.SetTexture(kernelInitDisplaceSpectrum,"HeightSpectrumRT",HeightTex);
-        fftOcean.SetTexture(kernelInitDisplaceSpectrum,"DisplaceSpectrumRT",DispaceTex);
+        fftOcean.SetTexture(kernelInitDisplaceSpectrum,"DisplaceXSpectrumRT",XDisplace);
+        fftOcean.SetTexture(kernelInitDisplaceSpectrum,"DisplaceZSpectrumRT",ZDisplace);
         fftOcean.Dispatch(kernelInitDisplaceSpectrum,N/8,N/8,1);
 
         int iterations = Mathf.CeilToInt(Mathf.Log(N,2));
@@ -140,7 +151,9 @@ public class FFTOcean : MonoBehaviour
             fftOcean.SetInt("Ns",ns * 2);
             fftOcean.SetInt("iteration",i);
             FFT(kernelHorizontalFFT, ref HeightTex);
-            FFT(kernelHorizontalFFT, ref DispaceTex);
+            FFT(kernelHorizontalFFT, ref XDisplace);
+            FFT(kernelHorizontalFFT, ref ZDisplace);
+
         }
 
         for(int i=1;i<=iterations;i++){//vertical fft
@@ -148,8 +161,17 @@ public class FFTOcean : MonoBehaviour
             fftOcean.SetInt("Ns",ns * 2);
             fftOcean.SetInt("iteration",i);
             FFT(kernelVerticalFFT, ref HeightTex);
-            FFT(kernelVerticalFFT, ref DispaceTex);
+            FFT(kernelVerticalFFT, ref XDisplace);
+            FFT(kernelVerticalFFT, ref ZDisplace);
+
         }
+
+        //设置偏移纹理
+        fftOcean.SetTexture(kernelDisplaceTexture,"HeightSpectrumRT",HeightTex);
+        fftOcean.SetTexture(kernelDisplaceTexture,"DisplaceXSpectrumRT",XDisplace);
+        fftOcean.SetTexture(kernelDisplaceTexture,"DisplaceZSpectrumRT",ZDisplace);
+        fftOcean.SetTexture(kernelDisplaceTexture,"DisplaceRT",DispaceTex);
+        fftOcean.Dispatch(kernelDisplaceTexture,N/8,N/8,1);
 
         //初始化法线以及泡沫
         // fftOcean.SetTexture(kernelInitNormalAndBubble,"DisplaceSpectrumRT",DispaceTex);
@@ -189,6 +211,8 @@ public class FFTOcean : MonoBehaviour
 
     void OnDestroy() {
         HeightTex.Release();
+        XDisplace.Release();
+        ZDisplace.Release();
         DispaceTex.Release();
         NormalTex.Release();
         BubbleTex.Release();

@@ -1,96 +1,62 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.8f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.8f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=18731 outsize=11294 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=9370 outsize=16164 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=11289 outsize=22334 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=2134 outsize=812 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(138): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(139): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  api=14 insize=6148 outsize=2242 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(188): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(189): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(191): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(198): integer modulus may be much slower, try using uints if possible.
-  api=14 insize=6209 outsize=2791 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(169): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(170): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(172): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(179): integer modulus may be much slower, try using uints if possible.
-  api=14 insize=6204 outsize=2793 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(133): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  api=14 insize=6210 outsize=3396 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  api=14 insize=6204 outsize=5193 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=5282 outsize=7887 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3604 outsize=4723 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=2970 outsize=3996 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(109): unary negate of unsigned value is still unsigned
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(188): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(189): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(191): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(198): integer modulus may be much slower, try using uints if possible.
-  api=14 insize=6242 outsize=2791 ok=1
-Cmd: compileComputeKernel
   error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(145): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(146): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(147): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(192): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(193): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(195): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(202): integer modulus may be much slower, try using uints if possible.
-  api=14 insize=6296 outsize=2791 ok=1
+  api=14 insize=6286 outsize=1848 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4086 outsize=5349 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(133): integer divides may be much slower, try using uints if possible.
-  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
-  api=14 insize=6248 outsize=3396 ok=1
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6283 outsize=1848 ok=1
 Cmd: compileComputeKernel
-  error: 2 plat 14 at FFTOcean.compute(107): 'hTidle': no matching 0 parameter function
-  error: 2 plat 14 at FFTOcean.compute(107): syntax error: unexpected token ','
-  api=14 insize=6282 outsize=0 ok=0
+  error: 2 plat 14 at FFTOcean.compute(124): cannot implicitly convert from 'const float2' to 'float4'
+  api=14 insize=6281 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(189): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(190): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(192): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(199): integer modulus may be much slower, try using uints if possible.
+  api=14 insize=6281 outsize=2791 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(124): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(134): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6245 outsize=3396 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(124): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(134): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6230 outsize=3396 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=2970 outsize=3996 ok=1
-
-Quitting shader compiler process
+  api=14 insize=4146 outsize=5426 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(147): undeclared identifier 'DispalceRT'
+  api=14 insize=6948 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3152 outsize=4085 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(129): cannot implicitly convert from 'float2' to 'float4'
+  api=14 insize=6887 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6887 outsize=2148 ok=1

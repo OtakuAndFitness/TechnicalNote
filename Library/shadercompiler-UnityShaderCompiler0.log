@@ -64,3 +64,120 @@ Cmd: compileSnippet
   api=14 type=0 insize=16577 outsize=10198 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: compileSnippet
   api=14 type=1 insize=16577 outsize=1842 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: preprocessCompute
+  insize=6279 outsize=6286 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6286 outsize=3997 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2086 outsize=1823 ok=1
+Cmd: preprocessCompute
+  insize=6276 outsize=6283 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6283 outsize=3997 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4086 outsize=5349 ok=1
+Cmd: preprocessCompute
+  insize=6277 outsize=6284 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(124): cannot implicitly convert from 'const float2' to 'float4'
+  api=14 insize=6284 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6276 outsize=6283 ok=1
+Cmd: preprocessCompute
+  insize=6274 outsize=6281 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(124): cannot implicitly convert from 'const float2' to 'float4'
+  api=14 insize=6281 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6274 outsize=6281 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6281 outsize=3997 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4086 outsize=5349 ok=1
+Cmd: preprocessCompute
+  insize=6276 outsize=6283 ok=1
+Cmd: preprocessCompute
+  insize=6238 outsize=6245 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(124): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6245 outsize=4057 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4146 outsize=5426 ok=1
+Cmd: preprocessCompute
+  insize=6223 outsize=6230 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(68): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(124): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(144): implicit truncation of vector type
+  api=14 insize=6230 outsize=4057 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2058 outsize=1791 ok=1
+Cmd: preprocessCompute
+  insize=6772 outsize=6781 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(128): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(144): unrecognized identifier 'Disp'
+  api=14 insize=6781 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6939 outsize=6948 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(147): undeclared identifier 'DispalceRT'
+  api=14 insize=6948 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6939 outsize=6948 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 2 plat 14 at FFTOcean.compute(156): undeclared identifier 'DisplaceSpectrumRT'
+  api=14 insize=6948 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6875 outsize=6884 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(73): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(129): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6884 outsize=4165 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4326 outsize=5546 ok=1
+Cmd: preprocessCompute
+  insize=6878 outsize=6887 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(129): cannot implicitly convert from 'float2' to 'float4'
+  api=14 insize=6887 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6878 outsize=6887 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(73): use of potentially uninitialized variable (PhillipsSpectrum)
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6887 outsize=4165 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=4326 outsize=5546 ok=1
