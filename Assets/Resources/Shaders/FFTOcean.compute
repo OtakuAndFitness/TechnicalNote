@@ -1,0 +1,203 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel InitHeightSpectrum
+#pragma kernel InitDisplaceSpectrum
+#pragma kernel InitNormalAndBubbleTex
+#pragma kernel HorizontalFFT
+#pragma kernel VerticalFFT
+
+#define PI 3.14159274f
+#define G 9.81f
+
+int N;
+int Ns; //size of subtransform for the current iteration
+int iteration;
+int Length;
+float randomVal1;
+float randomVal2;
+float A;//浪高参数调节
+float time;
+float2 wind;
+
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> HeightSpectrumRT;
+RWTexture2D<float4> DisplaceSpectrumRT;
+RWTexture2D<float4> NormalRT;
+RWTexture2D<float4> BubbleRT;
+RWTexture2D<float4> InputRT;
+RWTexture2D<float4> OutputRT;
+
+float2 ComplexMultipy(float2 a,float2 b)
+{
+    return float2(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);
+}
+
+float2 MultipyByI(float2 a)
+{
+    return float2(-a.y,a.x);
+}
+
+float2 Conj(float2 a)
+{
+    return float2(a.x,-a.y);
+}
+
+float RandomNum(float2 seed)
+{
+    return frac(sin(dot(seed, float2(12.9898, 78.233))) * 43758.5453);
+}
+
+float2 GetK(int n, int m)
+{
+    // n -= 0.5;
+    // m -= 0.5;
+    // n = (n < N / 2) ? n : n - N;
+    // m = (m < N / 2) ? m : m - N; 
+    return 2 * PI * float2(n,m) / N;
+}
+
+float PhillipsSpectrum(float2 k)
+{
+    // float2 k = GetK(n,m);
+    float k2 = length(k) * length(k);
+    float k4 = k2 * k2;
+
+    if (k2 < 0.0000001){
+       return 0;
+    }
+
+    float L = length(wind) * length(wind) / G;
+    float L2 = L * L;
+    float kdotw = dot(normalize(k), normalize(wind));
+    float kdotw2 = kdotw * kdotw;
+    float l2 = L2 * 0.00001;
+
+    return A * exp(-1/(k2 * L2)) / k4 * kdotw2 * exp(-k2 * l2);
+
+}
+
+float2 hTidle(float2 k,int n,int m)
+{
+    float2 r;
+    float r1 = RandomNum(float2(n,m) + float2(randomVal1,randomVal2));
+    float r2 = RandomNum(float2(n,m) + float2(randomVal2,randomVal1));
+    //ln(0)无定义,所以这里需要clamp
+    r1 = clamp(r1,0.001f,1.0f);
+    r2 = clamp(r2,0.001f,1.0f);
+    float x = sqrt(-2 * log(r1));
+    float y = 2 * PI * r2;
+    r.x = cos(y) * x;
+    r.y = sin(y) * x;
+    return r * sqrt(PhillipsSpectrum(k) / 2);
+}
+
+float dispersion(int n, int m)
+{
+    float2 k = GetK(n,m);
+    return sqrt(G * length(k));
+}
+
+[numthreads(8,8,1)]
+void InitHeightSpectrum (uint3 id : SV_DispatchThreadID)
+{
+    float2 k = GetK(id.x,id.y);
+    float omega = dispersion(id.x,id.y) * time;
+
+    float2 h0 = hTidle(k,id.x,id.y);
+    float2 h1 = ComplexMultipy(h0,float2(cos(omega),sin(omega)));
+
+    float2 h0Conj = Conj(hTidle(-k,id.x,id.y));
+    float2 h1Conj = ComplexMultipy(h0Conj,float2(cos(omega),-sin(omega)));
+
+    float2 h = h1 + h1Conj;
+
+    HeightSpectrumRT[id.xy] = float4(h1,h1Conj);
+    
+}
+
+[numthreads(8,8,1)]
+void InitDisplaceSpectrum (uint3 id : SV_DispatchThreadID)
+{
+    float2 k = GetK(id.x,id.y);
+    float kLen = max(0.001f,length(k));
+    float4 height = HeightSpectrumRT[id.xy];
+    float2 hx = -MultipyByI(k.x/kLen * (height.xy + height.zw));
+    float2 hz = -MultipyByI(k.y/kLen * (height.xy + height.zw));
+
+    DisplaceSpectrumRT[id.xy] = float4(hx,hz);
+}
+
+[numthreads(8,8,1)]
+void InitNormalAndBubbleTex(uint3 id : SV_DispatchThreadID)
+{
+    float unit = Length / N;
+
+    float3 leftOffset = DisplaceSpectrumRT[uint2((id.x - 1 + N) % N,id.y)].xyz;
+    float3 rightOffset = DisplaceSpectrumRT[uint2((id.x + 1 + N) % N,id.y)].xyz;
+    float3 topOffset = DisplaceSpectrumRT[uint2(id.x,(id.y + 1 + N) % N)].xyz;
+    float3 bottomOffset = DisplaceSpectrumRT[uint2(id.x,(id.y - 1 + N) % N)].xyz;
+
+    float3 left = float3(leftOffset.x - unit, leftOffset.yz) - DisplaceSpectrumRT[id.xy];
+    float3 right = float3(rightOffset.x + unit, rightOffset.yz) - DisplaceSpectrumRT[id.xy];
+    float3 top = float3(topOffset.xy,topOffset.z + unit) - DisplaceSpectrumRT[id.xy];
+    float3 bottom = float3(bottomOffset.xy, bottomOffset.z - unit) - DisplaceSpectrumRT[id.xy];
+
+    float3 lt = cross(left,top);
+    float3 rt = cross(right,top);
+    float3 lb = cross(left,bottom);
+    float3 rb = cross(right,bottom);
+
+    NormalRT[id.xy] = float4(normalize(lt+rt+lb+rb),1.0);
+
+    //雅克比行列式计算泡沫
+    float3 ddx = leftOffset - rightOffset;
+    float3 ddz = bottomOffset - topOffset;
+
+    float jacobian = (1 + ddx.x) * (1+ddz.z) - ddx.z * ddz.x;
+
+    //莫名优化泡沫效果代码，我也是抄别人的
+    float turb = max(0, 1 - jacobian + length(NormalRT[id.xy]));
+	float xx = 1 + 3 * smoothstep(1.2, 1.8, turb);
+	xx = min(turb, 1);
+	xx = smoothstep(0, 1, turb);
+	BubbleRT[id.xy] = float4(xx, xx, xx, 1);
+}
+
+[numthreads(8,8,1)]
+void HorizontalFFT(uint3 id : SV_DispatchThreadID)
+{
+    int base = floor(id.x / Ns) * (Ns / 2);
+    int offset = id.x % (Ns / 2);
+    int x0 = base + offset;
+    int x1 = x0 + (N / 2);
+    float2 output1 = InputRT[uint2(x0,id.y)].xy;
+    float2 output2 = InputRT[uint2(x1,id.y)].xy;
+    float angle = -2 * PI * (id.x / Ns); 
+    float2 w = float2(cos(angle),sin(angle));
+    w *= (iteration == log2(N)) ? -1 : 1;//最后一次乘以-1
+    float2 horizon = float2(output1.x + w.x * output2.x - w.y * output2.y, output1.y + w.y * output2.x + w.x * output2.y);
+    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) : 1;//最后一次是奇数则乘以-1
+    horizon *= minusOne;
+    OutputRT[id.xy] = float4(horizon,0,0);
+
+}
+
+[numthreads(8,8,1)]
+void VerticalFFT(uint3 id : SV_DispatchThreadID)
+{
+    int base = floor(id.y / Ns) * (Ns / 2);
+    int offset = id.y % (Ns / 2);
+    int x0 = base + offset;
+    int x1 = x0 + (N / 2);
+    float2 output1 = InputRT[uint2(id.x,x0)].zw;
+    float2 output2 = InputRT[uint2(id.x,x1)].zw;
+    float angle = -2 * PI * (id.y / Ns); 
+    float2 w = float2(cos(angle),sin(angle));
+    w *= (iteration == log2(N)) ? -1 : 1;
+    float2 vertical = float2(output1.x + w.x * output2.x - w.y * output2.y, output1.y + w.y * output2.x + w.x * output2.y);
+    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) : 1;
+    vertical *= minusOne;
+    OutputRT[id.xy] = float4(OutputRT[id.xy].xy,vertical);
+}
+

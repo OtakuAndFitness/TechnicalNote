@@ -1,16 +1,62 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.3f1/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.4f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
   api=14 insize=9597 outsize=16409 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=1864 outsize=1997 ok=1
+  api=14 insize=11176 outsize=11289 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1997 outsize=3520 ok=1
+  api=14 insize=10544 outsize=18402 ok=1
 Cmd: compileComputeKernel
-  api=14 insize=11176 outsize=11445 ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=1602 outsize=3918 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=11846 outsize=2668 kw=SHADOWS_SPLIT_SPHERES pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  api=14 insize=6209 outsize=2214 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(55): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(56): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  api=14 insize=6210 outsize=2184 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(188): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(189): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(191): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(198): integer modulus may be much slower, try using uints if possible.
+  api=14 insize=6236 outsize=2791 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3604 outsize=4723 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(123): undeclared identifier 'GetK'
+  api=14 insize=6243 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3604 outsize=4723 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(140): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(141): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(142): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(143): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(169): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(170): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(172): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(179): integer modulus may be much slower, try using uints if possible.
+  api=14 insize=6248 outsize=2793 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(83): undeclared identifier 'n'
+  api=14 insize=6251 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(107): 'hTidle': no matching 0 parameter function
+  error: 2 plat 14 at FFTOcean.compute(107): syntax error: unexpected token ','
+  api=14 insize=6282 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3604 outsize=4723 ok=1
 
 Quitting shader compiler process
