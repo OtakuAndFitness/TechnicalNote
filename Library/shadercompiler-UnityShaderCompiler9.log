@@ -32,3 +32,9 @@ Cmd: compileComputeKernel
   error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
   api=14 insize=6884 outsize=2489 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2822 outsize=3099 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3080 outsize=4085 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3150 outsize=4073 ok=1

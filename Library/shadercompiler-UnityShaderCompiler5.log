@@ -42,3 +42,21 @@ Cmd: translateComputeKernel
   api=14 insize=3150 outsize=4073 ok=1
 Cmd: translateComputeKernel
   api=14 insize=2458 outsize=2241 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2727 outsize=2728 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=2386 outsize=2241 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(112): 'hTidle': no matching 2 parameter function
+  error: 1 plat 14 at FFTOcean.compute(112): 'hTidle': implicit truncation of vector type
+  api=14 insize=6851 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(112): 'hTidle': no matching 2 parameter function
+  error: 1 plat 14 at FFTOcean.compute(112): 'hTidle': implicit truncation of vector type
+  api=14 insize=6883 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(89): 'length': no matching 0 parameter intrinsic function; Possible intrinsic functions are: length(floatM|halfM|min10floatM|min16floatM)
+  error: 2 plat 14 at FFTOcean.compute(89): syntax error: unexpected token '.'
+  api=14 insize=7376 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=3768 outsize=4787 ok=1

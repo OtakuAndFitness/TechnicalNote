@@ -18,3 +18,28 @@ Cmd: translateComputeKernel
   api=14 insize=2458 outsize=2241 ok=1
 Cmd: translateComputeKernel
   api=14 insize=2727 outsize=2728 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6875 outsize=2489 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(112): 'hTidle': no matching 2 parameter function
+  error: 1 plat 14 at FFTOcean.compute(112): 'hTidle': implicit truncation of vector type
+  api=14 insize=6851 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(110): 'dispersion': no matching 1 parameter function
+  error: 1 plat 14 at FFTOcean.compute(110): 'dispersion': implicit truncation of vector type
+  api=14 insize=6879 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(112): 'hTidle': no matching 2 parameter function
+  error: 1 plat 14 at FFTOcean.compute(112): 'hTidle': implicit truncation of vector type
+  api=14 insize=6883 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(89): undeclared identifier 'WindAndSeed'
+  api=14 insize=7387 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(89): 'length': no matching 0 parameter intrinsic function; Possible intrinsic functions are: length(floatM|halfM|min10floatM|min16floatM)
+  error: 2 plat 14 at FFTOcean.compute(89): syntax error: unexpected token '.'
+  api=14 insize=7376 outsize=0 ok=0

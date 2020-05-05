@@ -54,3 +54,37 @@ Cmd: compileComputeKernel
   error: 1 plat 14 at FFTOcean.compute(193): integer divides may be much slower, try using uints if possible.
   error: 1 plat 14 at FFTOcean.compute(200): integer modulus may be much slower, try using uints if possible.
   api=14 insize=6887 outsize=2901 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(209): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(210): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(212): integer divides may be much slower, try using uints if possible.
+  error: 1 plat 14 at FFTOcean.compute(219): integer modulus may be much slower, try using uints if possible.
+  api=14 insize=6875 outsize=2899 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(165): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(166): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(167): implicit truncation of vector type
+  api=14 insize=7037 outsize=2148 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(110): 'dispersion': no matching 1 parameter function
+  error: 1 plat 14 at FFTOcean.compute(110): 'dispersion': implicit truncation of vector type
+  api=14 insize=6879 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(112): 'hTidle': no matching 2 parameter function
+  error: 1 plat 14 at FFTOcean.compute(112): 'hTidle': implicit truncation of vector type
+  api=14 insize=6883 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at FFTOcean.compute(89): 'length': no matching 0 parameter intrinsic function; Possible intrinsic functions are: length(floatM|halfM|min10floatM|min16floatM)
+  error: 2 plat 14 at FFTOcean.compute(89): syntax error: unexpected token '.'
+  api=14 insize=7376 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(176): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(177): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(178): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(179): implicit truncation of vector type
+  api=14 insize=7377 outsize=2489 ok=1
