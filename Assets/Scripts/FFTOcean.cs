@@ -15,6 +15,7 @@ public class FFTOcean : MonoBehaviour
     public float heightScale = 1;
     public float displaceScale = 1;
     public float timeScale = 1.0f;
+    public Material testMat;
     private int N;
     private float time;
     private MeshFilter filter;
@@ -198,6 +199,8 @@ public class FFTOcean : MonoBehaviour
         oceanMat.SetTexture("_DisplaceTex",DisplaceTex);
         oceanMat.SetTexture("_NormalTex",NormalTex);
         oceanMat.SetTexture("_BubbleTex",BubbleTex);
+
+        testMat.SetTexture("_MainTex",DisplaceTex);
     } 
 
     // Update is called once per frame

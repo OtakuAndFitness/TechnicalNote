@@ -4,7 +4,7 @@
     {
         _Color("Main Color",Color) = (1,1,1,1)
         // _HeightTex("Height Texture",2D) = "white"{}
-        _DisplaceTex("Displacement Texture",2D) = "whhite"{}
+        _DisplaceTex("Displacement Texture",2D) = "white"{}
         _NormalTex("Normal Texture",2D) = "bump"{}
         _BubbleTex("Bubble Texture",2D) = "white"{}
         _LightWrap ("Light Wrapping Value", Float) = 1 
@@ -108,7 +108,6 @@
 				float4 white = saturate(pow(bubble / 2, 2));
 
 				return diffuse;// + specular + white;
-
             }
             ENDCG
         }

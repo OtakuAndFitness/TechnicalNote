@@ -68,7 +68,7 @@ float PhillipsSpectrum(float2 k)
     float k2 = length(k) * length(k);
     float k4 = k2 * k2;
 
-    if (k2 < 0.0000001){
+    if (k2 < 0.0000001f){
        return 0;
     }
 
@@ -76,7 +76,7 @@ float PhillipsSpectrum(float2 k)
     float L2 = L * L;
     float kdotw = dot(normalize(k), normalize(wind));
     float kdotw2 = kdotw * kdotw;
-    float l2 = L2 * 0.00001;
+    float l2 = L2 * 0.00001f;
 
     return A * exp(-1/(k2 * L2)) / k4 * kdotw2 * exp(-k2 * l2);
 
@@ -210,8 +210,8 @@ void VerticalFFT(uint3 id : SV_DispatchThreadID)
     int offset = id.y % (Ns / 2);
     int x0 = base + offset;
     int x1 = x0 + (N / 2);
-    float2 output1 = InputRT[uint2(id.x,x0)].zw;
-    float2 output2 = InputRT[uint2(id.x,x1)].zw;
+    float2 output1 = InputRT[uint2(id.x,x0)].xy;
+    float2 output2 = InputRT[uint2(id.x,x1)].xy;
     float angle = -2 * PI * (id.y / Ns); 
     float2 w = float2(cos(angle),sin(angle));
     w *= (iteration == log2(N)) ? -1 : 1;
