@@ -6,15 +6,15 @@ public class FFTOcean : MonoBehaviour
 {
     public ComputeShader fftOcean;
     public Material oceanMat;
-    public int resolution = 128;
-    public int detail = 8;
-    public int unit = 1;
-    public int Length = 10;
-    public float A = 0.0001f;
+    public int iterations = 9;
+    public int meshSize = 250;
+    public int meshLength = 512;
+    public float A = 70.0f;
+    public int windScale = 30;
     public Vector2 wind;
-    public float heightScale = 1;
-    public float displaceScale = 1;
-    public float timeScale = 1.0f;
+    public float heightScale = 50.0f;
+    public float displaceScale = 100.0f;
+    public float timeScale = 5.0f;
     private int N;
     private float time;
     private MeshFilter filter;
@@ -37,12 +37,12 @@ public class FFTOcean : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject ocean = new GameObject("Ocean");
-        filter = ocean.AddComponent<MeshFilter>();
+        // GameObject ocean = new GameObject("Ocean");
+        filter = gameObject.AddComponent<MeshFilter>();
         mesh = new Mesh();
         filter.mesh = mesh;
 
-        ocean.AddComponent<MeshRenderer>().material = oceanMat;
+        gameObject.AddComponent<MeshRenderer>().material = oceanMat;
 
         GenerateMesh();
         InitCSValue();
@@ -51,49 +51,49 @@ public class FFTOcean : MonoBehaviour
 
     #region MeshCreate
     void GenerateMesh(){
-        Vector3[] vertices = new Vector3[resolution * resolution];
-        Vector3[] normals = new Vector3[resolution * resolution];
-        Vector2[] uvs = new Vector2[resolution * resolution];
-        int[] indices = new int[(resolution - 1) * (resolution - 1) * 6];
+        Vector3[] vertices = new Vector3[meshSize * meshSize];
+        // Vector3[] normals = new Vector3[meshSize * meshSize];
+        Vector2[] uvs = new Vector2[meshSize * meshSize];
+        int[] indices = new int[(meshSize - 1) * (meshSize - 1) * 6];
 
         int indicesIndex = 0;
-        int halfResolution = resolution / 2;
+        int halfResolution = meshSize / 2;
 
-        for (int i = 0; i < resolution; i++)
+        for (int i = 0; i < meshSize; i++)
         {
-            float horizontalPos = (i - halfResolution) * unit;
-            for (int j = 0; j < resolution; j++)
+            float horizontalPos = (i - halfResolution) * (meshLength / meshSize);
+            for (int j = 0; j < meshSize; j++)
             {
-                int currentIndex = i * resolution + j;
-                float verticalPos = (j - halfResolution) * unit;
+                int currentIndex = i * meshSize + j;
+                float verticalPos = (j - halfResolution) * (meshLength / meshSize);
                 vertices[currentIndex] = new Vector3(horizontalPos,0,verticalPos);
-                normals[currentIndex] = new Vector3(0,1,0);
-                uvs[currentIndex] = new Vector2(i / (resolution - 1),j / (resolution-1));
+                // normals[currentIndex] = new Vector3(0,1,0);
+                uvs[currentIndex] = new Vector2(i / (meshSize - 1),j / (meshSize-1));
 
-                if (i != resolution - 1 && j != resolution - 1){
+                if (i != meshSize - 1 && j != meshSize - 1){
                     indices[indicesIndex++] = currentIndex;
                     indices[indicesIndex++] = currentIndex + 1;
-                    indices[indicesIndex++] = currentIndex + resolution + 1;
+                    indices[indicesIndex++] = currentIndex + meshSize + 1;
 
                     indices[indicesIndex++] = currentIndex;
-                    indices[indicesIndex++] = currentIndex + resolution + 1;
-                    indices[indicesIndex++] = currentIndex + resolution;
+                    indices[indicesIndex++] = currentIndex + meshSize + 1;
+                    indices[indicesIndex++] = currentIndex + meshSize;
                 }
             }
         }
 
         mesh.vertices = vertices;
         mesh.SetIndices(indices,MeshTopology.Triangles,0);
-        mesh.normals = normals;
+        // mesh.normals = normals;
         mesh.uv = uvs;
-        filter.mesh = mesh;
+        // filter.mesh = mesh;
 
     }
     #endregion
 
     #region InitCSValue
     void InitCSValue(){
-        N = resolution * detail;
+        N = (int)Mathf.Pow(2,iterations);
         HeightTex = CreateRT(N);
         XDisplaceTex = CreateRT(N);
         ZDisplaceTex = CreateRT(N);
@@ -110,10 +110,13 @@ public class FFTOcean : MonoBehaviour
         kernelVerticalFFT = fftOcean.FindKernel("VerticalFFT");
 
         fftOcean.SetInt("N",N);
-        fftOcean.SetInt("Length",Length);
+        fftOcean.SetInt("Length",meshLength);
 
         fftOcean.SetFloat("randomVal1",Random.value);
         fftOcean.SetFloat("randomVal2",Random.value);
+
+        wind.Normalize();
+        wind *= windScale;
 
     }
 
@@ -143,8 +146,6 @@ public class FFTOcean : MonoBehaviour
         fftOcean.SetTexture(kernelInitDisplaceSpectrum,"DisplaceXSpectrumRT",XDisplaceTex);
         fftOcean.SetTexture(kernelInitDisplaceSpectrum,"DisplaceZSpectrumRT",ZDisplaceTex);
         fftOcean.Dispatch(kernelInitDisplaceSpectrum,N/8,N/8,1);
-
-        int iterations = Mathf.CeilToInt(Mathf.Log(N,2));
         
         for(int i=1;i<=iterations;i++){// horizontal fft
             int ns = (int)Mathf.Pow(2,i-1);
