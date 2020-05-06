@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!43 &1173099625
+--- !u!43 &1116632422
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +341,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1173099625}
+  m_Mesh: {fileID: 1116632422}
 --- !u!114 &1692355534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +403,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692355531}
-  m_Mesh: {fileID: 1173099625}
+  m_Mesh: {fileID: 1116632422}
 --- !u!4 &1692355537
 Transform:
   m_ObjectHideFlags: 0
@@ -520,11 +520,11 @@ MonoBehaviour:
   detail: 4
   unit: 10
   Length: 10
-  A: 0.01
+  A: 100
   wind: {x: 14, y: 12}
-  heightScale: 1
-  displaceScale: 10
-  timeScale: 100
+  heightScale: 58
+  displaceScale: 100
+  timeScale: 5
 --- !u!1 &1985237006
 GameObject:
   m_ObjectHideFlags: 0

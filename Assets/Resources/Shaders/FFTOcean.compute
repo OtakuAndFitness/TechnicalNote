@@ -187,17 +187,17 @@ void InitNormalAndBubbleTex(uint3 id : SV_DispatchThreadID)
 [numthreads(8,8,1)]
 void HorizontalFFT(uint3 id : SV_DispatchThreadID)
 {
-    int base = floor(id.x / Ns) * (Ns / 2);
-    int offset = id.x % (Ns / 2);
+    int base = floor(id.x / Ns) * (Ns * 0.5f);
+    int offset = id.x % (Ns * 0.5f);
     int x0 = base + offset;
-    int x1 = x0 + (N / 2);
+    int x1 = x0 + (N * 0.5f);
     float2 output1 = InputRT[uint2(x0,id.y)].xy;
     float2 output2 = InputRT[uint2(x1,id.y)].xy;
-    float angle = -2 * PI * (id.x / Ns); 
+    float angle = -2 * PI * (id.x / (Ns * 1.0f)); 
     float2 w = float2(cos(angle),sin(angle));
     w *= (iteration == log2(N)) ? -1 : 1;//最后一次乘以-1
     float2 horizon = float2(output1.x + w.x * output2.x - w.y * output2.y, output1.y + w.y * output2.x + w.x * output2.y);
-    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) : 1;//最后一次是奇数则乘以-1
+    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) * 1 : 1;//最后一次是奇数则乘以-1
     horizon *= minusOne;
     OutputRT[id.xy] = float4(horizon,0,0);
 
@@ -206,18 +206,17 @@ void HorizontalFFT(uint3 id : SV_DispatchThreadID)
 [numthreads(8,8,1)]
 void VerticalFFT(uint3 id : SV_DispatchThreadID)
 {
-    int base = floor(id.y / Ns) * (Ns / 2);
-    int offset = id.y % (Ns / 2);
+    int base = floor(id.y / Ns) * (Ns * 0.5f);
+    int offset = id.y % (Ns * 0.5f);
     int x0 = base + offset;
-    int x1 = x0 + (N / 2);
+    int x1 = x0 + (N * 0.5f);
     float2 output1 = InputRT[uint2(id.x,x0)].xy;
     float2 output2 = InputRT[uint2(id.x,x1)].xy;
-    float angle = -2 * PI * (id.y / Ns); 
+    float angle = -2 * PI * (id.y / (Ns * 1.0f)); 
     float2 w = float2(cos(angle),sin(angle));
     w *= (iteration == log2(N)) ? -1 : 1;
     float2 vertical = float2(output1.x + w.x * output2.x - w.y * output2.y, output1.y + w.y * output2.x + w.x * output2.y);
-    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) : 1;
+    int minusOne = (iteration == log2(N)) ? (iteration % 2) * (-1) + ((iteration + 1) % 2) * 1 : 1;
     vertical *= minusOne;
     OutputRT[id.xy] = float4(vertical,0,0);
 }
-

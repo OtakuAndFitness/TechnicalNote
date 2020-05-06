@@ -83,7 +83,6 @@
      <None Include="Assets\Resources\Shaders\NormalMapping_2.shader" />
      <None Include="Assets\Resources\Shaders\SeparableBlur.shader" />
      <None Include="Assets\Resources\Basic Metal Texture Pack\readme.txt" />
-     <None Include="Assets\ShowMainTex.shader" />
      <None Include="Assets\Resources\Shaders\HalfLambert.shader" />
      <None Include="Assets\Resources\Shaders\FFTOcean.compute" />
      <None Include="Assets\Resources\Shaders\Fibonacci.compute" />
