@@ -107,7 +107,7 @@
 
 				float4 white = saturate(pow(bubble / 2, 2));
 
-				return diffuse;// + specular + white;
+				return diffuse + specular + white;
             }
             ENDCG
         }

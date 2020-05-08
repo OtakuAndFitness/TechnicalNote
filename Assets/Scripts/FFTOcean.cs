@@ -174,10 +174,10 @@ public class FFTOcean : MonoBehaviour
         fftOcean.Dispatch(kernelDisplaceTexture,N/8,N/8,1);
 
         //初始化法线以及泡沫
-        // fftOcean.SetTexture(kernelInitNormalAndBubble,"DisplaceRT",DisplaceTex);
-        // fftOcean.SetTexture(kernelInitNormalAndBubble,"NormalRT",NormalTex);
-        // fftOcean.SetTexture(kernelInitNormalAndBubble,"BubbleRT",BubbleTex);
-        // fftOcean.Dispatch(kernelInitNormalAndBubble,N/8,N/8,1);
+        fftOcean.SetTexture(kernelInitNormalAndBubble,"DisplaceRT",DisplaceTex);
+        fftOcean.SetTexture(kernelInitNormalAndBubble,"NormalRT",NormalTex);
+        fftOcean.SetTexture(kernelInitNormalAndBubble,"BubbleRT",BubbleTex);
+        fftOcean.Dispatch(kernelInitNormalAndBubble,N/8,N/8,1);
 
         SetMaterial();
     }
