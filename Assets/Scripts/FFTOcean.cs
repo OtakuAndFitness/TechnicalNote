@@ -52,12 +52,12 @@ public class FFTOcean : MonoBehaviour
     #region MeshCreate
     void GenerateMesh(){
         Vector3[] vertices = new Vector3[meshSize * meshSize];
-        // Vector3[] normals = new Vector3[meshSize * meshSize];
+        Vector3[] normals = new Vector3[meshSize * meshSize];
         Vector2[] uvs = new Vector2[meshSize * meshSize];
         int[] indices = new int[(meshSize - 1) * (meshSize - 1) * 6];
 
         int indicesIndex = 0;
-        int halfResolution = meshSize / 2;
+        float halfResolution = meshSize / 2.0f;
 
         for (int i = 0; i < meshSize; i++)
         {
@@ -66,9 +66,9 @@ public class FFTOcean : MonoBehaviour
             {
                 int currentIndex = i * meshSize + j;
                 float verticalPos = (j - halfResolution) * (meshLength / meshSize);
-                vertices[currentIndex] = new Vector3(horizontalPos,0,verticalPos);
-                // normals[currentIndex] = new Vector3(0,1,0);
-                uvs[currentIndex] = new Vector2(i / (meshSize - 1),j / (meshSize-1));
+                vertices[currentIndex] = new Vector3(horizontalPos,0.0f,verticalPos);
+                normals[currentIndex] = new Vector3(0.0f,1.0f,0.0f);
+                uvs[currentIndex] = new Vector2(i / (meshSize - 1.0f),j / (meshSize - 1.0f));
 
                 if (i != meshSize - 1 && j != meshSize - 1){
                     indices[indicesIndex++] = currentIndex;
@@ -84,9 +84,9 @@ public class FFTOcean : MonoBehaviour
 
         mesh.vertices = vertices;
         mesh.SetIndices(indices,MeshTopology.Triangles,0);
-        // mesh.normals = normals;
+        mesh.normals = normals;
         mesh.uv = uvs;
-        // filter.mesh = mesh;
+        filter.mesh = mesh;
 
     }
     #endregion
@@ -115,9 +115,6 @@ public class FFTOcean : MonoBehaviour
         fftOcean.SetFloat("randomVal1",Random.value);
         fftOcean.SetFloat("randomVal2",Random.value);
 
-        wind.Normalize();
-        wind *= windScale;
-
     }
 
     private RenderTexture CreateRT(int size){
@@ -129,13 +126,15 @@ public class FFTOcean : MonoBehaviour
     #endregion
 
     #region UpdateOceanValue
-    void UpdateOceanValue(float time){
+    void UpdateOceanValue(){
         //初始化各个参数
         fftOcean.SetFloat("A",A);
         fftOcean.SetFloat("time",time);
+        wind.Normalize();
+        wind *= windScale;
         fftOcean.SetVector("wind",wind);
         fftOcean.SetFloat("displaceScale", displaceScale);
-        fftOcean.SetFloat("HeightScale", heightScale);
+        fftOcean.SetFloat("heightScale", heightScale);
 
         //初始化高度频谱
         fftOcean.SetTexture(kernelInitHeightSpectrum,"HeightSpectrumRT",HeightTex);
@@ -205,7 +204,7 @@ public class FFTOcean : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime * timeScale;
-        UpdateOceanValue(time);
+        UpdateOceanValue();
     }
     #endregion
 
