@@ -19,3 +19,6 @@ Cmd: compileComputeKernel
   error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(200): integer modulus may be much slower, try using uints if possible.
   api=14 insize=6929 outsize=3029 ok=1
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process

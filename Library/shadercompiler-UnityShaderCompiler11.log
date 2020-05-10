@@ -2,3 +2,6 @@ Base path: '/Applications/Unity/Hub/Editor/2019.3.8f1/Unity.app/Contents', plugi
 Cmd: initializeCompiler
 Cmd: translateComputeKernel
   api=14 insize=2727 outsize=2728 ok=1
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process

@@ -9,3 +9,6 @@ Cmd: compileComputeKernel
   api=14 insize=6913 outsize=3488 ok=1
 Cmd: translateComputeKernel
   api=14 insize=3278 outsize=3913 ok=1
+Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
+
+Quitting shader compiler process
