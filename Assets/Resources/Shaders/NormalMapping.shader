@@ -4,7 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _NormalTex ("Normal", 2D) = "white"{} 
-        _NormalScale ("Normal Scale", Range(0,2)) = 1
+        _NormalScale ("Normal Scale", Range(-2,2)) = 1
     }
     SubShader
     {
