@@ -39,9 +39,9 @@ Shader "Unlit/NormalMapping_2"
                 UNITY_FOG_COORDS(1)
                 float2 texNormal : TEXCOORD2;
                 float4 vertex : SV_POSITION;
-                fixed4 TtoW0 : TEXCOORD3;
-  				fixed4 TtoW1 : TEXCOORD4;
-  				fixed4 TtoW2 : TEXCOORD5;
+                float4 TtoW0 : TEXCOORD3;
+  				float4 TtoW1 : TEXCOORD4;
+  				float4 TtoW2 : TEXCOORD5;
             };
 
             sampler2D _MainTex;
