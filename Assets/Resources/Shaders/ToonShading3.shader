@@ -5,6 +5,7 @@
         _MainTex ("Texture", 2D) = "white" {}
         _Outline ("Outline Width", Range(0,1)) = 0.1
         _OutlineCol ("Outline Color", Color) = (0,0,0,1)
+        _OutlineScale ("Outline Scale",Range(0,1)) = 1
         _DiffuseCol ("Diffuse Color", Color) = (1,1,1,1)
         _Blue ("Cool Color",Range(0,1)) = 1
         _Yellow ("Warm Color",Range(0,1)) = 1
@@ -58,15 +59,18 @@
 
             float _Outline;
             fixed4 _OutlineCol;
+            float _OutlineScale;
 
             v2f vert (appdata v)
             {
                 v2f o;
-                float4 pos = mul(UNITY_MATRIX_MV, v.vertex);
+                o.vertex = UnityObjectToClipPos(v.vertex);
                 float3 normal = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal); 
                 normal.z = 0.01;
-                pos += float4(normalize(normal), 0)  * _Outline;
-                o.vertex = mul(UNITY_MATRIX_P, pos);
+                float2 offset = TransformViewToProjection(normal.xy);
+                float height = o.vertex.z / unity_CameraProjection._m11;//加入这个参数可让物体描边在离摄像头远的时候不至于太细，近的时候不至于太粗
+                float outlineStrength = sqrt(height / _OutlineScale);
+                o.vertex.xy += offset * outlineStrength * _Outline;
                 return o;
             }
 
