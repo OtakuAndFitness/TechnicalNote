@@ -69,8 +69,8 @@
                 normal.z = 0.01;
                 float2 offset = TransformViewToProjection(normal.xy);
                 float height = o.vertex.z / unity_CameraProjection._m11;//加入这个参数可让物体描边在离摄像头远的时候不至于太细，近的时候不至于太粗
-                float outlineStrength = sqrt(height / _OutlineScale);
-                o.vertex.xy += offset * outlineStrength * _Outline;
+                float scale = sqrt(height / _OutlineScale);
+                o.vertex.xy += offset * scale * _Outline;
                 return o;
             }
 
