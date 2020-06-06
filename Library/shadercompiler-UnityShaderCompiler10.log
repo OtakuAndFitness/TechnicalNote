@@ -1,18 +1,14 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.14f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.14f1/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.15f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.15f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: compileComputeKernel
-  api=14 insize=18731 outsize=11742 ok=1
+  api=14 insize=18731 outsize=9901 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=9370 outsize=16164 ok=1
+  api=14 insize=11447 outsize=25062 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1199 outsize=1303 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=7304 outsize=11321 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=11445 outsize=22649 ok=1
+  api=14 insize=5781 outsize=8380 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
-  api=14 insize=6929 outsize=2148 ok=1
+  api=14 insize=11176 outsize=11445 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=866 outsize=907 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=3768 outsize=4787 ok=1

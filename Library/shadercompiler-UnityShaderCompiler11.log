@@ -1,15 +1,16 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.3.14f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.14f1/Unity.app/Contents/PlaybackEngines'
+Base path: '/Applications/Unity/Hub/Editor/2019.3.15f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.15f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=14 insize=1864 outsize=1153 ok=1
 Cmd: translateComputeKernel
-  api=14 insize=1477 outsize=2325 ok=1
+  api=14 insize=1997 outsize=3520 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=11445 outsize=22649 ok=1
 Cmd: compileComputeKernel
   api=14 insize=3174 outsize=815 ok=1
 Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(154): integer divides may be much slower, try using uints if possible.
   error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
   error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
-  api=14 insize=6929 outsize=3488 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=988 outsize=1094 ok=1
+  api=14 insize=6929 outsize=2489 ok=1

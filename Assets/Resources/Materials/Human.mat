@@ -110,7 +110,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GGX: 1
+    - _GGX: 0.8
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -126,7 +126,7 @@ Material:
     - _RoughnessMap: 0.7
     - _RoughnessPower: 0
     - _SmallRoughness: 1
-    - _Smoothness: 0.43
+    - _Smoothness: 0.551
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
