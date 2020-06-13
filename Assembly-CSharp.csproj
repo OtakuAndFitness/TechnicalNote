@@ -74,7 +74,7 @@
      <None Include="Assets\Resources\Shaders\BlinnPhong.shader" />
      <None Include="Assets\Resources\Shaders\Lambert.shader" />
      <None Include="Assets\Resources\Shaders\Replace.shader" />
-     <None Include="Assets\Resources\Shaders\ToonWithShadow.shader" />
+     <None Include="Assets\Resources\Shaders\SimpleToon.shader" />
      <None Include="Assets\Resources\Shaders\AnisotropicPBR.cginc" />
      <None Include="Assets\Resources\Shaders\PBR.shader" />
      <None Include="Assets\Resources\Shaders\NormalMapping_2.shader" />

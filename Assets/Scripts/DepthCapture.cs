@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DepthCapture : MonoBehaviour
 {
-    public RenderTexture depthTexture;
     private Camera myCamera;
     private Shader shadowMap;
     // Start is called before the first frame update
@@ -18,11 +17,13 @@ public class DepthCapture : MonoBehaviour
     void Update()
     {
         if (myCamera != null){
+            myCamera.backgroundColor = Color.white;
+            myCamera.clearFlags = CameraClearFlags.SolidColor;
             myCamera.enabled = false;
 
             Shader.SetGlobalTexture("_DepthTexture", myCamera.targetTexture);
-            Shader.SetGlobalFloat("_TextureWidth",depthTexture.width);
-            Shader.SetGlobalFloat("_TextureHeight",depthTexture.height);
+            Shader.SetGlobalFloat("_TextureWidth",myCamera.targetTexture.width);
+            Shader.SetGlobalFloat("_TextureHeight",myCamera.targetTexture.height);
 
             myCamera.RenderWithShader(shadowMap,"RenderType");
         }

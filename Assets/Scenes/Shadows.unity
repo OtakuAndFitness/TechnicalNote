@@ -364,10 +364,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -395,7 +395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1ea1d00244d41f887d248dceed7eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depthTexture: {fileID: 8400000, guid: 328319f295e134adbbc197b736848d87, type: 2}
 --- !u!1 &1854853521
 GameObject:
   m_ObjectHideFlags: 0
