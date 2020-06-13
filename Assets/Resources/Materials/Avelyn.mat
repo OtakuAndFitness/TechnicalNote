@@ -57,7 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Alpha: 1
-    - _Beta: 0.936
+    - _Beta: 0.548
     - _Blue: 0.076
     - _BumpScale: 1
     - _Cutoff: 0.5
