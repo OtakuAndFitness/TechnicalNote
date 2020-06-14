@@ -7,6 +7,7 @@
 
         Pass
         {
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -23,7 +24,6 @@
                 float4 vertex : SV_POSITION;
                 float2 depth : TEXCOORD0;
             };
-
 
             v2f vert (appdata v)
             {

@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 1050
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1680
     height: 1000
-  m_MinSize: {x: 678, y: 492}
+  m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 77
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1277
     height: 1000
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 78
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1277
     height: 573
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 79
+  controlID: 104
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 316
     height: 573
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -213,13 +213,13 @@ MonoBehaviour:
     height: 573
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 12}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -334,7 +334,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -394,9 +394,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 02330000
-      m_LastClickedID: 13058
-      m_ExpandedIDs: 02ddffff10ddffff16ddffff1eddffff36ddffff48ddffff62ddffff64ddffffceddffffd2ddffffdcddffffb2faffff40fbffff
+      m_SelectedIDs: 20970000
+      m_LastClickedID: 38688
+      m_ExpandedIDs: 1061feffc8e5feff50faffff5efaffff64faffff6afaffff84faffff96faffffb0faffffb2faffffccfaffff20fbffff2afbffff36fbffff40fbffff383200001697000034970000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -456,9 +456,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 41.81, y: 4.7584314, z: 50.582645}
+    m_Target: {x: 41.761044, y: 5.507824, z: 50.492805}
     speed: 2
-    m_Value: {x: 41.81, y: 4.7584314, z: 50.582645}
+    m_Value: {x: 41.761044, y: 5.507824, z: 50.492805}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -504,13 +504,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.003151579, y: -0.99430656, z: 0.10208359, w: -0.030727543}
+    m_Target: {x: 0.15746829, y: -0.82762975, z: 0.28517327, w: 0.45710996}
     speed: 2
-    m_Value: {x: -0.002998419, y: -0.99434125, z: 0.10208715, w: -0.029235745}
+    m_Value: {x: 0.1574651, y: -0.827613, z: 0.2851675, w: 0.4571007}
   m_Size:
-    m_Target: 1.4461503
+    m_Target: 11.286686
     speed: 2
-    m_Value: 1.4461503
+    m_Value: 11.286686
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -600,20 +600,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ThirdParty/Casual RPG Character - 4 Avelyn
+    - Assets/Resources/Textures
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ThirdParty/Casual RPG Character - 4 Avelyn
+  - Assets/Resources/Textures
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "/Users/bowentao/Desktop/GitHub/\u6280\u672F\u535A\u5BA2/TechnicalNote"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 58380000
-    m_LastClickedID: 14424
-    m_ExpandedIDs: 00000000b4320000b6320000b8320000ba320000bc320000cc3200004a3800005838000000ca9a3b
+    m_SelectedIDs: 5a340000
+    m_LastClickedID: 13402
+    m_ExpandedIDs: 0000000046340000483400004a3400004c3400004e3400005e340000603400006234000066340000cc36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4320000b6320000b8320000ba320000bc320000
+    m_ExpandedIDs: 0000000046340000483400004a3400004c3400004e340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000000000000863f0000e4370000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000863f0000e437000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

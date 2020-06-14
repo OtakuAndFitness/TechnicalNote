@@ -30,7 +30,7 @@
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float4 worldPos : TEXCOORD1;
+                float4 worldPos : TEXCOORD2;
 
             };
 
@@ -39,6 +39,13 @@
 
             float4x4 _LightMatrix;
             sampler2D _DepthTexture;
+
+            float _TextureWidth;
+            float _TextureHeight;
+
+            float _Strength;
+            float _Bias;
+
 
             v2f vert (appdata v)
             {
@@ -59,12 +66,20 @@
                 fixed4 lightSpacePos = mul(_LightMatrix,i.worldPos);//变换到光源空间
                 lightSpacePos.xyz = lightSpacePos.xyz / lightSpacePos.w;//剪裁空间为-1到1
                 float3 uvPos = lightSpacePos * 0.5 + 0.5; //uv是在0-1之间
-
-                fixed4 depthRGBA = tex2D(_DepthTexture,uvPos.xy);
-                float depth = DecodeFloatRGBA(depthRGBA);
+                
                 float currentDepth = lightSpacePos.z;
-                float shadow = currentDepth < depth ? 1.0 : 0.0;
+                float2 offset = float2(1.0 / _TextureWidth,1.0 / _TextureHeight);
+                float shadow = 0.0;
+                //PCF
+                for (int x=-1;x<=1;x++){
+                    for (int y=-1;y<=1;y++){
+                        fixed4 depthRGBA = tex2D(_DepthTexture,uvPos.xy + float2(x,y) * offset);
+                        float depth = DecodeFloatRGBA(depthRGBA);
+                        shadow += currentDepth + _Bias < depth ? 1.0 : _Strength;
 
+                    }
+                }
+                shadow /= 9;
                 col *= 1 - shadow;
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);

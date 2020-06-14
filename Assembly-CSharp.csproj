@@ -46,7 +46,6 @@
      <Compile Include="Assets\Scripts\JsonDownloader.cs" />
      <Compile Include="Assets\Scripts\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\KernelCalculator.cs" />
-     <Compile Include="Assets\Scripts\MatrixTransformation.cs" />
      <Compile Include="Assets\Scripts\MyRotator.cs" />
      <Compile Include="Assets\Scripts\NoiseGenerator.cs" />
      <Compile Include="Assets\Scripts\ProceduralGrid.cs" />
