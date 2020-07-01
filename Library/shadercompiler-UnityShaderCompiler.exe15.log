@@ -1,0 +1,10 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=5032 outsize=3708 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 4 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 4 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 4 at FFTOcean.compute(164): implicit truncation of vector type
+  api=4 insize=6929 outsize=1297 ok=1
