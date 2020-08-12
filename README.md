@@ -1,5 +1,6 @@
+
 # TechnicalNote
-个人技术博客的资源集合
+个人技术博客的资源集合（此项目分为两个分支，master分支是mac版本，WindowsBranch分支为windows版本）
 
 LightingModel场景对应博客
 
