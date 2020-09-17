@@ -73,6 +73,11 @@ void ConvertAnisotropyToRoughness(float roughness, float anisotropy, out float r
 	roughnessY = roughness * anisoAspect; // Straighten along bitangent (smoother)
 }
 
+float3 fresnelSchlickRoughness(float cosTheta, float3 F0, float roughness)
+{
+	return F0 + (max(float3(1.0 - roughness, 1.0 - roughness, 1.0 - roughness), F0) - F0) * pow(1.0 - cosTheta, 5.0);
+}
+
 float4 CookTorranceBRDF(float NdotH,float NdotL,float NdotV,float VdotH,float roughness,float4 specularColor){ 
     float D = GGX(NdotH,pow2(roughness));
     float G = SmithJoint(NdotL,NdotV,roughness);

@@ -135,7 +135,9 @@
                 //indirct diffuse
                 float3 sh = ShadeSH9(float4(normalWorld,1));
                 float3 iblDiffuse = max(float3(0,0,0),sh + (0.03 * ambient));
-                iblDiffuse /= UNITY_PI;
+                float3 Flast = fresnelSchlickRoughness(max(NdotV, 0.0), F0, roughness);
+				float kd = (1 - Flast) * OneMinusReflectivityFromMetallic(Metalness.r);
+                iblDiffuse = iblDiffuse * kd / UNITY_PI;
                 //indirect specular
                 float3 reflectDir = normalize(reflect(-viewDir,normalWorld));
                 float percetualRoughness = roughness * (1.7 - 0.7 * roughness);
@@ -143,7 +145,7 @@
                 float4 rgbm = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0,reflectDir,mip);
                 float4 iblSpecular = float4(DecodeHDR(rgbm,unity_SpecCube0_HDR),1);
                 //LUT part, use surfaceReduction instead
-                float grazing = saturate((1 - roughness) + 1 - OneMinusReflectivityFromMetallic(Metalness.r));
+                float grazing = saturate(smoothness + OneMinusReflectivityFromMetallic(Metalness.r));
                 float surfaceReduction = 1 / (pow2(roughness) + 1);
                 float4 indirectSpecualr = surfaceReduction * iblSpecular * FresnelLerp(float4(F0,1) * _SpecularColor,grazing,NdotV);
 
