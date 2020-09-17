@@ -93,7 +93,7 @@
                 // sample the texture
                 float4 col = tex2D(_MainTex, i.uv);
                 UNITY_LIGHT_ATTENUATION(atten,i,i.worldPos);
-                float4 Metalness = tex2D(_MetalicTex,i.uv);//r通道表示金属度，a通道表示光滑度
+                float4 Metalness = tex2D(_MetalicTex,i.uv);//r通道表示金属度，a通道表示光滑度,这里贴图网上找的，也许没按这个规则做
                 float smoothness = Metalness.a * _Smoothness;
                 float roughness = 1 - smoothness;
                 
