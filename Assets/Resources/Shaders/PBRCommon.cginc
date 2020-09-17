@@ -1,4 +1,5 @@
 //直接光公式出自https://cdn2-unrealengine-1251447533.file.myqcloud.com/Resources/files/2013SiggraphPresentationsNotes-26915738.pdf
+//各向异性公式出自https://blog.csdn.net/qq_42115447/article/details/102589465
 
 #define MINNUM 0.000001
 
