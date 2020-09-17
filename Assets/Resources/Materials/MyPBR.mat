@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MyPBR
   m_Shader: {fileID: 4800000, guid: 4b1c1a30940904f3a9eab3b7e3cbdf95, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _ISAnisotropy_ON _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -84,6 +84,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - IsAnisotropy: 1
+    - _Anisotropy: 0.972
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1

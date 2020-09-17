@@ -11,6 +11,10 @@
         _SpecularColor ("Specular Color", Color) = (1,1,1,1)
         _Smoothness ("Smoothness",Range(0,1)) = 1
         _GGX ("GGX",Range(0,40)) = 1
+        // _Anisotropy ("Anisotropy", Range(0,1)) = 1
+
+
+
     }
     SubShader
     {
@@ -30,7 +34,7 @@
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            #include "AnisotropicPBR.cginc"
+            #include "PBRCommon.cginc"
             #include "AutoLight.cginc"
             #include "Lighting.cginc"
 
@@ -65,6 +69,7 @@
             float4 _MainCol;
             float4 _SpecularColor;
             float _Smoothness;
+            // float _Anisotropy;
 
             v2f vert (appdata v)
             {
@@ -91,6 +96,7 @@
                 float4 Metalness = tex2D(_MetalicTex,i.uv);//r通道表示金属度，a通道表示光滑度
                 float smoothness = Metalness.a * _Smoothness;
                 float roughness = 1 - smoothness;
+                
                 float3 worldPos = float3(i.TtoW0.w,i.TtoW1.w,i.TtoW2.w);
                 float3 viewDir = normalize(UnityWorldSpaceViewDir(worldPos));
                 float3 lightDir = normalize(UnityWorldSpaceLightDir(worldPos));
@@ -108,22 +114,41 @@
                 float NdotH = saturate(dot(normalWorld,halfDir));
                 float LdotH = saturate(dot(lightDir,halfDir));
 
+                //tangent & binormal for Anisotropic PBR
+                float3 t = float3(i.TtoW0.x,i.TtoW1.x,i.TtoW2.x);
+                float3 b = float3(i.TtoW0.y,i.TtoW0.y,i.TtoW0.y);
+
                 //direct light part
                 float4 ambient = UNITY_LIGHTMODEL_AMBIENT * _MainCol * col * _LightFactor;
                 float4 diffuse = OneMinusReflectivityFromMetallic(Metalness.r) * _MainCol * col / UNITY_PI;
                 float3 F0 = lerp(unity_ColorSpaceDielectricSpec.rgb,col.rgb,Metalness.r);//区分金属非金属
+
+                //各项异性部分，但感觉很怪，也许是贴图问题吧，有需要的可以放掉注释看看
+                // float roughnessX;
+                // float roughnessY;
+                // ConvertAnisotropyToRoughness(roughness,_Anisotropy,roughnessX,roughnessY);
+                // float4 specular = AnisotropyCookTorranceBRDF(roughnessX,roughnessY,t,b,halfDir,normalWorld,lightDir,viewDir,_SpecularColor);
+
                 float4 specular = CookTorranceBRDF(NdotH,NdotL,NdotV,VdotH,roughness,float4(F0,1) * _SpecularColor);                
                 
                 //indirect light part
+                //indirct diffuse
+                float3 sh = ShadeSH9(float4(normalWorld,1));
+                float3 iblDiffuse = max(float3(0,0,0),sh + (0.03 * ambient));
+                iblDiffuse /= UNITY_PI;
+                //indirect specular
                 float3 reflectDir = normalize(reflect(-viewDir,normalWorld));
                 float percetualRoughness = roughness * (1.7 - 0.7 * roughness);
                 float mip = percetualRoughness * 6;
-                float4 envMap = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0,reflectDir,mip);
+                float4 rgbm = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0,reflectDir,mip);
+                float4 iblSpecular = float4(DecodeHDR(rgbm,unity_SpecCube0_HDR),1);
+                //LUT part, use surfaceReduction instead
                 float grazing = saturate((1 - roughness) + 1 - OneMinusReflectivityFromMetallic(Metalness.r));
                 float surfaceReduction = 1 / (pow2(roughness) + 1);
-                float4 indirectSpecualr = surfaceReduction * envMap * FresnelLerp(float4(F0,1) * _SpecularColor,grazing,NdotV);
+                float4 indirectSpecualr = surfaceReduction * iblSpecular * FresnelLerp(float4(F0,1) * _SpecularColor,grazing,NdotV);
 
-                return ambient + (diffuse + specular) * _LightColor0 * UNITY_PI * NdotL * atten + indirectSpecualr;
+                return ambient + (diffuse + specular) * _LightColor0 * UNITY_PI * NdotL * atten + indirectSpecualr + float4(iblDiffuse,1);
+                // return specular;
             }
             ENDCG
         }

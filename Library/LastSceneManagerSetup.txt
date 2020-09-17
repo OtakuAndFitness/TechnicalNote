@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Shadows.unity
+- path: Assets/Scenes/PBR.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
