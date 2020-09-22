@@ -1,0 +1,212 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel PerlinAndWorley
+#define MOD3 float3(0.1031,0.11369,0.13787)
+
+int octaves;
+float persistence;
+float scale;
+
+int Tex3DRes;
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture3D<float4> PerlinWorley;
+
+float setRange(float value, float low, float high)
+{
+    return saturate((value - low) / (high - low));
+}
+
+float dilatePerlinWorley(float p, float w, float x)
+{
+    float curve = 0.75;
+    if (x < 0.5)
+    {
+        x /= 0.5;
+        float n = p + w * x;
+        return n * lerp(1, 0.5, pow(x, curve));
+    }
+    else
+    {
+        x = (x - 0.5) / 0.5;
+        float n = w + p * (1.0 - x);
+        return n * lerp(0.5, 1.0, pow(x, 1.0 / curve));
+    }
+}
+
+/*
+*Perlin Noise
+*/
+float3 hash33(float3 p3)
+{
+    p3 = frac(p3 * MOD3);
+    p3 += dot(p3, p3.yxz + 19.19);
+    return -1.0 + 2.0 * frac(float3((p3.x + p3.y) * p3.z, (p3.x + p3.z) * p3.y, (p3.y + p3.z) * p3.x));
+}
+
+float perlin_noise(float3 p)
+{
+    float3 pi = floor(p);
+    float3 pf = p - pi;
+    
+    float3 w = pf * pf * pf * (pf * (pf * 6 - 15) + 10);
+    
+    return lerp(
+        		lerp(
+                	lerp(dot(pf - float3(0, 0, 0), hash33(pi + float3(0, 0, 0))),
+                        dot(pf - float3(1, 0, 0), hash33(pi + float3(1, 0, 0))),
+                       	w.x),
+                	lerp(dot(pf - float3(0, 0, 1), hash33(pi + float3(0, 0, 1))),
+                        dot(pf - float3(1, 0, 1), hash33(pi + float3(1, 0, 1))),
+                       	w.x),
+                	w.z),
+        		lerp(
+                    lerp(dot(pf - float3(0, 1, 0), hash33(pi + float3(0, 1, 0))),
+                        dot(pf - float3(1, 1, 0), hash33(pi + float3(1, 1, 0))),
+                       	w.x),
+                   	lerp(dot(pf - float3(0, 1, 1), hash33(pi + float3(0, 1, 1))),
+                        dot(pf - float3(1, 1, 1), hash33(pi + float3(1, 1, 1))),
+                       	w.x),
+                	w.z),
+    			w.y);
+}
+
+float Perlin(float3 p, int octaves,float persistence,float scale)
+{
+    float amplitude = 1;
+    float frequency = 1;
+    float total = 0;
+    float maxVal = 0; // Used for normalizing result to 0.0 - 1.0
+    for (int i = 0; i < octaves; i++)
+    {
+        total += perlin_noise(p * frequency * scale) * amplitude;
+        maxVal += amplitude;
+        amplitude *= persistence;
+        frequency *= 2;
+    }
+    return total / maxVal;
+
+}
+
+/*
+*Worley Noise
+*/
+float3 VoronoiHash(float3 v, float s)
+{
+    v = fmod(v, s);
+    v = float3(dot(v, float3(127.1, 311.7, 74.7)),
+             dot(v, float3(269.5, 183.3, 246.1)),
+             dot(v, float3(113.5, 271.9, 124.6)));
+    return frac(sin(v) * 43758.5453123);
+}
+
+float3 Voronoi(float3 v, float s, bool inverted)
+{
+    v = v * s;
+    v = v + 0.5;
+    float3 p = floor(v);
+    float3 f = frac(v);
+    
+    float id = 0.0;
+    float2 res = float2(1.0, 1.0);
+    for (int k = -1; k <= 1; k++)
+    {
+        for (int j = -1; j <= 1; j++)
+        {
+            for (int i = -1; i <= 1; i++)
+            {
+                float3 b = float3(i, j, k);
+                float3 r = float3(b) - f + VoronoiHash(p + b, s);
+                float d = dot(r, r);
+                if (d < res.x)
+                {
+                    id = dot(p + b, float3(1.0, 57.0, 113.0));
+                    res = float2(d, res.x);
+                }
+                else if (d < res.y)
+                {
+                    res.y = d;
+                }
+            }
+        }
+    }
+    float2 result = res;
+    id = abs(id);
+    if (inverted)
+        return float3(1.0 - result, id);
+    else
+        return float3(result, id);
+}
+
+float Worley(float3 p, int octaves, float persistence, float scale)
+{
+    float3 xyz = p;
+    
+    float amplitude = 1;
+    float frequency = 1;
+    float total = 0;
+    float maxVal = 0; // Used for normalizing result to 0.0 - 1.0
+    float3 temp; 
+    for (int i = 0; i < octaves; i++)
+    {
+        if (i == 0)
+        {
+            temp = Voronoi(xyz, frequency * scale, true) * amplitude;
+            total = clamp(temp.r, 0.0, 1.0);
+        }
+        else
+        {
+            temp = Voronoi(xyz, frequency * scale, false) * amplitude;
+            total -= clamp(temp.r, 0.0, 1.0) * 0.3;
+        }
+        maxVal += amplitude;
+        amplitude *= persistence;
+        frequency *= 2;
+
+    }
+    return total / maxVal;
+    
+    //float worleyV1 = Voronoi(xyz, 1.0 * s, true).r;
+    //float worleyV2 = Voronoi(xyz, 2.0 * s, false).r;
+    //float worleyV3 = Voronoi(xyz, 4.0 * s, false).r;
+    
+    //worleyV1 = clamp(worleyV1, 0.0, 1.0);
+    //worleyV2 = clamp(worleyV2, 0.0, 1.0);
+    //worleyV3 = clamp(worleyV3, 0.0, 1.0);
+    
+    //float worleyV = worleyV1;
+    //worleyV = worleyV - worleyV2 * 0.3;
+    //worleyV = worleyV - worleyV3 * 0.3;
+    //return worleyV;
+}
+
+[numthreads(8,8,1)]
+void PerlinAndWorley(uint3 id : SV_DispatchThreadID)
+{
+    float perlinToWorleyRatio = 0.3;
+
+    float tex1RPerlinLow = 0.3;
+    float tex1RPerlinHigh = 1.4;
+    float tex1RWorleyLow = -0.3;
+    float tex1RWorleyHigh = 1.3;
+    float tex1GBAWorleyLow = -0.4;
+    float tex1GBAWorleyHigh = 1.0;
+
+    float3 xyz = (float3) id.xyz / Tex3DRes;
+
+    float perlinR = Perlin(xyz, 7, 0.5, 4.0);
+    float worleyR = Worley(xyz, 3, 0.5, 6.0);
+    float worleyG = Worley(xyz, 3, 0.5, 6.0);
+    float worleyB = Worley(xyz, 3, 0.5, 12.0);
+    float worleyA = Worley(xyz, 3, 0.5, 24.0);
+
+    perlinR = setRange(perlinR, tex1RPerlinLow, tex1RPerlinHigh);
+    worleyR = setRange(worleyR, tex1RWorleyLow, tex1RWorleyHigh);
+    worleyG = setRange(worleyG, tex1GBAWorleyLow, tex1GBAWorleyHigh);
+    worleyB = setRange(worleyB, tex1GBAWorleyLow, tex1GBAWorleyHigh);
+    worleyA = setRange(worleyA, tex1GBAWorleyLow, tex1GBAWorleyHigh);
+
+    float worleyPerlin = dilatePerlinWorley(perlinR, worleyR, perlinToWorleyRatio);
+
+    PerlinWorley[id.xyz] = float4(worleyPerlin, 1.0 - worleyG, 1.0 - worleyB, 1.0 - worleyA);
+}
