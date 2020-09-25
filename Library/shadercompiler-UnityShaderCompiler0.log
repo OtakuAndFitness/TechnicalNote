@@ -24,3 +24,28 @@ Cmd: preprocess
   insize=3070 outsize=1860 ok=1
 Cmd: preprocess
   insize=3071 outsize=1861 ok=1
+Cmd: preprocess
+  insize=1578 outsize=368 ok=1
+Cmd: preprocessCompute
+  insize=7623 outsize=7628 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PerlinWorley.compute(230): invalid subscript 'xyz'
+  api=14 insize=7628 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7659 outsize=7664 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PerlinWorley.compute(230): invalid subscript 'xyz'
+  api=14 insize=7664 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7814 outsize=7819 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PerlinWorley.compute(230): invalid subscript 'xyz'
+  api=14 insize=7819 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7817 outsize=7822 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at PerlinWorley.compute(38): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  error: 1 plat 14 at PerlinWorley.compute(44): pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+  api=14 insize=7822 outsize=16848 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=16999 outsize=37031 ok=1

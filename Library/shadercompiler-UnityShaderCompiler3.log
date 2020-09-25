@@ -1,2 +1,10 @@
 Base path: '/Applications/Unity/Hub/Editor/2019.4.10f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.10f1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PerlinWorley.compute(230): invalid subscript 'xyz'
+  api=14 insize=7628 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 14 at PerlinWorley.compute(230): invalid subscript 'xyz'
+  api=14 insize=7819 outsize=0 ok=0
+Cmd: translateComputeKernel
+  api=14 insize=4159 outsize=8509 ok=1

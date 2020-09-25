@@ -57,10 +57,13 @@ public class JsonDownloader : MonoBehaviour
         
     }
 
+    // int i = 1;
+
     IEnumerator Counter(){
         for (int i = 0; i < 100000; i++)
         {
             Debug.Log(i);
+            // i++;
             yield return null;
             // yield return 0;
             // yield return w;
@@ -75,9 +78,9 @@ public class JsonDownloader : MonoBehaviour
             StartCoroutine(FetchData());
         }
 
-        if (Input.GetKeyDown(KeyCode.M)){
+        // if (Input.GetKeyDown(KeyCode.M)){
             StartCoroutine(Counter());
-        }
+        // }
         
     }
 
