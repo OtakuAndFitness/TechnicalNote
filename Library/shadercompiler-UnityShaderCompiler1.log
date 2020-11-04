@@ -1,8 +1,18 @@
-Base path: '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents/PlaybackEngines'
+Base path: /Applications/Unity/Hub/Editor/2018.4.28f1/Unity.app/Contents
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=1 insize=944 outsize=539 kw=UNITY_PASS_SHADOWCASTER SHADOWS_DEPTH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=1602 outsize=4937 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL SHADOWS_SCREEN LIGHTPROBE_SH _NORMALMAP _METALLICGLOSSMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-
-Quitting shader compiler process
+Cmd: compileComputeKernel
+  api=14 insize=547 outsize=857 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=5032 outsize=5549 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=5805 outsize=8421 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
+  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
+  api=14 insize=6929 outsize=2521 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=18731 outsize=9533 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=11321 outsize=24805 ok=1

@@ -54,66 +54,6 @@
                     "needPro":false,
                     "isOpend":true,
                     "menuItemOfSetting":"",
-                    "featureName":"用户认证",
-                    "featureNameEn":"Player ID",
-                    "featureDescribe":"集成多种认证方式的用户认证系统",
-                    "featureShortDoc":"1.多种登录方式：匿名登录、邮箱密码登录、手机号码登录、微信登录（Android/iOS手机）\n2.Unity Editor中跨多个平台配置身份,将开发时间从几周减少到几天",
-                    "remoteFeatureImage":"2019.3.15/ChinaFeature.PlayerID.png",
-                    "documentURL":"",
-                    "supportedTargets":"Android,iOS",
-                    "packageId":"com.unity.playerid-cn",
-                    "packageInstallTip":"（或在Package Manager中安装）",
-                    "linkButtonArray":[
-                        "<color=#29b5c4ff>用户手册</color>",
-                        "<color=#29b5c4ff>教程</color>",
-                        "<color=#29b5c4ff>讨论组</color>",
-                        "<color=#29b5c4ff>示例项目</color>",
-                        "<color=#29b5c4ff>联系我们</color>"
-                    ],
-                    "linkUrlArray":[
-                        "https://github.com/Unity-Technologies/cn-playerid-docs/tree/master/playerid%20doc",
-                        "https://unity-1258948065.cos.ap-shanghai.myqcloud.com/AssetStreaming/Player%20Identity.MP4",
-                        "https://connect.unity.cn/messages/w/05a748aedac0c000/c/07aa6d776c403000",
-                        "https://mgobe-unity-1300678507.cos.ap-shanghai.myqcloud.com/KartGame.zip",
-                        "https://unity.cn/ucg/contact"
-                    ]
-                },
-                {
-                    "id":"3",
-                    "buildIn":false,
-                    "needPro":false,
-                    "isOpend":true,
-                    "menuItemOfSetting":"",
-                    "featureName":"云存储",
-                    "featureNameEn":"Cloud Save",
-                    "featureDescribe":"便捷管理，保存玩家的游戏状态数据",
-                    "featureShortDoc":"1.便捷管理，保存玩家的游戏状态数据\n2.跨多设备同步游戏状态\n3.自动检测同步冲突",
-                    "remoteFeatureImage":"2019.3.15/ChinaFeature.CloudSave.png",
-                    "documentURL":"",
-                    "supportedTargets":"Android,iOS",
-                    "packageId":"com.unity.cloudsave",
-                    "packageInstallTip":"（或在Package Manager中安装）",
-                    "linkButtonArray":[
-                        "<color=#29b5c4ff>用户手册</color>",
-                        "<color=#29b5c4ff>教程</color>",
-                        "<color=#29b5c4ff>讨论组</color>",
-                        "<color=#29b5c4ff>示例项目</color>",
-                        "<color=#29b5c4ff>联系我们</color>"
-                    ],
-                    "linkUrlArray":[
-                        "https://github.com/Unity-Technologies/cn-playerid-docs/tree/master/cloudsave%20doc",
-                        "https://unity-1258948065.cos.ap-shanghai.myqcloud.com/AssetStreaming/CloudSave.mp4",
-                        "https://connect.unity.cn/messages/w/05a748aedac0c000/c/07aa6d776c403000",
-                        "https://mgobe-unity-1300678507.cos.ap-shanghai.myqcloud.com/KartGame.zip",
-                        "https://unity.cn/ucg/contact"
-                    ]
-                },
-                {
-                    "id":"4",
-                    "buildIn":false,
-                    "needPro":false,
-                    "isOpend":true,
-                    "menuItemOfSetting":"",
                     "featureName":"云开发",
                     "featureNameEn":"",
                     "featureDescribe":"在Unity中直接开发云端功能",
@@ -121,7 +61,7 @@
                     "remoteFeatureImage":"2019.3.15/ChinaFeature.YunHanShu.png",
                     "documentURL":"",
                     "supportedTargets":"All Platforms",
-                    "packageId":"com.unity.tcb",
+                    "packageId":"com.unity.cloudbase",
                     "packageInstallTip":"（或在Package Manager中安装）",
                     "linkButtonArray":[
                         "<color=#29b5c4ff>详情页面</color>",
@@ -137,7 +77,7 @@
                     ]
                 },
                 {
-                    "id":"5",
+                    "id":"3",
                     "buildIn":false,
                     "needPro":false,
                     "isOpend":true,
@@ -161,7 +101,7 @@
                     ]
                 },
                 {
-                    "id":"6",
+                    "id":"4",
                     "buildIn":false,
                     "needPro":false,
                     "isOpend":true,
@@ -185,7 +125,7 @@
                     ]
                 },
                 {
-                    "id":"7",
+                    "id":"5",
                     "buildIn":false,
                     "needPro":false,
                     "isOpend":true,
@@ -196,7 +136,7 @@
                     "featureShortDoc":"支持语音和文本聊天。 以插件方式轻松集成，并可以与任何引擎或平台一起使用。 已被很多大型多人游戏所采用。",
                     "remoteFeatureImage":"2019.3.15/ChinaFeature.Vivox.png",
                     "documentURL":"",
-                    "supportedTargets":"All Platforms",
+                    "supportedTargets":"Editor",
                     "packageId":"",
                     "packageInstallTip":"（或在Package Manager中安装）",
                     "linkButtonArray":[
@@ -209,7 +149,7 @@
                     ]
                 },
                 {
-                    "id":"8",
+                    "id":"6",
                     "buildIn":false,
                     "needPro":false,
                     "isOpend":true,
@@ -239,7 +179,7 @@
                     ]
                 },
                 {
-                    "id":"9",
+                    "id":"7",
                     "buildIn":false,
                     "needPro":false,
                     "isOpend":true,
@@ -273,26 +213,26 @@
             "buildIn":false,
             "needPro":false,
             "isOpend":true,
-            "menuItemOfSetting":"",
-            "featureName":"Anti-Cheat Expert",
-            "featureDescribe":"代码与数据加密工具",
-            "featureShortDoc":"由Anti-Cheat Expert团队与Unity中国技术支持团队联合开发。\n它针对Unity-Mono、Unity-IL2CPP运行时提供加密保护服务。同时提供文件级、方法级、指令级等多种等级的加密方式。\n\n使用方法：\n通过Project Settings > Player > Security Settings，将Enable Security Build启用，即可在编译时自动接入安全方案。\n\nAnti-Cheat Expert团队是全球领先游戏安全方案与服务提供者。\n致力于为端游、手游、主机等全平台游戏中的防破解、反作弊等各类游戏安全问题，提供全面和专业的解决方案。",
-            "remoteFeatureImage":"2019.3.15/ChinaFeature.Tencent.png",
-            "documentURL":"",
-            "supportedTargets":"Android,iOS"
+            "menuItemOfSetting":"Window/Package Manager",
+            "featureName":"SenseAR",
+            "featureDescribe":"商汤科技AR解决方案",
+            "featureShortDoc":"SenseAR为开发者提供实时跟踪与建图、尺度估计、多平面检测、光照估计、FaceMesh、图像识别与跟踪等功能。了解更多信息请访问SenseAR开发者官网：openar.sensetime.com \n具体功能包括：\n（1）实时跟踪与建图；\n（2）尺度估计；\n（3）多平面检测；\n（4）光照估计；\n（5）Face Mesh；\n（6）图像识别与跟踪。",
+            "remoteFeatureImage":"2018.4/ChinaFeature.ShangTangAR.png",
+            "documentURL":"https://openar.sensetime.com",
+            "supportedTargets":"Android"
         },
-        {
+        {  
             "id":"2",
             "buildIn":false,
             "needPro":false,
             "isOpend":true,
             "menuItemOfSetting":"",
-            "featureName":"AssetBundle加密",
-            "featureDescribe":"基于ChunkBased的AssetBundle加密功能",
-            "featureShortDoc":"Unity中国团队推出了Unity AssetBundle加密方案。\n\n提供基于ChunkBased的AssetBundle加密功能，使AssetBundle更加安全。\n\n加密方案基于AES对称加密和自定义加密，提高破解难度同时将性能影响降到最低。\n\n（注：目前AssetBundle加密需要AssetBundle为ChunkBased压缩格式。后续会推出支持lzma和非压缩格式的加密。）",
-            "remoteFeatureImage":"2019.3.15/ChinaFeature.AssetBundle.png",
-            "documentURL":"https://connect.unity.com/p/unityzeng-qiang-ban-gong-neng-assetbundlejia-mi-shuo-ming-wen-dang",
-            "supportedTargets":"All Platforms"
+            "featureName":"Connect Messenger",
+            "featureDescribe":"随时与其他开发者沟通交流",
+            "featureShortDoc":"提供便利的交流方式，方便开发者随时与其他用户讨论开发中遇到的问题。\n\n你也可以选择加入自己感兴趣的群组，帮助其他开发者，分享自己的经验或有趣的想法。\n\n请打开顶部菜单Window>Package Manager窗口下载安装",
+            "remoteFeatureImage":"2018.4/ChinaFeature.Messenger.png",
+            "documentURL":"",
+            "supportedTargets":"Editor"
         },
         {
             "id":"3",
@@ -300,15 +240,41 @@
             "needPro":false,
             "isOpend":true,
             "menuItemOfSetting":"",
+            "featureName":"Anti-Cheat Expert",
+            "featureDescribe":"代码与数据加密工具",
+            "featureShortDoc":"由Anti-Cheat Expert团队与Unity中国技术支持团队联合开发。\n它针对Unity-Mono、Unity-IL2CPP运行时提供加密保护服务。同时提供文件级、方法级、指令级等多种等级的加密方式。\n\n使用方法：\n通过Project Settings > Player > Security Settings，将Enable Security Build启用，即可在编译时自动接入安全方案。\n\nAnti-Cheat Expert团队是全球领先游戏安全方案与服务提供者。\n致力于为端游、手游、主机等全平台游戏中的防破解、反作弊等各类游戏安全问题，提供全面和专业的解决方案。",
+            "remoteFeatureImage":"2018.4/ChinaFeature.Tencent.png",
+            "documentURL":"",
+            "supportedTargets":"Android,iOS"
+        },
+        {
+            "id":"4",
+            "buildIn":false,
+            "needPro":false,
+            "isOpend":true,
+            "menuItemOfSetting":"",
             "featureName":"Crash Report",
             "featureDescribe":"崩溃与异常收集工具",
             "featureShortDoc":"崩溃与异常收集工具可以收集程序在崩溃时的异常数据，以此来改进和优化您的程序。请在Editor->Services->Cloud Diagnostics页面查看相关配置。\n收集的崩溃报告可以在https://developer.cloud.unity.cn/diagnostics/orgs/<org_name>/projects/<project_name>/crashes中查看。",
-            "remoteFeatureImage":"2019.3.15/ChinaFeature.CrashReporter.png",
+            "remoteFeatureImage":"2018.4/ChinaFeature.CrashReporter.png",
             "documentURL":"https://developer.cloud.unity.cn",
             "supportedTargets":"Android,iOS,Linux,Mac,PC,WebGL,Windows 8 Universal,Windows 10 Universal"
         },
         {
-            "id":"4",
+            "id":"5",
+            "buildIn":false,
+            "needPro":false,
+            "isOpend":true,
+            "menuItemOfSetting":"",
+            "featureName":"AssetBundle加密",
+            "featureDescribe":"基于ChunkBased的AssetBundle加密功能",
+            "featureShortDoc":"Unity中国团队推出了Unity AssetBundle加密方案。\n\n提供基于ChunkBased的AssetBundle加密功能，使AssetBundle更加安全。\n\n加密方案基于AES对称加密和自定义加密，提高破解难度同时将性能影响降到最低。\n\n（注：目前AssetBundle加密需要AssetBundle为ChunkBased压缩格式。后续会推出支持lzma和非压缩格式的加密。）",
+            "remoteFeatureImage":"2018.4/ChinaFeature.AssetBundle.png",
+            "documentURL":"https://connect.unity.com/p/unityzeng-qiang-ban-gong-neng-assetbundlejia-mi-shuo-ming-wen-dang",
+            "supportedTargets":"All Platforms"
+        },
+        {
+            "id":"6",
             "buildIn":false,
             "needPro":false,
             "isOpend":true,
