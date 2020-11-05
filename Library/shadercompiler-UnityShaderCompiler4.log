@@ -1,17 +1,6 @@
-Base path: /Applications/Unity/Hub/Editor/2018.4.28f1/Unity.app/Contents
+Base path: '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: translateComputeKernel
-  api=14 insize=2129 outsize=3889 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=11297 outsize=22357 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 14 at FFTOcean.compute(161): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(162): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(163): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(164): implicit truncation of vector type
-  error: 1 plat 14 at FFTOcean.compute(219): integer modulus may be much slower, try using uints if possible.
-  api=14 insize=6929 outsize=3033 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=969 outsize=1077 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=11489 outsize=25117 ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=2317 outsize=1975 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+
+Quitting shader compiler process

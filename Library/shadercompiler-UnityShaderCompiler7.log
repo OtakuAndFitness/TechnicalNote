@@ -1,16 +1,6 @@
-Base path: /Applications/Unity/Hub/Editor/2018.4.28f1/Unity.app/Contents
+Base path: '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.13f1c1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=14 insize=7822 outsize=5605 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=1226 outsize=1357 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=5032 outsize=7329 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=7329 outsize=11361 ok=1
-Cmd: translateComputeKernel
-  api=14 insize=3297 outsize=3949 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=18731 outsize=9721 ok=1
-Cmd: compileComputeKernel
-  api=14 insize=5591 outsize=7001 ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=2995 outsize=2135 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+
+Quitting shader compiler process
