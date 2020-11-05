@@ -143,7 +143,7 @@
 
                 fixed temp = dot(normalize(worldLight),worldNormal);
                 fixed4 diffuse = (1 + temp)/2 * k_cool + (1 - (1+temp/2)) * k_warm;
-                diffuse *= _DiffuseCol * _LightColor0 * atten;
+                diffuse *= _LightColor0 * atten;
                 fixed4 specular = pow(saturate(dot(worldNormal,halfVector)),_Gloss);
                 specular *= _SpecularCol * _LightColor0;
 

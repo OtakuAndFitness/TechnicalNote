@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _Alpha: 0.944
     - _Beta: 0.231
-    - _Blue: 0.236
+    - _Blue: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -89,7 +89,7 @@ Material:
     - _TranslationX: 0.1
     - _TranslationY: -0.03
     - _UVSec: 0
-    - _Yellow: 0.071
+    - _Yellow: 0.133
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

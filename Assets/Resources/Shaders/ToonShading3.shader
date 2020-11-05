@@ -51,9 +51,9 @@
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
+                // UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float4 color : COLOR;
+                // float4 color : COLOR;
 
             };
 
@@ -223,7 +223,7 @@
 
                 fixed temp = dot(tangentLightDir,tangentNormal);
                 fixed4 diffuse = (1 + temp)/2 * k_cool + (1 - (1+temp/2)) * k_warm;
-                diffuse *= _DiffuseCol * _LightColor0 * atten;
+                diffuse *= _LightColor0 * atten;
 
                 fixed spec = saturate(dot(tangentNormal,halfVector));
                 fixed w = fwidth(spec);
