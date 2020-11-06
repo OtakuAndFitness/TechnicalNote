@@ -51,7 +51,7 @@
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                // UNITY_FOG_COORDS(1)
+                UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
                 // float4 color : COLOR;
 
@@ -147,7 +147,7 @@
                 o.tangentNormal  = mul(rotation, v.normal);
 				o.tangentLightDir = mul(rotation, ObjSpaceLightDir(v.vertex));
 				o.tangentViewDir = mul(rotation, ObjSpaceViewDir(v.vertex));
-                o.worldPos = UnityObjectToWorldDir(v.vertex.xyz);
+                o.worldPos = mul(unity_ObjectToWorld,v.vertex).xyz;
 
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 TRANSFER_SHADOW(o);

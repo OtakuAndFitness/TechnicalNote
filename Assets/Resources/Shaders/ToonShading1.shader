@@ -111,7 +111,7 @@
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.worldPos = UnityObjectToWorldDir(v.vertex.xyz);
+                o.worldPos = mul(unity_ObjectToWorld,v.vertex).xyz;
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 UNITY_TRANSFER_FOG(o,o.pos);
                 TRANSFER_SHADOW(o);
