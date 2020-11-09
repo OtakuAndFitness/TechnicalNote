@@ -89,7 +89,7 @@ Material:
     - _TranslationX: 0.1
     - _TranslationY: -0.03
     - _UVSec: 0
-    - _Yellow: 0.133
+    - _Yellow: 0.32
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
