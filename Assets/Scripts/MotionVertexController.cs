@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 public class MotionVertexController : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class MotionVertexController : MonoBehaviour
     public float speed = 200;
     public Camera mainCamera;
     public float waitTime = 1;
-    private PostProcessLayer postProcessLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +30,6 @@ public class MotionVertexController : MonoBehaviour
             mats[i] = renderers[i].sharedMaterial;
         }
        radialBlur = mainCamera.GetComponent<RadialBlur>();
-       postProcessLayer = mainCamera.GetComponent<PostProcessLayer>();
     }
 
     // Update is called once per frame
@@ -73,8 +70,7 @@ public class MotionVertexController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S)){
             transform.Translate(-Vector3.forward * speed * Time.deltaTime,Space.World);
-            radialBlur.enabled = true;
-            // postProcessLayer.enabled = true;
+            // radialBlur.enabled = true;
             StartCoroutine(Stopper());
         }
     }
@@ -82,7 +78,6 @@ public class MotionVertexController : MonoBehaviour
     IEnumerator Stopper(){
         yield return new WaitForSeconds(waitTime);
         radialBlur.enabled = false;
-        // postProcessLayer.enabled = false;
         StopCoroutine(Stopper());
     }
 }

@@ -4,7 +4,10 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Diffuse ("Diffuse", Color) = (1,1,1,1)
-        _Fresnel ("Fresnel", Color) = (1,1,1,1)
+        _fresnelBase("fresnelBase", Range(0, 1)) = 1
+        _fresnelScale("fresnelScale", Range(0, 1)) = 1
+        _fresnelIndensity("fresnelIndensity", Range(0, 5)) = 5
+        _fresnelCol("_fresnelCol", Color) = (1,1,1,1)
         _Direction ("Direction", Vector) = (0,0,0,1)
     }
     SubShader
@@ -35,19 +38,25 @@
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
                 float ndotd : TEXCOORD2;
-                float vdoth : TEXCOORD3;
+                float ndotv : TEXCOORD3;
             };
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Diffuse;
             float4 _Direction;
-            float4 _Fresnel;
-            
-            float4 FresnelSchlick(float4 F0, float VdotH){
-                return F0 + (1 - F0) * exp2(-5.55473 * VdotH - 6.98316 * VdotH);
+            float _fresnelBase;
+
+            float _fresnelScale;
+
+            float _fresnelIndensity;
+
+            float4 _fresnelCol;
+
+            float Fresnel(float ndotv){
+                return _fresnelBase + _fresnelScale * pow(1 - ndotv, _fresnelIndensity);
             }
-            
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -60,9 +69,7 @@
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.ndotd = ndotd;
                 float3 viewDir = normalize(UnityWorldSpaceViewDir(worldVertex));
-                float3 lightDir = normalize(UnityWorldSpaceLightDir(worldVertex));
-                float3 halfDir = normalize(viewDir + lightDir);
-                o.vdoth = max(0,dot(viewDir,halfDir));
+                o.ndotv = max(0,dot(viewDir,normalize(wn)));
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -71,7 +78,8 @@
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-                col += FresnelSchlick(_Fresnel, i.vdoth) * _Diffuse * i.ndotd; 
+                col += _Diffuse * i.ndotd; 
+                col = lerp(col, _fresnelCol,Fresnel(i.ndotv));
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
