@@ -78,8 +78,8 @@ extern void FFTOcean_OnDestroy_m8A8AF1411FD4FAD52E212280FAFC6AE062F50FB6 (void);
 extern void FFTOcean__ctor_mDFA09354BFCE2AE5EBB1398F4FBA555B3A872132 (void);
 // 0x0000001D System.Void FogController::Start()
 extern void FogController_Start_m3AED23572A086989077F1617B2CCD37F042BE8C7 (void);
-// 0x0000001E System.Void FogController::Update()
-extern void FogController_Update_m337A6B83DBAFEFB3FC617C714DF0AECA713DAACD (void);
+// 0x0000001E System.Void FogController::OnDestroy()
+extern void FogController_OnDestroy_m85EA4AFDA596A053F54D525B159AE106C05F9BBB (void);
 // 0x0000001F System.Void FogController::OnRenderImage(UnityEngine.RenderTexture,UnityEngine.RenderTexture)
 extern void FogController_OnRenderImage_mCB77ACA7E399493E4EA224649C5E76700A3C1D1C (void);
 // 0x00000020 System.Void FogController::.ctor()
@@ -338,7 +338,7 @@ static Il2CppMethodPointer s_methodPointers[144] =
 	FFTOcean_OnDestroy_m8A8AF1411FD4FAD52E212280FAFC6AE062F50FB6,
 	FFTOcean__ctor_mDFA09354BFCE2AE5EBB1398F4FBA555B3A872132,
 	FogController_Start_m3AED23572A086989077F1617B2CCD37F042BE8C7,
-	FogController_Update_m337A6B83DBAFEFB3FC617C714DF0AECA713DAACD,
+	FogController_OnDestroy_m85EA4AFDA596A053F54D525B159AE106C05F9BBB,
 	FogController_OnRenderImage_mCB77ACA7E399493E4EA224649C5E76700A3C1D1C,
 	FogController__ctor_m4DF7AA233C841C5E56973E5494D94600FED6E2CB,
 	GerstnerWave_Start_m9CBAD7C127745F3840D3AFCBD067669BB28998BA,
@@ -471,7 +471,7 @@ static const int32_t s_InvokerIndices[144] =
 	23,
 	23,
 	23,
-	1600,
+	1604,
 	23,
 	23,
 	23,
@@ -492,8 +492,8 @@ static const int32_t s_InvokerIndices[144] =
 	23,
 	23,
 	4,
-	1601,
-	1602,
+	1605,
+	1606,
 	14,
 	14,
 	14,
@@ -503,9 +503,9 @@ static const int32_t s_InvokerIndices[144] =
 	3,
 	-1,
 	23,
-	1603,
+	1607,
 	1118,
-	1604,
+	1608,
 	23,
 	23,
 	23,

@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 7058205b7e9df4295817ec9cd6145a1f, type: 2}
+  blend: {fileID: 2100000, guid: 6ced043c9063449e680104a8839d8547, type: 2}
 --- !u!1001 &1735996432
 PrefabInstance:
   m_ObjectHideFlags: 0

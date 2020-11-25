@@ -38,11 +38,11 @@
             sampler2D _FogTex;
             float _Factor;
 
-            v2f vert (appdata v)
+            v2f vert (appdata_img v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.texcoord;
                 // UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -51,6 +51,7 @@
             {
                 // sample the texture
                 fixed4 col = lerp(tex2D(_MainTex, i.uv),tex2D(_FogTex,i.uv),_Factor);
+                // fixed4 col = tex2D(_FogTex,i.uv);
                 // apply fog
                 // UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;

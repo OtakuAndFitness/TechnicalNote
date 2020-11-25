@@ -65,8 +65,8 @@ Material:
     - _DIST_TYPE: 0
     - _Density: 0.239
     - _DepthEnd: 2
-    - _DepthHeightRatio: 0.368
-    - _DepthNoiseScale: 2.9
+    - _DepthHeightRatio: 0.632
+    - _DepthNoiseScale: 5.38
     - _DepthStart: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -74,9 +74,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HeightEnd: 20.77
-    - _HeightNoiseScale: 7.43
-    - _HeightStart: 0
+    - _HeightEnd: -0.67
+    - _HeightNoiseScale: 7
+    - _HeightStart: 0.5
     - _Metallic: 0
     - _Mode: 0
     - _NoiseSpX: 0.632

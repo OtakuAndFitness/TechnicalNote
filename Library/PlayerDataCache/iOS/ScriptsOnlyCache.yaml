@@ -450,7 +450,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 70d5ae9cf7f83bdbcc75880044866e84
+      Hash: bf02813e1acd9a861aec6a9986d7aeb0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FogController

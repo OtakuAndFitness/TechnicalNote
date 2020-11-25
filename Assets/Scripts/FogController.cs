@@ -1,18 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+
 public class FogController : MonoBehaviour
 {
     public Material mat;
+    public Material blend;
     private Camera cam;
     private Transform camTrans;
-    // private CommandBuffer cmd; 
+    private CommandBuffer cmd;
+    // private RenderTexture temp,temp2; 
     // Start is called before the first frame update
     void Start() {
         cam = GetComponent<Camera>();
         cam.depthTextureMode |= DepthTextureMode.Depth;
 
+        cmd = new CommandBuffer();
+        cmd.name = "Fog";
+
+        int fogID = Shader.PropertyToID("_FogTex");
+        // temp = RenderTexture.GetTemporary(Screen.width,Screen.height,0); 
+        cmd.GetTemporaryRT(fogID,-1,-1,24,FilterMode.Bilinear);
+        int fogID2 = Shader.PropertyToID("_FogTex2");
+        // temp2 = RenderTexture.GetTemporary(Screen.width,Screen.height,0); 
+        cmd.GetTemporaryRT(fogID2,-1,-1,24,FilterMode.Bilinear);
+        cmd.Blit(BuiltinRenderTextureType.CurrentActive,fogID2);
+        cmd.Blit(fogID2,fogID,mat);
+        // cmd.Blit(temp2,temp);
         
+        // cmd.Blit(fogID,fogID2,mat);
+        cmd.SetGlobalTexture("_FogTex",fogID);
+
+        cam.AddCommandBuffer(CameraEvent.AfterForwardOpaque,cmd);
+
+    }
+
+    void OnDestroy() {
+        cam.RemoveCommandBuffer(CameraEvent.AfterForwardOpaque,cmd);
+        cmd.Clear();
+        // temp.Release();
+        // temp2.Release();
     }
 
  
@@ -58,7 +86,7 @@ public class FogController : MonoBehaviour
 
             mat.SetMatrix("_Ray", frustumCornors);
 
-            Graphics.Blit(source, destination, mat);
+            Graphics.Blit(source, destination, blend);
         } 
 		
 	} 

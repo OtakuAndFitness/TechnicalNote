@@ -1714,6 +1714,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Rendering_CommandBuffer_InitBuffer();
 		Register_UnityEngine_Rendering_CommandBuffer_InitBuffer();
 
+		//System.Void UnityEngine.Rendering.CommandBuffer::Blit_Identifier_Injected(UnityEngine.Rendering.RenderTargetIdentifier&,UnityEngine.Rendering.RenderTargetIdentifier&,UnityEngine.Material,System.Int32,UnityEngine.Vector2&,UnityEngine.Vector2&,System.Int32,System.Int32)
+		void Register_UnityEngine_Rendering_CommandBuffer_Blit_Identifier_Injected();
+		Register_UnityEngine_Rendering_CommandBuffer_Blit_Identifier_Injected();
+
 		//System.Void UnityEngine.Rendering.CommandBuffer::Blit_Texture_Injected(UnityEngine.Texture,UnityEngine.Rendering.RenderTargetIdentifier&,UnityEngine.Material,System.Int32,UnityEngine.Vector2&,UnityEngine.Vector2&,System.Int32,System.Int32)
 		void Register_UnityEngine_Rendering_CommandBuffer_Blit_Texture_Injected();
 		Register_UnityEngine_Rendering_CommandBuffer_Blit_Texture_Injected();

@@ -77,11 +77,11 @@
                 o.uv = TRANSFORM_TEX(v.uv,_MainTex);
                 o.uvDepth = v.uvDepth;
 
-                #if UNITY_UV_STARTS_AT_TOP
-                    if (_MainTex_TexelSize.y < 0){
-                        o.uvDepth.y = 1 - o.uvDepth.y;
-                    }
-                #endif
+                // #if UNITY_UV_STARTS_AT_TOP
+                //     if (_MainTex_TexelSize.y < 0){
+                //         o.uvDepth.y = 1 - o.uvDepth.y;
+                //     }
+                // #endif
 
                 // int index = 0;
                 // if (v.uv.x < 0.5 && v.uv.y < 0.5){
@@ -140,10 +140,15 @@
                 heightFactor *= _Density;
                 heightFactor = saturate(heightFactor);
 
-                float4 depthCol = lerp(tex2D(_MainTex, i.uv), _FogColor, depthFactor);
-                float4 heightCol = lerp(tex2D(_MainTex, i.uv), _FogColor, heightFactor);
+                float4 mainCol = tex2D(_MainTex, i.uv);
+
+                float4 depthCol = lerp(mainCol, _FogColor, depthFactor);
+                float4 heightCol = lerp(mainCol, _FogColor, heightFactor);
 
                 return lerp(depthCol, heightCol, _DepthHeightRatio);
+                // return heightCol;
+                // return depthCol;
+                // return tex2D(_CameraDepthTexture,UnityStereoScreenSpaceUVAdjust(i.uv, _CameraDepthTexture_ST));
             }
             ENDCG
         }
