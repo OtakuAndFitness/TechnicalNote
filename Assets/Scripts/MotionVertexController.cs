@@ -73,6 +73,7 @@ public class MotionVertexController : MonoBehaviour
             // radialBlur.enabled = true;
             StartCoroutine(Stopper());
         }
+        
     }
 
     IEnumerator Stopper(){

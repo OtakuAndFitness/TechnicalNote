@@ -1,19 +1,21 @@
-﻿<Properties StartupConfiguration="{3994D431-55CA-E17F-1BA8-F77075050968}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BloomForSelection.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FogController.cs">
     <Files>
-      <File FileName="Assets/Scripts/BloomForSelection.cs" Line="1" Column="1" />
-      <File FileName="Assets/Resources/Shaders/AnisotropicPBR.cginc" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FogController.cs" Line="60" Column="10" />
+      <File FileName="Assets/Resources/Shaders/DepthHeightFog.shader" Line="136" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TechnicalNote" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="Shaders" expanded="True" />
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="BloomForSelection.cs" selected="True" />
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Resources" expanded="True">
+                  <Node name="Shaders" expanded="True" />
+                </Node>
+                <Node name="Scripts" expanded="True">
+                  <Node name="FogController.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

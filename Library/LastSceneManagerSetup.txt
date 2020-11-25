@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/RadialBlur.unity
+- path: Assets/Scenes/Fog.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
