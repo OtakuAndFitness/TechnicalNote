@@ -16,8 +16,8 @@
         _WorldPosScale ("WorldPos Scale", Range(0,0.1)) = 0
         _NoiseSpX ("Noise Speed X",Range(0,1)) = 1
         _NoiseSpY ("Noise Speed Y",Range(0,1)) = 1
-        _DepthNoiseScale ("Depth Noise Scale",Range(0,10)) = 4
-        _HeightNoiseScale ("Height Noise Scale",Range(0,10)) = 4
+        _DepthNoiseScale ("Depth Noise Scale",Range(0,100)) = 4
+        _HeightNoiseScale ("Height Noise Scale",Range(0,100)) = 4
 
         _Density ("Fog Density", Range(0, 1)) = 0.3
 
@@ -83,25 +83,25 @@
                 //     }
                 // #endif
 
-                // int index = 0;
-                // if (v.uv.x < 0.5 && v.uv.y < 0.5){
-                //     index = 0;
-                // }else if (v.uv.x > 0.5 && v.uv.y < 0.5){
-                //     index = 1;
-                // }else if (v.uv.x > 0.5 && v.uv.y > 0.5){
-                //     index = 2;
-                // }else{
-                //     index = 3;
-                // }
-                int xx = (int)v.vertex.x;
-                int yy = (int)v.vertex.y;
-                int index = abs(3 - xx - 3 * yy);
+                int index = 0;
+                if (v.uv.x < 0.5 && v.uv.y < 0.5){
+                    index = 0;
+                }else if (v.uv.x > 0.5 && v.uv.y < 0.5){
+                    index = 1;
+                }else if (v.uv.x > 0.5 && v.uv.y > 0.5){
+                    index = 2;
+                }else{
+                    index = 3;
+                }
+                // int xx = (int)v.vertex.x;
+                // int yy = (int)v.vertex.y;
+                // int index = abs(3 - xx - 3 * yy);
 
-                #if UNITY_UV_STARTS_AT_TOP
-                    if (_MainTex_TexelSize.y < 0){
-                        index = 3 - index;
-                    }
-                #endif
+                // #if UNITY_UV_STARTS_AT_TOP
+                //     if (_MainTex_TexelSize.y < 0){
+                //         index = 3 - index;
+                //     }
+                // #endif
 
                 o.ray = _Ray[index].xyz;
                 return o;
@@ -113,6 +113,8 @@
                 float3 wp = _WorldSpaceCameraPos.xyz + i.ray * Linear01Depth(depth);
 
                 float noise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).r;
+                // float minusNoise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).b;
+                // noise *= minusNoise; 
 
                 float dist = 0;
                 #if _DIST_TYPE_VIEWSPACE 
@@ -136,6 +138,7 @@
                 depthFactor = saturate(depthFactor);
 
                 float heightNoise = noise * _HeightNoiseScale;
+                // float heightMinusNoise = minusNoise * _HeightNoiseScale;
                 float heightFactor = (_HeightEnd - wp.y - heightNoise) / (_HeightEnd - _HeightStart);
                 heightFactor *= _Density;
                 heightFactor = saturate(heightFactor);

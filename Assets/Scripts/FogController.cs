@@ -20,74 +20,62 @@ public class FogController : MonoBehaviour
         cmd.name = "Fog";
 
         int fogID = Shader.PropertyToID("_FogTex");
-        // temp = RenderTexture.GetTemporary(Screen.width,Screen.height,0); 
         cmd.GetTemporaryRT(fogID,-1,-1,24,FilterMode.Bilinear);
-        int fogID2 = Shader.PropertyToID("_FogTex2");
-        // temp2 = RenderTexture.GetTemporary(Screen.width,Screen.height,0); 
+        int fogID2 = Shader.PropertyToID("_Temp");
         cmd.GetTemporaryRT(fogID2,-1,-1,24,FilterMode.Bilinear);
         cmd.Blit(BuiltinRenderTextureType.CurrentActive,fogID2);
-        cmd.Blit(fogID2,fogID,mat);
-        // cmd.Blit(temp2,temp);
+        cmd.Blit(fogID2,fogID);
         
-        // cmd.Blit(fogID,fogID2,mat);
-        cmd.SetGlobalTexture("_FogTex",fogID);
-
-        cam.AddCommandBuffer(CameraEvent.AfterForwardOpaque,cmd);
+        cmd.Blit(fogID,fogID2,mat);
+        cmd.SetGlobalTexture("_FogTex",fogID2);
+        cmd.Blit(fogID, BuiltinRenderTextureType.CameraTarget,blend);
+        cam.AddCommandBuffer(CameraEvent.BeforeForwardAlpha,cmd);
 
     }
 
     void OnDestroy() {
-        cam.RemoveCommandBuffer(CameraEvent.AfterForwardOpaque,cmd);
+        cam.RemoveCommandBuffer(CameraEvent.BeforeForwardAlpha,cmd);
         cmd.Clear();
-        // temp.Release();
-        // temp2.Release();
     }
 
  
-	void OnRenderImage (RenderTexture source, RenderTexture destination)
-    {
-        if (mat != null)
-        {
-            camTrans = cam.transform;
+	void Update() {
+         camTrans = cam.transform;
 
-            Matrix4x4 frustumCornors = Matrix4x4.identity;
-            float fov = cam.fieldOfView;
-            float near = cam.nearClipPlane;
-            float far = cam.farClipPlane;
-            float aspect = cam.aspect;
+        Matrix4x4 frustumCornors = Matrix4x4.identity;
+        float fov = cam.fieldOfView;
+        float near = cam.nearClipPlane;
+        float far = cam.farClipPlane;
+        float aspect = cam.aspect;
 
-            float fovWHalf = fov * 0.5f;
+        float fovWHalf = fov * 0.5f;
 
-            Vector3 toRight = camTrans.right * near * Mathf.Tan (fovWHalf * Mathf.Deg2Rad) * aspect;
-            Vector3 toTop = camTrans.up * near * Mathf.Tan (fovWHalf * Mathf.Deg2Rad);
+        Vector3 toRight = camTrans.right * near * Mathf.Tan (fovWHalf * Mathf.Deg2Rad) * aspect;
+        Vector3 toTop = camTrans.up * near * Mathf.Tan (fovWHalf * Mathf.Deg2Rad);
 
-            Vector3 topLeft = (camTrans.forward * near - toRight + toTop);
-            float camScale = topLeft.magnitude * far/near;
+        Vector3 topLeft = (camTrans.forward * near - toRight + toTop);
+        float camScale = topLeft.magnitude * far/near;
 
-            topLeft.Normalize();
-            topLeft *= camScale;
+        topLeft.Normalize();
+        topLeft *= camScale;
 
-            Vector3 topRight = (camTrans.forward * near + toRight + toTop);
-            topRight.Normalize();
-            topRight *= camScale;
+        Vector3 topRight = (camTrans.forward * near + toRight + toTop);
+        topRight.Normalize();
+        topRight *= camScale;
 
-            Vector3 bottomRight = (camTrans.forward * near + toRight - toTop);
-            bottomRight.Normalize();
-            bottomRight *= camScale;
+        Vector3 bottomRight = (camTrans.forward * near + toRight - toTop);
+        bottomRight.Normalize();
+        bottomRight *= camScale;
 
-            Vector3 bottomLeft = (camTrans.forward * near - toRight - toTop);
-            bottomLeft.Normalize();
-            bottomLeft *= camScale;
+        Vector3 bottomLeft = (camTrans.forward * near - toRight - toTop);
+        bottomLeft.Normalize();
+        bottomLeft *= camScale;
 
-            frustumCornors.SetRow(0, bottomLeft);
-            frustumCornors.SetRow(1, bottomRight);
-            frustumCornors.SetRow(2, topRight);
-            frustumCornors.SetRow(3, topLeft);
+        frustumCornors.SetRow(0, bottomLeft);
+        frustumCornors.SetRow(1, bottomRight);
+        frustumCornors.SetRow(2, topRight);
+        frustumCornors.SetRow(3, topLeft);
 
-            mat.SetMatrix("_Ray", frustumCornors);
-
-            Graphics.Blit(source, destination, blend);
-        } 
-		
-	} 
+        mat.SetMatrix("_Ray", frustumCornors);
+    }
 }
