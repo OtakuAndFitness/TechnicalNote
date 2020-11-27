@@ -40,13 +40,10 @@
             struct appdata {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                float2 uvDepth : TEXCOORD1;
-                //uint id : SV_VertexID;
             };
             struct v2f {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                float2 uvDepth : TEXCOORD2;
                 float3 ray : TEXCOORD1;
             };
 
@@ -75,13 +72,6 @@
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv,_MainTex);
-                o.uvDepth = v.uvDepth;
-
-                // #if UNITY_UV_STARTS_AT_TOP
-                //     if (_MainTex_TexelSize.y < 0){
-                //         o.uvDepth.y = 1 - o.uvDepth.y;
-                //     }
-                // #endif
 
                 int index = 0;
                 if (v.uv.x < 0.5 && v.uv.y < 0.5){
@@ -97,11 +87,12 @@
                 // int yy = (int)v.vertex.y;
                 // int index = abs(3 - xx - 3 * yy);
 
-                // #if UNITY_UV_STARTS_AT_TOP
-                //     if (_MainTex_TexelSize.y < 0){
-                //         index = 3 - index;
-                //     }
-                // #endif
+                #if UNITY_UV_STARTS_AT_TOP
+                    if (_MainTex_TexelSize.y < 0){
+                        index = 3 - index;
+                        o.uv.y = 1 - o.uv.y;
+                    }
+                #endif
 
                 o.ray = _Ray[index].xyz;
                 return o;
@@ -109,7 +100,7 @@
             fixed4 frag (v2f i) : SV_Target {
                 float4 finalCol;
 
-                float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv, _CameraDepthTexture_ST));
+                float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);
                 float3 wp = _WorldSpaceCameraPos.xyz + i.ray * Linear01Depth(depth);
 
                 float noise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).r;
