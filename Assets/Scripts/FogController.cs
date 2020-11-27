@@ -40,7 +40,7 @@ public class FogController : MonoBehaviour
 
  
 	void Update() {
-         camTrans = cam.transform;
+        camTrans = cam.transform;
 
         Matrix4x4 frustumCornors = Matrix4x4.identity;
         float fov = cam.fieldOfView;
