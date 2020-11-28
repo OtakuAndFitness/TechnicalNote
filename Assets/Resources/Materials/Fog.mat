@@ -63,10 +63,11 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DIST_TYPE: 0
-    - _Density: 0.616
+    - _Density: 0.488
+    - _DepthDensity: 0.0175
     - _DepthEnd: 2
-    - _DepthHeightRatio: 0.248
-    - _DepthNoiseScale: 5.38
+    - _DepthHeightRatio: 0.761
+    - _DepthNoiseScale: 13.8
     - _DepthStart: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -75,8 +76,8 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HeightEnd: 12.39
-    - _HeightNoiseScale: 5.1
-    - _HeightStart: 10
+    - _HeightNoiseScale: 11.9
+    - _HeightStart: 3.93
     - _Metallic: 0
     - _Mode: 0
     - _NoiseSpX: 1
@@ -87,7 +88,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WorldPosScale: 0.0299
+    - _WorldPosScale: 0.0197
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

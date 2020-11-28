@@ -16,10 +16,11 @@
         _WorldPosScale ("WorldPos Scale", Range(0,0.1)) = 0
         _NoiseSpX ("Noise Speed X",Range(0,1)) = 1
         _NoiseSpY ("Noise Speed Y",Range(0,1)) = 1
-        _DepthNoiseScale ("Depth Noise Scale",Range(0,100)) = 4
-        _HeightNoiseScale ("Height Noise Scale",Range(0,100)) = 4
+        _DepthNoiseScale ("Depth Noise Scale",Range(0,30)) = 4
+        _HeightNoiseScale ("Height Noise Scale",Range(0,30)) = 4
 
-        _Density ("Fog Density", Range(0, 1)) = 0.3
+        _DepthDensity ("Fog Depth Density", Range(0, 0.1)) = 0.001
+        _Density ("Fog Height Density", Range(0, 1)) = 0.3
 
         _DepthHeightRatio ("Depth Height Ratio",Range(0,1)) = 0
     }
@@ -40,6 +41,8 @@
             struct appdata {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                // uint id : SV_VertexID;
+
             };
             struct v2f {
                 float4 vertex : SV_POSITION;
@@ -66,6 +69,7 @@
             float _DepthNoiseScale;
             float _HeightNoiseScale;
             float _Density;
+            float _DepthDensity;
             float _DepthHeightRatio;
             
             v2f vert (appdata v) {
@@ -103,25 +107,22 @@
                 float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv);
                 float3 wp = _WorldSpaceCameraPos.xyz + i.ray * Linear01Depth(depth);
 
-                float noise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).r;
-                // float minusNoise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).b;
-                // noise *= minusNoise; 
+                float noise = tex2D(_NoiseTex, wp.xz * _WorldPosScale + _Time.x * fixed2(_NoiseSpX, _NoiseSpY)).r; 
 
                 float dist = 0;
                 #if _DIST_TYPE_VIEWSPACE 
                     dist = LinearEyeDepth(depth);;
                 #else
-                    float linear01depth = length(i.ray * Linear01Depth(depth));
+                    dist = length(i.ray * Linear01Depth(depth));
                 #endif
 
                 float depthFactor = 0;
                 #if _FUNC_TYPE_LINEAR
                     depthFactor = (_DepthEnd - dist) / (_DepthEnd - _DepthStart);
-                    depthFactor *= _Density;
                 #elif _FUNC_TYPE_EXP
-                    depthFactor = exp(-(_Density * dist));
+                    depthFactor = exp(-_DepthDensity * dist);
                 #else
-                    depthFactor = exp(-pow(_Density * dist, 2));
+                    depthFactor = exp(-pow(_DepthDensity * dist, 2));
                 #endif
 
                 float depthNoise = noise * _DepthNoiseScale;
@@ -129,20 +130,18 @@
                 depthFactor = saturate(depthFactor);
 
                 float heightNoise = noise * _HeightNoiseScale;
-                // float heightMinusNoise = minusNoise * _HeightNoiseScale;
                 float heightFactor = (_HeightEnd - wp.y - heightNoise) / (_HeightEnd - _HeightStart);
-                heightFactor *= _Density;
                 heightFactor = saturate(heightFactor);
 
                 float4 mainCol = tex2D(_MainTex, i.uv);
 
                 float4 depthCol = lerp(mainCol, _FogColor, depthFactor);
-                float4 heightCol = lerp(mainCol, _FogColor, heightFactor);
+                float4 heightCol = lerp(mainCol, _FogColor, heightFactor * _Density);
 
                 return lerp(depthCol, heightCol, _DepthHeightRatio);
                 // return heightCol;
                 // return depthCol;
-                // return tex2D(_CameraDepthTexture,UnityStereoScreenSpaceUVAdjust(i.uv, _CameraDepthTexture_ST));
+                // return depthCol + heightCol;
             }
             ENDCG
         }
