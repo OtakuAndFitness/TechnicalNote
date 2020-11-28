@@ -1,0 +1,24 @@
+{
+  "displayName": "Custom NUnit",
+  "name": "com.unity.ext.nunit",
+  "version": "1.0.5",
+  "unity": "2019.2",
+  "description": "Custom version of the nunit package build to work with Unity. Used by the Unity Test Framework.",
+  "keywords": [
+    "nunit",
+    "unittest",
+    "test"
+  ],
+  "category": "Libraries",
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git",
+    "type": "git",
+    "revision": "1b3e542964a65210e966f5bf8751f62b1dcd8d69"
+  },
+  "relatedPackages": {
+    "com.unity.ext.nunit.tests": "1.0.5"
+  },
+  "upmCi": {
+    "footprint": "b328f519a06bcacb01a806505afddd34ca2247e2"
+  }
+}

@@ -1,6 +1,10 @@
 Base path: '/Applications/Unity/Hub/Editor/2019.4.15f1c1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.4.15f1c1/Unity.app/Contents/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=14 type=1 insize=4919 outsize=3237 kw=_DIST_TYPE_VIEWSPACE _FUNC_TYPE_LINEAR pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_ENABLE_REFLECTION_BUFFERS UNITY_FRAMEBUFFER_FETCH_AVAILABLE UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF3 SHADER_API_MOBILE UNITY_HARDWARE_TIER1 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
-Cmd: compileSnippet
-  api=14 type=0 insize=4937 outsize=2419 kw=_DIST_TYPE_VIEWSPACE _FUNC_TYPE_LINEAR pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_ENABLE_REFLECTION_BUFFERS UNITY_FRAMEBUFFER_FETCH_AVAILABLE UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF3 SHADER_API_MOBILE UNITY_HARDWARE_TIER1 UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: compileComputeKernel
+  api=14 insize=1972 outsize=1153 ok=1
+Cmd: translateComputeKernel
+  api=14 insize=1721 outsize=2588 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=11230 outsize=11445 ok=1
+Cmd: compileComputeKernel
+  api=14 insize=3348 outsize=815 ok=1
