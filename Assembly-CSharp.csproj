@@ -109,7 +109,6 @@
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\Resources\Shaders\TextureChange.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-     <None Include="Assets\Resources\Shaders\PerlinWorley.compute" />
      <None Include="Assets\Resources\Shaders\ToonShading2.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading1.shader" />
      <None Include="Assets\Resources\Shaders\VertexMotionBlur.shader" />

@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\AdvancedNoiseGenerator.cs" />
      <Compile Include="Assets\Editor\NoiseGenerator.cs" />
+     <None Include="Assets\Editor\PerlinWorley.compute" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.15f1c1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

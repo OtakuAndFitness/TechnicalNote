@@ -1,7 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - FogController
+    - SubsurfaceScatterPostProcessing
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -20,7 +20,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
   sceneClasses:
-    Assets/Scenes/Fog.unity:
+    Assets/Scenes/SSS.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -64,15 +64,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 12478}
+      Script: {instanceID: 12064}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12476}
     - Class: 114
-      Script: {instanceID: 12536}
+      Script: {instanceID: 12486}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12814}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -630,5 +630,5 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   platform: 9
   scenePathNames:
-  - Assets/Scenes/Fog.unity
+  - Assets/Scenes/SSS.unity
   playerPath: /Users/bowentao/Desktop/Demo

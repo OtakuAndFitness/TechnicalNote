@@ -7,7 +7,7 @@
             "fullManagedTypeName": "UnityEngine.Object",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -30,7 +30,7 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -53,7 +53,7 @@
             "fullManagedTypeName": "UnityEngine.Shader",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -62,7 +62,7 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -71,7 +71,7 @@
             "fullManagedTypeName": "UnityEngine.TextAsset",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -80,7 +80,7 @@
             "fullManagedTypeName": "UnityEditor.MonoScript",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -89,7 +89,7 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -112,7 +112,7 @@
             "fullManagedTypeName": "UnityEngine.Material",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -212,7 +212,7 @@
             "fullManagedTypeName": "UnityEngine.AnimationClip",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -221,7 +221,7 @@
             "fullManagedTypeName": "UnityEngine.SkinnedMeshRenderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -230,7 +230,7 @@
             "fullManagedTypeName": "UnityEngine.MeshRenderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -239,7 +239,7 @@
             "fullManagedTypeName": "UnityEngine.AudioBehaviour",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -248,7 +248,7 @@
             "fullManagedTypeName": "UnityEngine.MeshCollider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -257,7 +257,7 @@
             "fullManagedTypeName": "UnityEngine.BoxCollider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -266,7 +266,7 @@
             "fullManagedTypeName": "UnityEngine.TerrainCollider",
             "moduleName": "TerrainPhysics",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -275,7 +275,7 @@
             "fullManagedTypeName": "UnityEngine.Animator",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -284,7 +284,7 @@
             "fullManagedTypeName": "UnityEngine.RuntimeAnimatorController",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -293,7 +293,7 @@
             "fullManagedTypeName": "UnityEngine.Motion",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -302,7 +302,7 @@
             "fullManagedTypeName": "UnityEngine.Avatar",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -311,7 +311,7 @@
             "fullManagedTypeName": "UnityEditor.Animations.AnimatorController",
             "moduleName": "Animation",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -320,7 +320,7 @@
             "fullManagedTypeName": "UnityEngine.LightmapSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -329,7 +329,7 @@
             "fullManagedTypeName": "UnityEngine.Texture2D",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -338,7 +338,7 @@
             "fullManagedTypeName": "UnityEngine.Renderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -347,7 +347,7 @@
             "fullManagedTypeName": "UnityEngine.ComputeShader",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -356,7 +356,7 @@
             "fullManagedTypeName": "UnityEngine.Behaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -365,7 +365,7 @@
             "fullManagedTypeName": "UnityEngine.MonoBehaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -374,7 +374,7 @@
             "fullManagedTypeName": "UnityEngine.GameObject",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -383,7 +383,7 @@
             "fullManagedTypeName": "UnityEngine.Camera",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -392,7 +392,7 @@
             "fullManagedTypeName": "UnityEngine.Component",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -401,7 +401,7 @@
             "fullManagedTypeName": "UnityEngine.Transform",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -410,7 +410,7 @@
             "fullManagedTypeName": "UnityEngine.RenderSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -419,7 +419,7 @@
             "fullManagedTypeName": "UnityEngine.Collider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -428,7 +428,7 @@
             "fullManagedTypeName": "UnityEngine.AudioListener",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -437,7 +437,7 @@
             "fullManagedTypeName": "UnityEngine.Font",
             "moduleName": "TextRendering",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -446,7 +446,7 @@
             "fullManagedTypeName": "UnityEngine.Light",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -455,7 +455,7 @@
             "fullManagedTypeName": "UnityEngine.Texture",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -464,7 +464,7 @@
             "fullManagedTypeName": "",
             "moduleName": "AI",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -473,7 +473,7 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -482,7 +482,7 @@
             "fullManagedTypeName": "UnityEngine.RenderTexture",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -491,7 +491,7 @@
             "fullManagedTypeName": "UnityEngine.Terrain",
             "moduleName": "Terrain",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -500,7 +500,7 @@
             "fullManagedTypeName": "UnityEngine.Mesh",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
@@ -509,13 +509,13 @@
             "fullManagedTypeName": "UnityEngine.MeshFilter",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Fog.unity"
+                "Assets/Scenes/SSS.unity"
             ]
         },
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "FogController",
+            "fullManagedTypeName": "SubsurfaceScatterPostProcessing",
             "moduleName": "",
             "usedInScenes": []
         },
