@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 4735160b42a3154428094dff59ef0f4e
+labels:
+- Tree
+- model
+- foliage
+- mesh
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: canopy_1
+    100002: canopy_2
+    100004: canopy_3
+    100006: //RootNode
+    100008: Trunk
+    100010: canopy_2_001
+    100012: tree_1_canopy
+    100014: tree_1_trunk
+    100016: tree_1_LOD0
+    100018: tree_1_LOD1
+    100020: tree_1_LOD2
+    400000: canopy_1
+    400002: canopy_2
+    400004: canopy_3
+    400006: //RootNode
+    400008: Trunk
+    400010: canopy_2_001
+    400012: tree_1_canopy
+    400014: tree_1_trunk
+    400016: tree_1_LOD0
+    400018: tree_1_LOD1
+    400020: tree_1_LOD2
+    2300000: canopy_1
+    2300002: canopy_2
+    2300004: canopy_3
+    2300006: Trunk
+    2300008: canopy_2_001
+    2300010: tree_1_canopy
+    2300012: tree_1_trunk
+    2300014: tree_1_LOD0
+    2300016: tree_1_LOD1
+    2300018: tree_1_LOD2
+    3300000: canopy_1
+    3300002: canopy_2
+    3300004: canopy_3
+    3300006: Trunk
+    3300008: canopy_2_001
+    3300010: tree_1_canopy
+    3300012: tree_1_trunk
+    3300014: tree_1_LOD0
+    3300016: tree_1_LOD1
+    3300018: tree_1_LOD2
+    4300000: canopy_3
+    4300002: canopy_2
+    4300004: canopy_1
+    4300006: Trunk
+    4300008: canopy_2_001
+    4300010: tree_1_trunk
+    4300012: tree_1_canopy
+    4300014: tree_1_LOD0
+    4300016: tree_1_LOD1
+    4300018: tree_1_LOD2
+    9500000: //RootNode
+    20500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark01_bottom
+    second: {fileID: 2100000, guid: 7e56b6e37c078ed47b6d0e9d9249ea9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tree_branches
+    second: {fileID: 2100000, guid: 16a185093c7e02d40a49265c23c74417, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 55
+    secondaryUVAreaDistortion: 75
+    secondaryUVHardAngle: 180
+    secondaryUVPackMargin: 15
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

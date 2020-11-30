@@ -58,6 +58,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Resources\Shaders\SSS.shader" />
+     <None Include="Assets\ThirdParty\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
      <None Include="Assets\Resources\Shaders\ToonShading3.shader" />
      <None Include="Assets\Resources\Shaders\ShadowMap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -292,6 +293,9 @@
     </Reference>
     <Reference Include="LitJson">
         <HintPath>/Users/bowentao/Desktop/GitHub/技术博客/TechnicalNote/Assets/ThirdParty/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+        <HintPath>/Users/bowentao/Desktop/GitHub/技术博客/TechnicalNote/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2019.4.15f1c1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
