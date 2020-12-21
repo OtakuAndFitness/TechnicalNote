@@ -91,12 +91,12 @@
                 // int yy = (int)v.vertex.y;
                 // int index = abs(3 - xx - 3 * yy);
 
-                // #if UNITY_UV_STARTS_AT_TOP
-                //     if (_MainTex_TexelSize.y < 0){
-                //         index = 3 - index;
-                //         o.uv.y = 1 - o.uv.y;
-                //     }
-                // #endif
+                #if UNITY_UV_STARTS_AT_TOP
+                    if (_MainTex_TexelSize.y < 0){
+                        index = 3 - index;
+                        o.uv.y = 1 - o.uv.y;
+                    }
+                #endif
 
                 o.ray = _Ray[index].xyz;
                 return o;
