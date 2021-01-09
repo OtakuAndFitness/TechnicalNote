@@ -19,6 +19,7 @@
             #pragma vertex vert
             #pragma fragment frag
             
+            #pragma shader_feature _USESHADOWMASK_ON
             #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
             #ifdef _USESHADOWMASK_ON
                 #pragma multi_compile SHADOWS_SHADOWMASK
@@ -74,8 +75,8 @@
                 float directAtten = SHADOW_ATTENUATION(i);
                 float3 normal = normalize(i.worldNormal);
                 // sample the texture
-                // fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 col = _Color;
+                fixed4 col = tex2D(_MainTex, i.uv);
+                col *= _Color;
                 #ifdef LIGHTMAP_ON
                     #ifdef _ISDIR_ON
                         float4 lightmapDir = UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd, unity_Lightmap, i.uvLM);
