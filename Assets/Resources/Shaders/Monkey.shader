@@ -2,14 +2,15 @@
 {
     Properties
     {
-        // _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "white" {}
         _Color ("Main Color",Color) = (1,1,1,1)
         [Toggle]_IsDir ("Directional LightMap ?", int) = 0
+        [Toggle]_UseShadowmask ("Use Shadowmask ?", int) = 0
         
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque"}
+        Tags { "RenderType"="Opaque" "LightMode" = "ForwardBase"}
         LOD 100
 
         Pass
@@ -19,7 +20,9 @@
             #pragma fragment frag
             
             #pragma multi_compile LIGHTMAP_OFF LIGHTMAP_ON
-            #pragma multi_compile SHADOWS_SHADOWMASK
+            #ifdef _USESHADOWMASK_ON
+                #pragma multi_compile SHADOWS_SHADOWMASK
+            #endif
             #pragma multi_compile SHADOWS_SCREEN
             #pragma shader_feature _ISDIR_ON
             
@@ -81,14 +84,18 @@
                         fixed3 lm = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap,i.uvLM));
                     #endif
 
-                    float viewZ = dot(_WorldSpaceCameraPos - i.worldPos, UNITY_MATRIX_V[2].xyz);
-		            float shadowFadeDistance = UnityComputeShadowFadeDistance(i.worldPos, viewZ);
-                    float shadowFade = UnityComputeShadowFade(shadowFadeDistance);
+                    #ifdef _USESHADOWMASK_ON
+                        float viewZ = dot(_WorldSpaceCameraPos - i.worldPos, UNITY_MATRIX_V[2].xyz);
+                        float shadowFadeDistance = UnityComputeShadowFadeDistance(i.worldPos, viewZ);
+                        float shadowFade = UnityComputeShadowFade(shadowFadeDistance);
 
-                    float bakedAtten = UnitySampleBakedOcclusion(i.uvLM,i.worldPos);
-                    float atten = UnityMixRealtimeAndBakedShadows(directAtten, bakedAtten, shadowFade);
-                    col.rgb *= atten;
-                    col.rgb *= lm;
+                        float bakedAtten = UnitySampleBakedOcclusion(i.uvLM,i.worldPos);
+                        float atten = UnityMixRealtimeAndBakedShadows(directAtten, bakedAtten, shadowFade);
+                        col.rgb *= atten;
+                        col.rgb += lm;
+                    #else
+                        col.rgb *= lm * directAtten;
+                    #endif
                 #endif
                 return col;
             }
