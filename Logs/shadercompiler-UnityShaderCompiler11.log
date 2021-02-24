@@ -185,3 +185,6 @@ Cmd: compileComputeKernel
 Cmd: compileComputeKernel
   insize=10925 path=/Users/bowentao/Desktop/GitHub/技术博客/TechnicalNote/Library/PackageCache/com.unity.postprocessing@3.0.3/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute kernel=MultiScaleVORender_MSAA_interleaved cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=9 km=<MAIN=MultiScaleVORender_MSAA_interleaved>,<MSAA=1>,<INTERLEAVE_RESULT=1>,<UNITY_VERSION=202025> pKW=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_ENABLE_REFLECTION_BUFFERS UNITY_FRAMEBUFFER_FETCH_AVAILABLE UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_MOBILE UNITY_LIGHTMAP_DLDR_ENCODING uKW=SHADER_STAGE_COMPUTE platform=metal flags=268439552 ok=1 outsize=22634
 
+Cmd: shutdown
+
+Quitting shader compiler process
