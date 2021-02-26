@@ -1,0 +1,10 @@
+/Library
+/Logs
+/obj
+/UserSettings
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+TechnicalNote.sln
+UnityAsync.csproj
+/.vs
+/.vscode
