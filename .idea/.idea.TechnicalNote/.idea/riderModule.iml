@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.cn/com.unity.ext.nunit@1.0.6" />
+    <content url="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.cn/com.unity.ide.rider@2.0.7" />
+    <content url="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.cn/com.unity.postprocessing@3.0.3" />
+    <content url="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.cn/com.unity.textmeshpro@3.0.4" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

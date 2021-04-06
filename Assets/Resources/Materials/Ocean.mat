@@ -111,3 +111,4 @@ Material:
     - _OceanColorShallow: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 0.2509804, b: 0, a: 1}
+  m_BuildTextureStacks: []
