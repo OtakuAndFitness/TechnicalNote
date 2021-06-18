@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MyPBR
+  m_Name: MyIron
   m_Shader: {fileID: 4800000, guid: 4b1c1a30940904f3a9eab3b7e3cbdf95, type: 3}
   m_ShaderKeywords: _ISAnisotropy_ON _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 4
@@ -83,6 +83,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 419a2c98190aa4d0188fd92b91f17075, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - IsAnisotropy: 1
     - _Anisotropy: 0.972
@@ -117,7 +118,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Diffuse: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainCol: {r: 0.9245283, g: 0.87655747, b: 0.87655747, a: 1}
+    - _MainCol: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
