@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/PBR.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/PBR.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/Head_02_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/Head_02_Roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/bamboo-wood-semigloss-metal.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/bamboo-wood-semigloss-metal.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/bricks2_disp.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/bricks2_disp.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/rustediron2_metallic.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/rustediron2_metallic.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +86,7 @@
       <workItem from="1617010455719" duration="165000" />
       <workItem from="1617075380834" duration="1849000" />
       <workItem from="1622087964087" duration="670000" />
-      <workItem from="1623995267683" duration="3378000" />
+      <workItem from="1623995267683" duration="3600000" />
     </task>
     <servers />
   </component>

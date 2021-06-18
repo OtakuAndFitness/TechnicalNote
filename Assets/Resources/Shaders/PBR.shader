@@ -122,7 +122,7 @@
 
                 //direct light part
                 float4 ambient = UNITY_LIGHTMODEL_AMBIENT * _LightFactor;
-                float4 diffuse = (1 - FresnelSchlick(float4(F0,1),VdotH)) * OneMinusReflectivityFromMetallic(Metalness.r) * _MainCol * col * _LightColor0;
+                float4 diffuse = (1 - FresnelSchlick(float4(F0,1),VdotH)) * OneMinusReflectivityFromMetallic(Metalness.r) * _MainCol * col;
 
                 //各项异性部分，但感觉很怪，也许是贴图问题吧，有需要的可以放掉注释看看
                 // float roughnessX;
@@ -150,7 +150,7 @@
                 float surfaceReduction = 1 / (pow2(roughness) + 1);
                 float4 indirectSpecualr = surfaceReduction * iblSpecular * FresnelLerp(float4(F0,1) * _SpecularColor,grazing,NdotV);
 
-                return ambient + (diffuse+ float4(iblDiffuse,1) + specular + indirectSpecualr) * atten;
+                return ambient + (diffuse+ float4(iblDiffuse,1) + specular + indirectSpecualr) * atten * _LightColor0;
             }
             ENDCG
         }
