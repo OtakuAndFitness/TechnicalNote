@@ -118,10 +118,11 @@
                 float3 t = float3(i.TtoW0.x,i.TtoW1.x,i.TtoW2.x);
                 float3 b = float3(i.TtoW0.y,i.TtoW0.y,i.TtoW0.y);
 
-                //direct light part
-                float4 ambient = UNITY_LIGHTMODEL_AMBIENT * _MainCol * col * _LightFactor;
-                float4 diffuse = OneMinusReflectivityFromMetallic(Metalness.r) * _MainCol * col / UNITY_PI;
                 float3 F0 = lerp(unity_ColorSpaceDielectricSpec.rgb,col.rgb,Metalness.r);//区分金属非金属
+
+                //direct light part
+                float4 ambient = UNITY_LIGHTMODEL_AMBIENT * _LightFactor;
+                float4 diffuse = (1 - FresnelSchlick(float4(F0,1),VdotH)) * OneMinusReflectivityFromMetallic(Metalness.r) * _MainCol * col * _LightColor0;
 
                 //各项异性部分，但感觉很怪，也许是贴图问题吧，有需要的可以放掉注释看看
                 // float roughnessX;
@@ -129,7 +130,7 @@
                 // ConvertAnisotropyToRoughness(roughness,_Anisotropy,roughnessX,roughnessY);
                 // float4 specular = AnisotropyCookTorranceBRDF(roughnessX,roughnessY,t,b,halfDir,normalWorld,lightDir,viewDir,_SpecularColor);
 
-                float4 specular = CookTorranceBRDF(NdotH,NdotL,NdotV,VdotH,roughness,float4(F0,1) * _SpecularColor);                
+                float4 specular = CookTorranceBRDF(NdotH,NdotL,NdotV,VdotH,roughness,float4(F0,1) * _SpecularColor) * UNITY_PI;                
                 
                 //indirect light part
                 //indirct diffuse
@@ -137,11 +138,11 @@
                 float3 iblDiffuse = max(float3(0,0,0),sh + (0.03 * ambient));
                 float3 Flast = fresnelSchlickRoughness(max(NdotV, 0.0), F0, roughness);
 				float kd = (1 - Flast) * OneMinusReflectivityFromMetallic(Metalness.r);
-                iblDiffuse = iblDiffuse * kd / UNITY_PI;
+                iblDiffuse = iblDiffuse * kd;
                 //indirect specular
                 float3 reflectDir = normalize(reflect(-viewDir,normalWorld));
                 float percetualRoughness = roughness * (1.7 - 0.7 * roughness);
-                float mip = percetualRoughness * 6;
+                float mip = percetualRoughness * UNITY_SPECCUBE_LOD_STEPS;
                 float4 rgbm = UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0,reflectDir,mip);
                 float4 iblSpecular = float4(DecodeHDR(rgbm,unity_SpecCube0_HDR),1);
                 //LUT part, use surfaceReduction instead
@@ -149,8 +150,7 @@
                 float surfaceReduction = 1 / (pow2(roughness) + 1);
                 float4 indirectSpecualr = surfaceReduction * iblSpecular * FresnelLerp(float4(F0,1) * _SpecularColor,grazing,NdotV);
 
-                return ambient + (diffuse + specular) * _LightColor0 * UNITY_PI * NdotL * atten + indirectSpecualr + float4(iblDiffuse,1);
-                // return specular;
+                return ambient + (diffuse+ float4(iblDiffuse,1) + specular + indirectSpecualr) * atten;
             }
             ENDCG
         }
