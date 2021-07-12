@@ -79,8 +79,14 @@
 
                     }
                 }
+
+                //Discard border.
+				float white = uvPos.x < 0.0 ? 1.0 : (uvPos.x > 1.0 ? 1.0 : (uvPos.y < 0.0 ? 1.0 : (uvPos.y > 1.0 ? 1.0 : 0.0)));
+				if (white > 0.5) shadow = 1.f;
+                
                 shadow /= 9;
                 col *= 1 - shadow;
+
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;

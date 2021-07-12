@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="" />
+    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,14 +22,14 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.12f1c1/Unity.app/Contents/CGIncludes/UnityStandardUtils.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.12f1c1/Unity.app/Contents/CGIncludes/UnityStandardUtils.cginc" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/FFTOcean.compute" />
-      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PBR.shader" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -86,7 +89,8 @@
       <workItem from="1617010455719" duration="165000" />
       <workItem from="1617075380834" duration="1849000" />
       <workItem from="1622087964087" duration="670000" />
-      <workItem from="1623995267683" duration="3892000" />
+      <workItem from="1623995267683" duration="4766000" />
+      <workItem from="1626067273837" duration="1515000" />
     </task>
     <servers />
   </component>
