@@ -8,13 +8,11 @@ using UnityEngine.Rendering;
 
 public class PerlinWorleyNoise : EditorWindow
 {
-    private int texWidth;
-
-    // int texHeight;
-    private int octaves;
-    private float persistence;
-    private float scale;
-    private float ratio;
+    private int texWidth = 128;
+    private int octaves = 6;
+    private float persistence = 0.5f;
+    private int scale = 50;
+    private float ratio = 0.5f;
     private string texName;
     private string[] options = {"Perlin", "Worley", "WorleyForCloud", "PerlinWorley"};
     private int index;
@@ -29,8 +27,8 @@ public class PerlinWorleyNoise : EditorWindow
         PerlinWorley
     }
     
-    [MenuItem("Tools/个性化噪声图")]
-    static void Init(){
+    [MenuItem("Tools/高级噪声图")]
+    static void ShowWindow(){
         GetWindow(typeof(PerlinWorleyNoise)).Show();
     }
 
@@ -225,7 +223,8 @@ public class PerlinWorleyNoise : EditorWindow
 
     private void OnGUI() {
         EditorGUILayout.BeginHorizontal();
-        noiseGenerator = EditorGUILayout.ObjectField("Shader使用: ", Resources.Load("Shaders/PerlinWorley.compute"), typeof(ComputeShader), true) as ComputeShader;
+        noiseGenerator = AssetDatabase.LoadAssetAtPath<ComputeShader>("Assets/Resources/Shaders/PerlinWorley.compute");
+        noiseGenerator = (ComputeShader)EditorGUILayout.ObjectField("Shader使用: ", noiseGenerator, typeof(ComputeShader), true);
         EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
@@ -241,15 +240,15 @@ public class PerlinWorleyNoise : EditorWindow
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        octaves = EditorGUILayout.IntField("叠加多少个噪声: ", octaves);
+        octaves = EditorGUILayout.IntSlider("叠加多少个噪声: ", octaves,1,10);
         EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
-        persistence = EditorGUILayout.FloatField("每个噪声按照多少比例叠: ", persistence);
+        persistence = EditorGUILayout.Slider("每个噪声按照多少比例叠: ", persistence,0,1);
         EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
-        scale = EditorGUILayout.FloatField("Scale: ", scale);
+        scale = EditorGUILayout.IntSlider("Scale: ", scale,1,100);
         EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
@@ -268,11 +267,6 @@ public class PerlinWorleyNoise : EditorWindow
             //     Debug.LogWarning("图片高或宽最好是2的次方数");
             // }
 
-            if (!Mathf.IsPowerOfTwo(texWidth))
-            {
-                texWidth = Mathf.ClosestPowerOfTwo(texWidth);
-            }
-
             // if (!Mathf.IsPowerOfTwo(texHeight))
             // {
             //     texHeight = Mathf.ClosestPowerOfTwo(texHeight);
@@ -282,21 +276,42 @@ public class PerlinWorleyNoise : EditorWindow
                 Debug.LogError("请为图片命名");
                 return;
             }
+            
+            if (!Mathf.IsPowerOfTwo(texWidth))
+            {
+                texWidth = Mathf.ClosestPowerOfTwo(texWidth);
+            }
 
             NoiseType noiseType = NoiseType.Perlin;
             switch (index)
             {
                 case 0:
                     noiseType = NoiseType.Perlin;
+                    if (texWidth > 1024)
+                    {
+                        texWidth = 1024;
+                    }
                     break;
                 case 1:
                     noiseType = NoiseType.Worley;
+                    if (texWidth > 1024)
+                    {
+                        texWidth = 1024;
+                    }
                     break;
                 case 2:
                     noiseType = NoiseType.WorleyForCloud;
+                    if (texWidth > 256)
+                    {
+                        texWidth = 256;
+                    }
                     break;
                 case 3:
                     noiseType = NoiseType.PerlinWorley;
+                    if (texWidth > 256)
+                    {
+                        texWidth = 256;
+                    }
                     break;
             }
             GenerateNoiseTexture(noiseType);

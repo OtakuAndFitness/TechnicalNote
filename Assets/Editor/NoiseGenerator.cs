@@ -14,10 +14,10 @@ public class NoiseGenerator : EditorWindow
 
     [MenuItem("Tools/生成噪声图")]
     static void Init(){
-        EditorWindow.GetWindow(typeof(NoiseGenerator)).Show();
+        GetWindow(typeof(NoiseGenerator)).Show();
     }
 
-    void GenerateNoiseImage(int x, int y){
+    void GenerateNoiseImage(){
         int size = Mathf.Min(x,y);
         Texture2D tex = new Texture2D(x,y,TextureFormat.RGB24,false);
         Color[] pixel = new Color[x*y];
@@ -71,7 +71,7 @@ public class NoiseGenerator : EditorWindow
             }else if (step < 1){
                 step = 1;
             }
-            GenerateNoiseImage(x,y);
+            GenerateNoiseImage();
         }
         EditorGUILayout.EndHorizontal();
     }
