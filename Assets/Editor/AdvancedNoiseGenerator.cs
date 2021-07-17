@@ -142,10 +142,7 @@ public class AdvancedNoiseGenerator : EditorWindow
 
     void Save2D(RenderTexture rt, NoiseType type)
     {
-        Texture2D tex = new Texture2D(texWidth, texWidth, TextureFormat.ARGB32, true);
-        RenderTexture.active = rt;
-        tex.ReadPixels(new Rect(0,0,texWidth,texWidth),0,0);
-        tex.Apply();
+        Texture2D tex = ConvertRTToTexture(rt);
 
         string res = GetTexName(type);
         
@@ -194,6 +191,7 @@ public class AdvancedNoiseGenerator : EditorWindow
         RenderTexture.active = rt;
         tex.ReadPixels(new Rect(0,0,texWidth,texWidth),0,0);
         tex.Apply();
+        
         return tex;
     }
 
