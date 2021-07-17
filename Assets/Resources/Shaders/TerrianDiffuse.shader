@@ -66,6 +66,9 @@
                 fixed4 lightSpacePos = mul(_LightMatrix,i.worldPos);//变换到光源空间
                 lightSpacePos.xyz = lightSpacePos.xyz / lightSpacePos.w;//剪裁空间为-1到1
                 float3 uvPos = lightSpacePos * 0.5 + 0.5; //uv是在0-1之间
+
+                //Discard border.
+				float white = uvPos.x < 0.0 ? 1.0 : (uvPos.x > 1.0 ? 1.0 : (uvPos.y < 0.0 ? 1.0 : (uvPos.y > 1.0 ? 1.0 : 0.0)));
                 
                 float currentDepth = lightSpacePos.z;
                 float2 offset = float2(1.0 / _TextureWidth,1.0 / _TextureHeight);
@@ -80,10 +83,8 @@
                     }
                 }
 
-                //Discard border.
-				float white = uvPos.x < 0.0 ? 1.0 : (uvPos.x > 1.0 ? 1.0 : (uvPos.y < 0.0 ? 1.0 : (uvPos.y > 1.0 ? 1.0 : 0.0)));
-				if (white > 0.5) shadow = 1.f;
-                
+                if (white > 0.5) shadow = 1.f;
+
                 shadow /= 9;
                 col *= 1 - shadow;
 

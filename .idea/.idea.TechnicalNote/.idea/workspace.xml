@@ -3,7 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorley.compute" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorley.compute.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Editor.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Editor.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEngine.SpatialTracking.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.SpatialTracking.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,14 +47,24 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/61/f1df6379/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../UnityPlayground-master/Assets/My/Cloud/Scripts/NoiseGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/01/d05ca2d7/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/d2/3689ecc4/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/9c/9dd48ea7/Texture3D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///Applications/Unity/Hub/Editor/2021.1.12f1c1/Unity.app/Contents/CGIncludes/UnityStandardUtils.cginc" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/FFTOcean.compute" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PBR.shader" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DepthCapture.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/ShadowMap.shader" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/TerrianDiffuse.shader" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorley.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
+      <option value="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -90,7 +125,10 @@
       <workItem from="1617075380834" duration="1849000" />
       <workItem from="1622087964087" duration="670000" />
       <workItem from="1623995267683" duration="4766000" />
-      <workItem from="1626067273837" duration="1515000" />
+      <workItem from="1626067273837" duration="1585000" />
+      <workItem from="1626143166607" duration="12342000" />
+      <workItem from="1626416151584" duration="4848000" />
+      <workItem from="1626430087758" duration="5754000" />
     </task>
     <servers />
   </component>
@@ -99,6 +137,18 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
