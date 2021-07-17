@@ -6,7 +6,7 @@ using System.IO;
 using TreeEditor;
 using UnityEngine.Rendering;
 
-public class AdvancedNoiseGenerator : EditorWindow
+public class PerlinWorleyNoise : EditorWindow
 {
     private int texWidth;
 
@@ -18,7 +18,7 @@ public class AdvancedNoiseGenerator : EditorWindow
     private string texName;
     private string[] options = {"Perlin", "Worley", "WorleyForCloud", "PerlinWorley"};
     private int index;
-    private ComputeShader noiseGenerator = (ComputeShader) Resources.Load("Shaders/PerlinWorley.compute");
+    private ComputeShader noiseGenerator;
     
     
     enum NoiseType
@@ -31,8 +31,10 @@ public class AdvancedNoiseGenerator : EditorWindow
     
     [MenuItem("Tools/个性化噪声图")]
     static void Init(){
-        GetWindow(typeof(AdvancedNoiseGenerator)).Show();
+        GetWindow(typeof(PerlinWorleyNoise)).Show();
     }
+
+    #region NoiseGenerator
 
     void GenerateNoiseTexture(NoiseType type){
         switch (type)
@@ -216,9 +218,16 @@ public class AdvancedNoiseGenerator : EditorWindow
 
         return res;
     }
+
+    #endregion
+    
     
 
     private void OnGUI() {
+        EditorGUILayout.BeginHorizontal();
+        noiseGenerator = EditorGUILayout.ObjectField("Shader使用: ", Resources.Load("Shaders/PerlinWorley.compute"), typeof(ComputeShader), true) as ComputeShader;
+        EditorGUILayout.EndHorizontal();
+        
         EditorGUILayout.BeginHorizontal();
         texName = EditorGUILayout.TextField("图片名: ", texName);
         EditorGUILayout.EndHorizontal();

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +21,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/923143A3-5CFF-483B-AA0C-440D84700E8A/41/3f9c42b2/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/61/f1df6379/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../UnityPlayground-master/Assets/My/Cloud/Scripts/NoiseGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/01/d05ca2d7/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/923143A3-5CFF-483B-AA0C-440D84700E8A/7e/72f43b21/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/d2/3689ecc4/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/9c/9dd48ea7/Texture3D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
@@ -39,6 +41,7 @@
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorley.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
       <option value="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -48,6 +51,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34971997" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -102,7 +107,7 @@
       <workItem from="1626067273837" duration="1585000" />
       <workItem from="1626143166607" duration="12342000" />
       <workItem from="1626416151584" duration="4848000" />
-      <workItem from="1626430087758" duration="6235000" />
+      <workItem from="1626430087758" duration="8870000" />
     </task>
     <servers />
   </component>
