@@ -146,10 +146,8 @@ public class PerlinWorleyNoise : EditorWindow
 
         // string res = GetTexName(type);
         
-        AssetDatabase.CreateAsset(tex,Application.dataPath + "/Res/Textures/" + texName + ".tga");
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
+        File.WriteAllBytes(System.Environment.CurrentDirectory + "/Assets/Resources/Textures/" + texName + ".tga", tex.EncodeToTGA());
+        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Resources/Textures目录下生成！","确定","取消");
     }
 
     void Save3D(RenderTexture[] rts)
@@ -178,10 +176,10 @@ public class PerlinWorleyNoise : EditorWindow
         
         // string res = GetTexName(type);
         
-        AssetDatabase.CreateAsset(cube,Application.dataPath + "/Res/Textures/" + texName + ".asset");
+        AssetDatabase.CreateAsset(cube,"Assets/Resources/Textures/" + texName + ".asset");
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
+        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Resources/Textures目录下生成！","确定","取消");
 
     }
 
