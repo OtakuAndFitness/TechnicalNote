@@ -67,7 +67,7 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.SetTexture(kernelPerlin,"PerlinTex",rt);
         noiseGenerator.Dispatch(kernelPerlin,texWidth/8,texWidth/8,1);
         
-        Save2D(rt,NoiseType.Perlin);
+        Save2D(rt);
     }
 
     void Worley()
@@ -84,7 +84,7 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.SetTexture(kernelWorley,"WorleyTex",rt);
         noiseGenerator.Dispatch(kernelWorley,texWidth/8,texWidth/8,1);
         
-        Save2D(rt,NoiseType.Worley);
+        Save2D(rt);
     }
 
     void PerlinWorley()
@@ -111,7 +111,7 @@ public class PerlinWorleyNoise : EditorWindow
             layers[i] = rt;
         }
         
-        Save3D(layers,NoiseType.PerlinWorley);
+        Save3D(layers);
         
     }
 
@@ -137,22 +137,22 @@ public class PerlinWorleyNoise : EditorWindow
             layers[i] = rt;
         }
         
-        Save3D(layers,NoiseType.WorleyForCloud);
+        Save3D(layers);
     }
 
-    void Save2D(RenderTexture rt, NoiseType type)
+    void Save2D(RenderTexture rt)
     {
         Texture2D tex = ConvertRTToTexture(rt);
 
-        string res = GetTexName(type);
+        // string res = GetTexName(type);
         
-        AssetDatabase.CreateAsset(tex,Application.dataPath + "/Res/Textures/" + res + ".tga");
+        AssetDatabase.CreateAsset(tex,Application.dataPath + "/Res/Textures/" + texName + ".tga");
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        EditorUtility.DisplayDialog("成功",res + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
+        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
     }
 
-    void Save3D(RenderTexture[] rts, NoiseType type)
+    void Save3D(RenderTexture[] rts)
     {
         Texture2D[] finalSlices = new Texture2D[texWidth];
         for (int i = 0; i < texWidth; i++)
@@ -176,12 +176,12 @@ public class PerlinWorleyNoise : EditorWindow
         cube.SetPixels(pixel);
         cube.Apply();
         
-        string res = GetTexName(type);
+        // string res = GetTexName(type);
         
-        AssetDatabase.CreateAsset(cube,Application.dataPath + "/Res/Textures/" + res + ".asset");
+        AssetDatabase.CreateAsset(cube,Application.dataPath + "/Res/Textures/" + texName + ".asset");
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        EditorUtility.DisplayDialog("成功",res + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
+        EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Res/Textures目录下生成！","确定","取消");
 
     }
 
@@ -195,27 +195,27 @@ public class PerlinWorleyNoise : EditorWindow
         return tex;
     }
 
-    string GetTexName(NoiseType type)
-    {
-        string res = "";
-        switch (type)
-        {
-            case NoiseType.Perlin:
-                res = "Perlin";
-                break;
-            case NoiseType.Worley:
-                res = "Worley";
-                break;
-            case NoiseType.WorleyForCloud:
-                res = "WorleyForCloud";
-                break;
-            case NoiseType.PerlinWorley:
-                res = "PerlinWorley";
-                break;
-        }
-
-        return res;
-    }
+    // string GetTexName(NoiseType type)
+    // {
+    //     string res = "";
+    //     switch (type)
+    //     {
+    //         case NoiseType.Perlin:
+    //             res = "Perlin";
+    //             break;
+    //         case NoiseType.Worley:
+    //             res = "Worley";
+    //             break;
+    //         case NoiseType.WorleyForCloud:
+    //             res = "WorleyForCloud";
+    //             break;
+    //         case NoiseType.PerlinWorley:
+    //             res = "PerlinWorley";
+    //             break;
+    //     }
+    //
+    //     return res;
+    // }
 
     #endregion
     
@@ -250,10 +250,14 @@ public class PerlinWorleyNoise : EditorWindow
         EditorGUILayout.BeginHorizontal();
         scale = EditorGUILayout.IntSlider("Scale: ", scale,1,100);
         EditorGUILayout.EndHorizontal();
+
+        if (index > 2)
+        {
+            EditorGUILayout.BeginHorizontal();
+            ratio = EditorGUILayout.Slider("混合比例: ", ratio,0f, 1f);
+            EditorGUILayout.EndHorizontal();
+        }
         
-        EditorGUILayout.BeginHorizontal();
-        ratio = EditorGUILayout.Slider("混合比例: ", ratio,0f, 1f);
-        EditorGUILayout.EndHorizontal();
         
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("生成")){

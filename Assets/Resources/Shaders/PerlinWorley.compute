@@ -250,8 +250,8 @@ void WorleyCloud(uint3 id : SV_DispatchThreadID){
 
 [numthreads(8,8,1)]
 void Perlin(uint3 id : SV_DispatchThreadID){
-    uint3 index = uint3(id.xy,1);
-    float3 xyz = (float3) index / pRes;
+    // uint3 index = uint3(id.xy,1);
+    float3 xyz = (float3) id.xyz / pRes;
 
     float perlin = Perlin(xyz, octaves, persistence, scale);
 
@@ -262,8 +262,8 @@ void Perlin(uint3 id : SV_DispatchThreadID){
 
 [numthreads(8,8,1)]
 void Worley(uint3 id : SV_DispatchThreadID){
-    uint3 index = uint3(id.xy,1);
-    float3 xyz = (float3) index / wRes;
+    // uint3 index = uint3(id.xy,1);
+    float3 xyz = (float3) id.xyz / wRes;
 
     float worley = Worley(xyz, octaves, persistence, scale);
 
