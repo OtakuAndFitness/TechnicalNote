@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +110,7 @@
       <workItem from="1626143166607" duration="12342000" />
       <workItem from="1626416151584" duration="4848000" />
       <workItem from="1626430087758" duration="8870000" />
-      <workItem from="1626507006992" duration="1568000" />
+      <workItem from="1626507006992" duration="1866000" />
     </task>
     <servers />
   </component>
@@ -147,24 +143,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs</url>
-          <line>226</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" initialLine="226" containingFunctionPresentation="method 'OnGUI'">
-            <startOffsets>
-              <option value="7198" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7317" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
