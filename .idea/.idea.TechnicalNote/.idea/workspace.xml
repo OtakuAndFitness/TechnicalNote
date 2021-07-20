@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,7 @@
       <workItem from="1626507006992" duration="2036000" />
       <workItem from="1626664431834" duration="10501000" />
       <workItem from="1626759148673" duration="420000" />
-      <workItem from="1626759822688" duration="4648000" />
+      <workItem from="1626759822688" duration="5632000" />
     </task>
     <servers />
   </component>

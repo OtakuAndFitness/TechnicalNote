@@ -146,6 +146,7 @@ public class PerlinWorleyNoise : EditorWindow
         // string res = GetTexName(type);
         
         File.WriteAllBytes(System.Environment.CurrentDirectory + "/Assets/Resources/Textures/" + texName + ".tga", tex.EncodeToTGA());
+        AssetDatabase.Refresh();
         EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Resources/Textures目录下生成！","确定","取消");
     }
 
