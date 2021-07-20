@@ -65,7 +65,7 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.SetFloat("persistence", persistence);
         noiseGenerator.SetFloat("scale", scale);
         noiseGenerator.SetTexture(kernelPerlin,"PerlinTex",rt);
-        noiseGenerator.Dispatch(kernelPerlin,texWidth/8,texWidth/8,1);
+        noiseGenerator.Dispatch(kernelPerlin,texWidth/16,texWidth/16,1);
         
         Save2D(rt);
     }
@@ -82,7 +82,7 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.SetFloat("persistence", persistence);
         noiseGenerator.SetFloat("scale", scale);
         noiseGenerator.SetTexture(kernelWorley,"WorleyTex",rt);
-        noiseGenerator.Dispatch(kernelWorley,texWidth/8,texWidth/8,1);
+        noiseGenerator.Dispatch(kernelWorley,texWidth/16,texWidth/16,1);
         
         Save2D(rt);
     }
@@ -91,7 +91,7 @@ public class PerlinWorleyNoise : EditorWindow
     {
         RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
         rt.enableRandomWrite = true;
-        rt.dimension = TextureDimension.Tex2D;
+        // rt.dimension = TextureDimension.Tex2D;
         rt.Create();
         
         int kernelPerlinAndWorley = noiseGenerator.FindKernel("PerlinAndWorley");
@@ -119,7 +119,7 @@ public class PerlinWorleyNoise : EditorWindow
     {
         RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
         rt.enableRandomWrite = true;
-        rt.dimension = TextureDimension.Tex2D;
+        // rt.dimension = TextureDimension.Tex2D;
         rt.Create();
         
         int kernelWorleyCloud = noiseGenerator.FindKernel("WorleyCloud");
@@ -128,7 +128,7 @@ public class PerlinWorleyNoise : EditorWindow
 
         for (int i = 0; i < texWidth; i++)
         {
-            noiseGenerator.SetFloat("pwRes", texWidth);
+            noiseGenerator.SetFloat("wRes", texWidth);
             noiseGenerator.SetInt("octaves", octaves);
             noiseGenerator.SetFloat("persistence", persistence);
             noiseGenerator.SetFloat("scale", scale);

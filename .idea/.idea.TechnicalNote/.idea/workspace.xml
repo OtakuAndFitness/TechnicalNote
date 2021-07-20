@@ -4,6 +4,11 @@
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Human.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Human.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GodRay.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GodRay.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/d2/3689ecc4/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/9c/9dd48ea7/Texture3D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/ShaderMan-master/Assets/Scripts/CodeGenerator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -43,8 +49,9 @@
       <option value="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorley.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.shader" />
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -80,10 +87,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22009">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22009" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -112,7 +119,9 @@
       <workItem from="1626416151584" duration="4848000" />
       <workItem from="1626430087758" duration="8870000" />
       <workItem from="1626507006992" duration="2036000" />
-      <workItem from="1626664431834" duration="2760000" />
+      <workItem from="1626664431834" duration="10501000" />
+      <workItem from="1626759148673" duration="420000" />
+      <workItem from="1626759822688" duration="1050000" />
     </task>
     <servers />
   </component>
