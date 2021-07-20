@@ -1,10 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
 using System.IO;
-using TreeEditor;
-using UnityEngine.Rendering;
+using UnityEditor;
+using UnityEngine;
+
 
 public class PerlinWorleyNoise : EditorWindow
 {
@@ -28,7 +27,7 @@ public class PerlinWorleyNoise : EditorWindow
     }
     
     [MenuItem("Tools/高级噪声图")]
-    static void ShowWindow(){
+    static void Init(){
         GetWindow(typeof(PerlinWorleyNoise)).Show();
     }
 

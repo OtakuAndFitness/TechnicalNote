@@ -10,9 +10,9 @@ int octaves;//多少个噪声叠加
 float persistence;//每个噪声按照多少比例叠加（frequency = 2^i, amplitude = persistence^i）
 float scale;
 
-int pwRes;//perlinworley贴图尺寸
-int wRes;//worley贴图尺寸
-int pRes;//perlin贴图尺寸
+float pwRes;//perlinworley贴图尺寸
+float wRes;//worley贴图尺寸
+float pRes;//perlin贴图尺寸
 
 float perlinToWorleyRatio;//perlin和worley按照多少比例混合
 
@@ -22,8 +22,8 @@ int layer;
 // with cs.SetTexture
 RWTexture3D<float4> PerlinWorley;
 RWTexture3D<float4> WorleyForCloud;
-RWTexture2D<float3> PerlinTex;
-RWTexture2D<float3> WorleyTex;
+RWTexture2D<float4> PerlinTex;
+RWTexture2D<float4> WorleyTex;
 
 float setRange(float value, float low, float high)
 {
@@ -257,7 +257,8 @@ void Perlin(uint3 id : SV_DispatchThreadID){
 
     perlin = clamp(perlin,0.0,1.0);
 
-    PerlinTex[id.xy] = float3(perlin,perlin,perlin);
+    // PerlinTex[id.xy] = float3(perlin,perlin,perlin);
+    PerlinTex[id.xy] = float4(perlin,perlin,perlin,perlin);
 }
 
 [numthreads(16,16,1)]
@@ -269,5 +270,5 @@ void Worley(uint3 id : SV_DispatchThreadID){
 
     worley = clamp(worley,0.0,1.0);
 
-    WorleyTex[id.xy] = float3(worley,worley,worley);
+    WorleyTex[id.xy] = float4(worley,worley,worley,worley);
 }

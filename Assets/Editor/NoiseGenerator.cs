@@ -11,12 +11,12 @@ public class NoiseGenerator : EditorWindow
     string texName;
     int scale = 1;
     int step = 1;
-
+    
     [MenuItem("Tools/生成噪声图")]
     static void Init(){
         GetWindow(typeof(NoiseGenerator)).Show();
     }
-
+    
     void GenerateNoiseImage(){
         int size = Mathf.Min(x,y);
         Texture2D tex = new Texture2D(x,y,TextureFormat.RGB24,false);
@@ -33,28 +33,28 @@ public class NoiseGenerator : EditorWindow
         }
         tex.SetPixels(pixel);
         tex.Apply();
-
+    
         File.WriteAllBytes(System.Environment.CurrentDirectory + "\\Assets\\" + texName + ".png", tex.EncodeToPNG());
         EditorUtility.DisplayDialog("成功","噪声图\"" + texName + "\"" + "已在Assets目录下生成！","确定","取消");
     }
-
+    
     private void OnGUI() {
         EditorGUILayout.BeginHorizontal();
         texName = EditorGUILayout.TextField("图片名: ", texName);
         EditorGUILayout.EndHorizontal();
-
+    
         EditorGUILayout.BeginHorizontal();
         y = EditorGUILayout.IntField("图片长: ", y);
         EditorGUILayout.EndHorizontal();
-
+    
         EditorGUILayout.BeginHorizontal();
         x = EditorGUILayout.IntField("图片宽: ", x);
         EditorGUILayout.EndHorizontal();
-
+    
         EditorGUILayout.BeginHorizontal();
         scale = EditorGUILayout.IntField("Scale: ", scale);
         EditorGUILayout.EndHorizontal();
-
+    
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("生成")){
             if (x < 1 || y < 1){
@@ -75,4 +75,6 @@ public class NoiseGenerator : EditorWindow
         }
         EditorGUILayout.EndHorizontal();
     }
+    
+    
 }

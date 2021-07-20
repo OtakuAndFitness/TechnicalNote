@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Human.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Human.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GodRay.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GodRay.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +32,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/01/d05ca2d7/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/923143A3-5CFF-483B-AA0C-440D84700E8A/7e/72f43b21/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/d2/3689ecc4/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/9c/9dd48ea7/Texture3D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/ShaderMan-master/Assets/Scripts/CodeGenerator.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,10 +47,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/AdvancedNoiseGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorley.cs" />
-      <option value="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.shader" />
-      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
+      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -121,7 +121,7 @@
       <workItem from="1626507006992" duration="2036000" />
       <workItem from="1626664431834" duration="10501000" />
       <workItem from="1626759148673" duration="420000" />
-      <workItem from="1626759822688" duration="1050000" />
+      <workItem from="1626759822688" duration="4648000" />
     </task>
     <servers />
   </component>
