@@ -208,11 +208,11 @@ public class PerlinWorleyNoise : EditorWindow
         rt.dimension = TextureDimension.Tex2D;
         rt.Create();
 
-        int kernerlCSMain = noiseGenerator.FindKernel("CSMain");
+        int kernelCSMain = noiseGenerator.FindKernel("CSMain");
         noiseGenerator.SetInt("layer",layer);
-        noiseGenerator.SetTexture(kernerlCSMain,"IntermediateTex",PerlinWorleyNoise.rt3D);
-        noiseGenerator.SetTexture(kernerlCSMain, "ResultTex",rt);
-        noiseGenerator.Dispatch(kernerlCSMain, texWidth/8,texWidth/8,1);
+        noiseGenerator.SetTexture(kernelCSMain,"IntermediateTex",PerlinWorleyNoise.rt3D);
+        noiseGenerator.SetTexture(kernelCSMain, "ResultTex",rt);
+        noiseGenerator.Dispatch(kernelCSMain, texWidth/8,texWidth/8,1);
 
         return rt;
 
