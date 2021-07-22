@@ -3,6 +3,7 @@
 #pragma kernel WorleyCloud
 #pragma kernel Perlin
 #pragma kernel Worley
+#pragma kernel CSMain
 
 #define MOD3 float3(0.1031,0.11369,0.13787)
 
@@ -16,7 +17,7 @@ float pRes;//perlin贴图尺寸
 
 float perlinToWorleyRatio;//perlin和worley按照多少比例混合
 
-int layer;
+int layer;//texture3D深度层
 
 // Create a RenderTexture with enableRandomWrite flag and set it
 // with cs.SetTexture
@@ -24,6 +25,9 @@ RWTexture3D<float4> PerlinWorley;
 RWTexture3D<float4> WorleyForCloud;
 RWTexture2D<float4> PerlinTex;
 RWTexture2D<float4> WorleyTex;
+
+Texture3D<float4> IntermediateTex;
+RWTexture2D<float4> ResultTex;
 
 float setRange(float value, float low, float high)
 {
@@ -193,11 +197,11 @@ float Worley(float3 p, int octaves, float persistence, float scale)
     //return worleyV;
 }
 
-[numthreads(8,8,1)]
+[numthreads(8,8,8)]
 void PerlinAndWorley(uint3 id : SV_DispatchThreadID)
 {
     // float perlinToWorleyRatio = 0.3;
-    uint3 index = uint3(id.x,id.y,layer);
+    // uint3 index = uint3(id.x,id.y,layer);
 
     float tex1RPerlinLow = 0.3;
     float tex1RPerlinHigh = 1.4;
@@ -206,7 +210,7 @@ void PerlinAndWorley(uint3 id : SV_DispatchThreadID)
     float tex1GBAWorleyLow = -0.4;
     float tex1GBAWorleyHigh = 1.0;
 
-    float3 xyz = (float3) index / pwRes;
+    float3 xyz = (float3) id.xyz / pwRes;
 
     float perlinR = Perlin(xyz, 7, 0.5, 4.0);
     float worleyR = Worley(xyz, 3, 0.5, 6.0);
@@ -222,17 +226,17 @@ void PerlinAndWorley(uint3 id : SV_DispatchThreadID)
 
     float worleyPerlin = dilatePerlinWorley(perlinR, worleyR, perlinToWorleyRatio);
 
-    PerlinWorley[index] = float4(worleyPerlin, 1.0 - worleyG, 1.0 - worleyB, 1.0 - worleyA);
+    PerlinWorley[id.xyz] = float4(worleyPerlin, 1.0 - worleyG, 1.0 - worleyB, 1.0 - worleyA);
 }
 
-[numthreads(8,8,1)]
+[numthreads(8,8,8)]
 void WorleyCloud(uint3 id : SV_DispatchThreadID){
     float tex2Low = -0.2;
     float tex2High = 1.0;
 
-    uint3 index = uint3(id.x,id.y,layer);
+    // uint3 index = uint3(id.x,id.y,layer);
 
-    float3 xyz = (float3)index / wRes;
+    float3 xyz = (float3)id.xyz / wRes;
 
     float worleyR = Worley(xyz,3,0.5,10);
     float worleyG = Worley(xyz,3,0.5,15);
@@ -244,7 +248,7 @@ void WorleyCloud(uint3 id : SV_DispatchThreadID){
     worleyB = setRange(worleyB,tex2Low,tex2High);
     worleyA = setRange(worleyA,tex2Low,tex2High);
 
-    WorleyForCloud[index] = float4(worleyR,worleyG,worleyB,worleyA);
+    WorleyForCloud[id.xyz] = float4(worleyR,worleyG,worleyB,worleyA);
 
 }
 
@@ -271,4 +275,11 @@ void Worley(uint3 id : SV_DispatchThreadID){
     worley = clamp(worley,0.0,1.0);
 
     WorleyTex[id.xy] = float4(worley,worley,worley,worley);
+}
+
+[numthreads(8,8,1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint3 index = uint3(id.x,id.y,layer);
+    ResultTex[id.xy] = IntermediateTex[index];
 }

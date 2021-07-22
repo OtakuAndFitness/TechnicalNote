@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 public class PerlinWorleyNoise : EditorWindow
@@ -90,27 +91,29 @@ public class PerlinWorleyNoise : EditorWindow
     {
         RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
         rt.enableRandomWrite = true;
-        // rt.dimension = TextureDimension.Tex2D;
+        rt.dimension = TextureDimension.Tex3D;
+        rt.volumeDepth = texWidth;
         rt.Create();
         
         int kernelPerlinAndWorley = noiseGenerator.FindKernel("PerlinAndWorley");
         
-        RenderTexture[] layers = new RenderTexture[texWidth];
+        // RenderTexture[] layers = new RenderTexture[texWidth];
         
-        for (int i = 0; i < texWidth; i++)
-        {
-            noiseGenerator.SetFloat("pwRes", texWidth);
-            noiseGenerator.SetInt("octaves", octaves);
-            noiseGenerator.SetFloat("persistence", persistence);
-            noiseGenerator.SetFloat("scale", scale);
-            noiseGenerator.SetFloat("perlinToWorleyRatio",ratio);
-            noiseGenerator.SetInt("layer",i);
-            noiseGenerator.SetTexture(kernelPerlinAndWorley,"PerlinWorley",rt);
-            noiseGenerator.Dispatch(kernelPerlinAndWorley,texWidth/8,texWidth/8,1);
-            layers[i] = rt;
-        }
+        noiseGenerator.SetFloat("pwRes", texWidth);
+        noiseGenerator.SetInt("octaves", octaves);
+        noiseGenerator.SetFloat("persistence", persistence);
+        noiseGenerator.SetFloat("scale", scale);
+        noiseGenerator.SetFloat("perlinToWorleyRatio",ratio);
+        noiseGenerator.SetTexture(kernelPerlinAndWorley,"PerlinWorley",rt);
+
+        // for (int i = 0; i < texWidth; i++)
+        // {
+            // noiseGenerator.SetInt("layer",i);
+        noiseGenerator.Dispatch(kernelPerlinAndWorley,texWidth/8,texWidth/8,texWidth/8);
+            // layers[i] = rt;
+        // }
         
-        Save3D(layers);
+        Save3D(rt);
         
     }
 
@@ -118,25 +121,28 @@ public class PerlinWorleyNoise : EditorWindow
     {
         RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
         rt.enableRandomWrite = true;
-        // rt.dimension = TextureDimension.Tex2D;
+        rt.dimension = TextureDimension.Tex3D;
+        rt.volumeDepth = texWidth;
         rt.Create();
         
         int kernelWorleyCloud = noiseGenerator.FindKernel("WorleyCloud");
         
-        RenderTexture[] layers = new RenderTexture[texWidth];
-
-        for (int i = 0; i < texWidth; i++)
-        {
-            noiseGenerator.SetFloat("wRes", texWidth);
-            noiseGenerator.SetInt("octaves", octaves);
-            noiseGenerator.SetFloat("persistence", persistence);
-            noiseGenerator.SetFloat("scale", scale);
-            noiseGenerator.SetTexture(kernelWorleyCloud,"WorleyForCloud",rt);
-            noiseGenerator.Dispatch(kernelWorleyCloud,texWidth/8,texWidth/8,1);
-            layers[i] = rt;
-        }
+        // RenderTexture[] layers = new RenderTexture[texWidth];
         
-        Save3D(layers);
+        noiseGenerator.SetFloat("wRes", texWidth);
+        noiseGenerator.SetInt("octaves", octaves);
+        noiseGenerator.SetFloat("persistence", persistence);
+        noiseGenerator.SetFloat("scale", scale);
+        noiseGenerator.SetTexture(kernelWorleyCloud,"WorleyForCloud",rt);
+
+        // for (int i = 0; i < texWidth; i++)
+        // {
+            // noiseGenerator.SetInt("layers",i);
+        noiseGenerator.Dispatch(kernelWorleyCloud,texWidth/8,texWidth/8,texWidth/8);
+            // layers[i] = rt;
+        // }
+        
+        Save3D(rt);
     }
 
     void Save2D(RenderTexture rt)
@@ -150,12 +156,13 @@ public class PerlinWorleyNoise : EditorWindow
         EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Resources/Textures目录下生成！","确定","取消");
     }
 
-    void Save3D(RenderTexture[] rts)
+    void Save3D(RenderTexture rt)
     {
         Texture2D[] finalSlices = new Texture2D[texWidth];
         for (int i = 0; i < texWidth; i++)
         {
-            finalSlices[i] = ConvertRTToTexture(rts[i]);
+            RenderTexture temp = Copy3DSliceToRenderTexture(i,rt);
+            finalSlices[i] = ConvertRTToTexture(temp);
         }
 
         Texture3D cube = new Texture3D(texWidth, texWidth, texWidth, TextureFormat.ARGB32,true);
@@ -191,6 +198,24 @@ public class PerlinWorleyNoise : EditorWindow
         tex.Apply();
         
         return tex;
+    }
+
+    RenderTexture Copy3DSliceToRenderTexture(int layer, RenderTexture rt3D)
+    {
+        RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
+        rt.enableRandomWrite = true;
+        rt.dimension = TextureDimension.Tex2D;
+        rt.Create();
+
+        int kernerlCSMain = noiseGenerator.FindKernel("CSMain");
+        noiseGenerator.SetInt("layer",layer);
+        noiseGenerator.SetTexture(kernerlCSMain,"IntermediateTex",rt3D);
+        noiseGenerator.SetTexture(kernerlCSMain, "ResultTex",rt);
+        noiseGenerator.Dispatch(kernerlCSMain, texWidth/8,texWidth/8,1);
+
+        return rt;
+
+
     }
 
     // string GetTexName(NoiseType type)
