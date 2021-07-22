@@ -4,18 +4,6 @@
     <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Postprocessing.Runtime.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Rider.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.TextMeshPro.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.SpatialTracking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.TestRunner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEditor.XR.LegacyInputHelpers.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.SpatialTracking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.TestRunner.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UnityEngine.XR.LegacyInputHelpers.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +47,8 @@
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.shader" />
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/NoiseGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
+      <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
@@ -130,7 +118,7 @@
       <workItem from="1626507006992" duration="2036000" />
       <workItem from="1626664431834" duration="10501000" />
       <workItem from="1626759148673" duration="420000" />
-      <workItem from="1626759822688" duration="13287000" />
+      <workItem from="1626759822688" duration="13926000" />
     </task>
     <servers />
   </component>

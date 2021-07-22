@@ -17,6 +17,7 @@ public class PerlinWorleyNoise : EditorWindow
     private string[] options = {"Perlin", "Worley", "WorleyForCloud", "PerlinWorley"};
     private int index;
     private ComputeShader noiseGenerator;
+    private static RenderTexture rt3D;
     
     
     enum NoiseType
@@ -112,8 +113,8 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.Dispatch(kernelPerlinAndWorley,texWidth/8,texWidth/8,texWidth/8);
             // layers[i] = rt;
         // }
-        
-        Save3D(rt);
+        PerlinWorleyNoise.rt3D = rt;
+        Save3D();
         
     }
 
@@ -141,8 +142,8 @@ public class PerlinWorleyNoise : EditorWindow
         noiseGenerator.Dispatch(kernelWorleyCloud,texWidth/8,texWidth/8,texWidth/8);
             // layers[i] = rt;
         // }
-        
-        Save3D(rt);
+        PerlinWorleyNoise.rt3D = rt;
+        Save3D();
     }
 
     void Save2D(RenderTexture rt)
@@ -156,12 +157,12 @@ public class PerlinWorleyNoise : EditorWindow
         EditorUtility.DisplayDialog("成功",texName + "噪声图已在Assets/Resources/Textures目录下生成！","确定","取消");
     }
 
-    void Save3D(RenderTexture rt)
+    void Save3D()
     {
         Texture2D[] finalSlices = new Texture2D[texWidth];
         for (int i = 0; i < texWidth; i++)
         {
-            RenderTexture temp = Copy3DSliceToRenderTexture(i,rt);
+            RenderTexture temp = Copy3DSliceToRenderTexture(i);
             finalSlices[i] = ConvertRTToTexture(temp);
         }
 
@@ -200,7 +201,7 @@ public class PerlinWorleyNoise : EditorWindow
         return tex;
     }
 
-    RenderTexture Copy3DSliceToRenderTexture(int layer, RenderTexture rt3D)
+    RenderTexture Copy3DSliceToRenderTexture(int layer)
     {
         RenderTexture rt = new RenderTexture(texWidth, texWidth, 0, RenderTextureFormat.ARGB32);
         rt.enableRandomWrite = true;
@@ -209,7 +210,7 @@ public class PerlinWorleyNoise : EditorWindow
 
         int kernerlCSMain = noiseGenerator.FindKernel("CSMain");
         noiseGenerator.SetInt("layer",layer);
-        noiseGenerator.SetTexture(kernerlCSMain,"IntermediateTex",rt3D);
+        noiseGenerator.SetTexture(kernerlCSMain,"IntermediateTex",PerlinWorleyNoise.rt3D);
         noiseGenerator.SetTexture(kernerlCSMain, "ResultTex",rt);
         noiseGenerator.Dispatch(kernerlCSMain, texWidth/8,texWidth/8,1);
 
