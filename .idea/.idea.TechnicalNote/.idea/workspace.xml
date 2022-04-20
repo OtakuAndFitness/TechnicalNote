@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TechnicalNote/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e037af6b-efc6-49c1-bb17-30dc3fadacbd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,17 +19,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/923143A3-5CFF-483B-AA0C-440D84700E8A/41/3f9c42b2/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/61/f1df6379/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2C24F0C1-857D-4078-B6D4-53F88E061A29/a1/c23fa95b/File.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../UnityPlayground-master/Assets/My/Cloud/Scripts/NoiseGenerator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/01/d05ca2d7/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/923143A3-5CFF-483B-AA0C-440D84700E8A/7e/72f43b21/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2C89414-8F03-462D-BF18-9BCAB9DFA7FC/d2/3689ecc4/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2021.3.0f1c1/Editor/Data/CGIncludes/AutoLight.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF4E657D-96A8-4691-9B0F-6EFFBE5E45E2/9c/9dd48ea7/Texture3D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8805DF07-97D0-49F6-BAB8-1BD3776A1A2C/23/33d4f62a/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/ShaderMan-master/Assets/Scripts/CodeGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Unity/Hub/Editor/2021.3.0f1c1/Editor/Data/CGIncludes/UnityShaderVariables.cginc" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -50,6 +39,9 @@
       <option value="$PROJECT_DIR$/Assets/Resources/Shaders/PerlinWorley.compute" />
       <option value="$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" />
     </changedPaths>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1qQS48HsmVr0QEuCu2Dde2N4ljT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -70,6 +62,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -119,12 +112,23 @@
       <workItem from="1626664431834" duration="10501000" />
       <workItem from="1626759148673" duration="420000" />
       <workItem from="1626759822688" duration="13926000" />
+      <workItem from="1626955536074" duration="298000" />
+      <workItem from="1626957483376" duration="1162000" />
+      <workItem from="1627479502372" duration="708000" />
+      <workItem from="1631025100263" duration="84000" />
+      <workItem from="1633423170332" duration="81000" />
+      <workItem from="1633423635038" duration="107000" />
+      <workItem from="1650427283676" duration="2516000" />
+      <workItem from="1650431961392" duration="569000" />
+      <workItem from="1650432555145" duration="850000" />
+      <workItem from="1650433429401" duration="236000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.History.Properties">
@@ -147,7 +151,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
