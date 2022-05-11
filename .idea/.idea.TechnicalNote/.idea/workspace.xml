@@ -27,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PerlinWorleyNoise.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnableDepth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.postprocessing@3.2.2/PostProcessing/Shaders/Builtins/ScalableAO.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.postprocessing@3.2.2/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.hlsl" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -130,6 +131,10 @@
       <workItem from="1650627127967" duration="365000" />
       <workItem from="1650694323267" duration="7208000" />
       <workItem from="1650709053255" duration="2883000" />
+      <workItem from="1650882177975" duration="1657000" />
+      <workItem from="1650965323246" duration="6172000" />
+      <workItem from="1652260911272" duration="3133000" />
+      <workItem from="1652264183373" duration="378000" />
     </task>
     <servers />
   </component>

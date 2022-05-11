@@ -34,7 +34,7 @@ float AnisotropicGGX(float RoughnessX, float RoughnessY, float NdotH, float3 H, 
 float SmithJoint(float NdotL, float NdotV,float r){
     float k = pow2(r+1) / 8;
     float g1 = NdotV / (NdotV * (1 - k) + k);
-    float g2 = NdotL * (NdotL * (1 - k) + k);
+    float g2 = NdotL / (NdotL * (1 - k) + k);
     return g1 * g2;
 }
 
@@ -57,7 +57,7 @@ float AnisotropicSmithJoint(float3 X, float3 Y, float3 V, float3 L, float3 N,flo
 
 //Specular F, Fresnel Term
 float4 FresnelSchlick(float4 F0, float VdotH){
-    return F0 + (1 - F0) * exp2(-5.55473 * VdotH - 6.98316 * VdotH);
+    return F0 + (1 - F0) * exp2((-5.55473 * VdotH - 6.98316) * VdotH);
 }
 
 float4 FresnelLerp(float4 F0,float4 F90, float cosA){

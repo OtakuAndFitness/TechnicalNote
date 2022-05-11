@@ -33,8 +33,21 @@ public class NoiseGenerator : EditorWindow
         }
         tex.SetPixels(pixel);
         tex.Apply();
-    
-        File.WriteAllBytes(System.Environment.CurrentDirectory + "\\Assets\\" + texName + ".png", tex.EncodeToPNG());
+
+        string absolutepath = System.Environment.CurrentDirectory + "\\Assets\\" + texName + ".png";
+        File.WriteAllBytes(absolutepath, tex.EncodeToPNG());
+        AssetDatabase.Refresh();
+
+        absolutepath = absolutepath.Replace("\\","/");
+        if (absolutepath.StartsWith(Application.dataPath)) {
+            string relativepath =  "Assets" + absolutepath.Substring(Application.dataPath.Length);
+            TextureImporter textureImporter = TextureImporter.GetAtPath(relativepath) as TextureImporter;
+            textureImporter.sRGBTexture = false;//生成的噪声图是使用的数据而不是颜色，这个项目基于linear space，所以不勾srgb
+            EditorUtility.SetDirty(textureImporter);
+            textureImporter.SaveAndReimport();
+        }
+        AssetDatabase.Refresh();
+
         EditorUtility.DisplayDialog("成功","噪声图\"" + texName + "\"" + "已在Assets目录下生成！","确定","取消");
     }
     

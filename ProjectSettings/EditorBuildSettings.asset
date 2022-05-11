@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Fog.unity
-    guid: 6be3b3bc77a8a4a85b013f3023793b64
+    path: Assets/Scenes/Cloud.unity
+    guid: 47b4bee1d3aaff0448d8d66528ce6994
   m_configObjects: {}

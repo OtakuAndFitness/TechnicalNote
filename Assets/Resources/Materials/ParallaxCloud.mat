@@ -30,13 +30,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.368
+    - _Alpha: 0.363
     - _HeightOffset: 0.635
-    - _NormalScale: 0.1025
-    - _Speed: 0.0417
-    - _StepLayer: 39.9
+    - _NormalScale: 0.1478
+    - _Speed: 0.0235
+    - _StepLayer: 64
     - _ViewOffset: 0.4
     m_Colors:
-    - _BottomColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
-    - _Color: {r: 0.7334163, g: 0.8567187, b: 0.8867924, a: 1}
+    - _BottomColor: {r: 0.6156863, g: 0.8156863, b: 0.8862745, a: 1}
+    - _Color: {r: 0.9098039, g: 0.99215686, b: 0.9764706, a: 1}
   m_BuildTextureStacks: []
