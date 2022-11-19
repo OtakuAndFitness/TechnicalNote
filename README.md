@@ -1,6 +1,6 @@
 
 # TechnicalNote
-个人技术博客的资源集合（master分支是iOS版本）
+个人技术博客的资源集合（master分支是iOS版本），之后技术会切换到URP上，bulit-in的技术慢慢就不积累了，URP技术在https://github.com/OtakuAndFitness/URP-Practice
 
 LightingModel场景对应博客
 
